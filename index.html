@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Free Weight Loss and Face Lift Demos | Awakened Skin + Body</title>
-<meta name="description" content="Free weight loss and face lift demos at our studio right off the Broad Causeway. Book online, or call or text (305) 909-7069. Hablamos español.">
+<meta name="description" content="Free weight loss and face lift demos right off the Broad Causeway. Try a mini face lift with atmospheric plasma. Book online or call (305) 909-7069.">
 <meta name="theme-color" content="#412F23">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://freebodydemo.com/">
@@ -180,6 +180,33 @@
   }
   .alt .chips li { background: #fff; }
 
+  /* Before and after carousels */
+  .results { margin: 44px 0 0; }
+  .results-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+  .results-head h3 { font-size: 32px; line-height: 1.1; }
+  .results-note { margin: 6px 0 0; color: var(--muted); font-size: 15px; max-width: 34em; }
+  .car-nav { display: none; gap: 8px; flex: none; }
+  .car-btn {
+    appearance: none; width: 46px; height: 46px; border-radius: 50%; padding: 0;
+    border: 1.5px solid var(--espresso); background: transparent; color: var(--espresso);
+    display: grid; place-items: center; cursor: pointer; transition: background .15s ease, opacity .15s ease;
+  }
+  .car-btn:hover:not(:disabled) { background: var(--cream); }
+  .alt .car-btn:hover:not(:disabled) { background: #fff; }
+  .car-btn:disabled { opacity: .35; cursor: default; }
+  .car-btn svg { width: 20px; height: 20px; }
+  .car-track {
+    display: flex; gap: 14px; list-style: none; margin: 0 -20px; padding: 2px 20px 16px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--champagne) transparent;
+  }
+  .car-track:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
+  .car-slide { flex: 0 0 min(74vw, 300px); scroll-snap-align: start; }
+  .car-slide img {
+    width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover;
+    border-radius: var(--radius); border: 1px solid var(--line); background: var(--ink);
+  }
+
   .cal-head { margin: 40px 0 16px; }
   .cal-head h3 { font-size: 32px; }
   .cal-head p { margin: 6px 0 0; color: var(--muted); }
@@ -243,6 +270,9 @@
     section { padding: 84px 0; }
     .steps.five { grid-template-columns: repeat(5, 1fr); }
     .steps.three { grid-template-columns: repeat(3, 1fr); }
+    .steps.four { grid-template-columns: repeat(4, 1fr); }
+    .car-nav { display: flex; }
+    .car-track { margin: 0; padding: 2px 0 16px; scroll-padding-left: 0; }
     .step { padding: 22px 20px 20px; }
     .step::before { position: static; display: block; margin-bottom: 10px; font-size: 38px; }
     .mbar { display: none; }
@@ -291,7 +321,7 @@
         <a class="choice" href="#face-lift" data-track="choose_face_lift">
           <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis de</span></span>
           <span class="title"><span class="en">Face lift</span><span class="es">Lifting facial</span></span>
-          <p><span class="en">We look at your skin with you and give you straight answers on Fusion Plasma and Fibroblast. About 45 minutes.</span><span class="es">Revisamos tu piel contigo y te damos respuestas claras sobre Fusion Plasma y Fibroblast. Unos 45 minutos.</span></p>
+          <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins. About 45 minutes.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas. Unos 45 minutos.</span></p>
           <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
         </a>
       </div>
@@ -344,6 +374,29 @@
         </ul>
       </div>
 
+      <div class="results" data-results="weight_loss" role="region" aria-roledescription="carousel" aria-labelledby="wl-res-title">
+        <div class="results-head">
+          <div>
+            <h3 id="wl-res-title"><span class="en">Real results from our studio</span><span class="es">Resultados reales de nuestro estudio</span></h3>
+            <p class="results-note"><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+          </div>
+          <div class="car-nav">
+            <button type="button" class="car-btn" data-dir="-1" aria-label="Previous photos" data-aria-en="Previous photos" data-aria-es="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="car-btn" data-dir="1" aria-label="Next photos" data-aria-en="Next photos" data-aria-es="Fotos siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <ul class="car-track" tabindex="0" aria-label="Before and after photos" data-aria-en="Before and after photos. Swipe or use the arrow keys." data-aria-es="Fotos de antes y después. Desliza o usa las flechas del teclado.">
+          <li class="car-slide"><img src="/assets/results/wl-01.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-06.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-07.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+          <li class="car-slide"><img src="/assets/results/wl-08.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+        </ul>
+      </div>
+
       <div class="cal-head">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
         <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
@@ -370,10 +423,14 @@
         <h2 id="face-title"><span class="en">Your face lift demo</span><span class="es">Tu demo de lifting facial</span></h2>
         <p class="sub"><span class="en">About 45 minutes, here in our studio. Here's what happens:</span><span class="es">Unos 45 minutos, aquí en nuestro estudio. Así es la visita:</span></p>
       </div>
-      <ol class="steps three">
+      <ol class="steps four">
         <li class="step">
           <h3><span class="en">We look at your skin with you</span><span class="es">Revisamos tu piel contigo</span></h3>
           <p><span class="en">Tell us what's bothering you, and we'll look at it up close together.</span><span class="es">Cuéntanos qué te molesta y lo vemos de cerca contigo.</span></p>
+        </li>
+        <li class="step">
+          <h3><span class="en">Your mini face lift</span><span class="es">Tu mini lifting facial</span></h3>
+          <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas.</span></p>
         </li>
         <li class="step">
           <h3><span class="en">Straight answers</span><span class="es">Respuestas claras</span></h3>
@@ -387,8 +444,30 @@
       <div class="about">
         <ul class="chips">
           <li><span class="en">No surgery</span><span class="es">Sin cirugía</span></li>
-          <li><span class="en">No injections</span><span class="es">Sin inyecciones</span></li>
-          <li><span class="en">Come as you are, makeup is fine</span><span class="es">Ven como estés, con maquillaje está bien</span></li>
+          <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
+          <li><span class="en">No fillers</span><span class="es">Sin rellenos</span></li>
+          <li><span class="en">No toxins</span><span class="es">Sin toxinas</span></li>
+          <li><span class="en">Come as you are</span><span class="es">Ven como estés</span></li>
+        </ul>
+      </div>
+
+      <div class="results" data-results="face_lift" role="region" aria-roledescription="carousel" aria-labelledby="face-res-title">
+        <div class="results-head">
+          <div>
+            <h3 id="face-res-title"><span class="en">Real results from our studio</span><span class="es">Resultados reales de nuestro estudio</span></h3>
+            <p class="results-note"><span class="en">Fusion Plasma clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Fusion Plasma, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+          </div>
+          <div class="car-nav">
+            <button type="button" class="car-btn" data-dir="-1" aria-label="Previous photos" data-aria-en="Previous photos" data-aria-es="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="car-btn" data-dir="1" aria-label="Next photos" data-aria-en="Next photos" data-aria-es="Fotos siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <ul class="car-track" tabindex="0" aria-label="Before and after photos" data-aria-en="Before and after photos. Swipe or use the arrow keys." data-aria-es="Fotos de antes y después. Desliza o usa las flechas del teclado.">
+          <li class="car-slide"><img src="/assets/results/face-01.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
+          <li class="car-slide"><img src="/assets/results/face-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
+          <li class="car-slide"><img src="/assets/results/face-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
+          <li class="car-slide"><img src="/assets/results/face-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
+          <li class="car-slide"><img src="/assets/results/face-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting de rostro y cuello con Fusion Plasma"></li>
         </ul>
       </div>
 
@@ -430,11 +509,11 @@
         </details>
         <details>
           <summary><span class="en">Is the face lift surgery?</span><span class="es">¿El lifting facial es cirugía?</span></summary>
-          <p><span class="en">No, it's non-surgical. At the demo we'll go over Fusion Plasma and Fibroblast and what the downtime looks like for each one.</span><span class="es">No, no es cirugía. En la demo te explicamos Fusion Plasma y Fibroblast y cómo es el tiempo de recuperación de cada uno.</span></p>
+          <p><span class="en">No, it's non-surgical. Your mini face lift uses atmospheric plasma, with no needles, no fillers and no toxins. Afterward we'll go over Fusion Plasma and Fibroblast and what the downtime looks like for each one.</span><span class="es">No, no es cirugía. Tu mini lifting facial usa plasma atmosférico, sin agujas, sin rellenos y sin toxinas. Después te explicamos Fusion Plasma y Fibroblast y cómo es el tiempo de recuperación de cada uno.</span></p>
         </details>
         <details>
           <summary><span class="en">What should I wear?</span><span class="es">¿Qué me pongo?</span></summary>
-          <p><span class="en">For the weight loss demo, something comfortable, and skip lotion, oil and self-tanner on your waist, hips and thighs that day. For the face lift demo, come as you are. Makeup is fine.</span><span class="es">Para la demo de peso, ropa cómoda, y evita cremas, aceites y autobronceador en la cintura, las caderas y los muslos ese día. Para la demo de lifting facial, ven como estés. Con maquillaje está bien.</span></p>
+          <p><span class="en">For the weight loss demo, something comfortable, and skip lotion, oil and self-tanner on your waist, hips and thighs that day. For the face lift demo, come as you are.</span><span class="es">Para la demo de peso, ropa cómoda, y evita cremas, aceites y autobronceador en la cintura, las caderas y los muslos ese día. Para la demo de lifting facial, ven como estés.</span></p>
         </details>
         <details>
           <summary><span class="en">Where are you?</span><span class="es">¿Dónde están?</span></summary>
@@ -599,6 +678,12 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
     document.querySelectorAll(".js-wa").forEach(function (a) {
       a.href = "https://wa.me/13059097069?text=" + encodeURIComponent(TEXT[lang].msg.any);
     });
+    document.querySelectorAll("[data-alt-en]").forEach(function (img) {
+      img.alt = img.getAttribute("data-alt-" + lang);
+    });
+    document.querySelectorAll("[data-aria-en]").forEach(function (el) {
+      el.setAttribute("aria-label", el.getAttribute("data-aria-" + lang));
+    });
     if (remember) store("fbd-lang", lang);
     if (seen.wl) loadSection("wl");
   }
@@ -615,6 +700,46 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
       if (window.gtag) gtag("event", "language_switch", { language: lang });
     });
   });
+
+  // ---------- Before and after carousels ----------
+  var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var carousels = [];
+  document.querySelectorAll("[data-results]").forEach(function (box) {
+    var track = box.querySelector(".car-track");
+    var prev = box.querySelector('[data-dir="-1"]');
+    var next = box.querySelector('[data-dir="1"]');
+    var tracked = false;
+
+    function slideStep() {
+      var s = track.querySelector(".car-slide");
+      return s ? s.getBoundingClientRect().width + 14 : 300;
+    }
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+    function interacted() {
+      if (tracked) return;
+      tracked = true;
+      if (window.gtag) gtag("event", "results_carousel", { section: box.getAttribute("data-results"), language: root.getAttribute("data-lang") });
+    }
+    [prev, next].forEach(function (b) {
+      b.addEventListener("click", function () {
+        interacted();
+        var step = slideStep();
+        var visible = Math.max(1, Math.floor(track.clientWidth / step));
+        var pages = Math.max(1, visible - 1);
+        track.scrollBy({ left: Number(b.getAttribute("data-dir")) * pages * step, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    });
+    track.addEventListener("scroll", function () {
+      update();
+      if (track.scrollLeft > 20) interacted();
+    }, { passive: true });
+    carousels.push(update);
+    update();
+  });
+  window.addEventListener("resize", function () { carousels.forEach(function (u) { u(); }); });
 
   // ---------- Click tracking ----------
   document.addEventListener("click", function (e) {
