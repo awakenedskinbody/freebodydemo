@@ -136,17 +136,24 @@
   .hero h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.1; margin-bottom: 20px; max-width: 22ch; }
   .choices { display: grid; gap: 14px; }
   .choice {
-    display: flex; flex-direction: column; gap: 10px;
+    display: flex; flex-direction: column; gap: 18px;
     background: #fff; border: 1px solid var(--line); border-radius: 18px;
-    padding: 24px 22px 22px; text-decoration: none; color: inherit;
-    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+    padding: 24px 22px 22px; color: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
   }
   .choice:hover { border-color: var(--bronze); box-shadow: 0 8px 28px rgba(65, 47, 35, 0.08); }
-  .choice:active { transform: scale(0.99); }
+  .choice { text-align: center; }
+  .choice-head { display: flex; flex-direction: column; gap: 8px; }
+  .choice-link {
+    display: flex; flex-direction: column; gap: 10px; flex: 1;
+    text-decoration: none; color: inherit; transition: transform .15s ease;
+  }
+  .choice-link:active { transform: scale(0.99); }
   .choice .kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze); }
   .choice .title { font-family: var(--serif); font-weight: 600; color: var(--espresso); font-size: clamp(38px, 9vw, 54px); line-height: 1; }
   .choice p { margin: 0; color: var(--text); }
-  .choice .go { margin-top: 8px; align-self: flex-start; }
+  .choice .go { margin-top: auto; align-self: center; }
+  .choice-link p { margin-bottom: 8px; }
   .hero-note { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
   .hero-note a { color: var(--espresso); font-weight: 600; text-decoration: none; }
 
@@ -180,32 +187,32 @@
   }
   .alt .chips li { background: #fff; }
 
-  /* Before and after carousels */
-  .results { margin: 44px 0 0; }
-  .results-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
-  .results-head h3 { font-size: 32px; line-height: 1.1; }
-  .results-note { margin: 6px 0 0; color: var(--muted); font-size: 15px; max-width: 34em; }
-  .car-nav { display: none; gap: 8px; flex: none; }
-  .car-btn {
-    appearance: none; width: 46px; height: 46px; border-radius: 50%; padding: 0;
-    border: 1.5px solid var(--espresso); background: transparent; color: var(--espresso);
-    display: grid; place-items: center; cursor: pointer; transition: background .15s ease, opacity .15s ease;
+  /* Before and after carousel in each demo card: one photo at a time */
+  .hc { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hc-stage { position: relative; width: min(100%, 280px); }
+  .hc-track {
+    display: flex; list-style: none; margin: 0; padding: 0; overflow-x: auto; border-radius: 12px;
+    scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; background: var(--ink);
   }
-  .car-btn:hover:not(:disabled) { background: var(--cream); }
-  .alt .car-btn:hover:not(:disabled) { background: #fff; }
-  .car-btn:disabled { opacity: .35; cursor: default; }
-  .car-btn svg { width: 20px; height: 20px; }
-  .car-track {
-    display: flex; gap: 14px; list-style: none; margin: 0 -20px; padding: 2px 20px 16px;
-    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px;
-    -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--champagne) transparent;
+  .hc-track::-webkit-scrollbar { display: none; }
+  .hc-track:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  .hc-slide { flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; }
+  .hc-slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: var(--ink); }
+  .hc-btn {
+    appearance: none; position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%; padding: 0; border: 0; cursor: pointer;
+    display: grid; place-items: center; color: var(--espresso);
+    background: rgba(253, 251, 248, 0.94); box-shadow: 0 2px 12px rgba(14, 12, 10, 0.3);
+    transition: background .15s ease;
   }
-  .car-track:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
-  .car-slide { flex: 0 0 min(74vw, 300px); scroll-snap-align: start; }
-  .car-slide img {
-    width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover;
-    border-radius: var(--radius); border: 1px solid var(--line); background: var(--ink);
-  }
+  .hc-btn:hover { background: #fff; }
+  .hc-btn:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
+  .hc-btn.prev { left: -12px; }
+  .hc-btn.next { right: -12px; }
+  .hc-btn svg { width: 20px; height: 20px; }
+  .hc-cap { margin: 0; text-align: center; font-size: 14px; line-height: 1.4; color: var(--muted); max-width: 32em; }
+  .hc-count { display: block; font-weight: 600; letter-spacing: 0.1em; color: var(--espresso); margin-bottom: 2px; }
 
   .cal-head { margin: 40px 0 16px; }
   .cal-head h3 { font-size: 32px; }
@@ -262,24 +269,28 @@
   @media (min-width: 760px) {
     .top .logo img { height: 44px; }
     .top-call { display: inline; }
-    .hero { padding: 64px 0 76px; }
+    .hero { padding: 44px 0 76px; }
+    .hero h1 { max-width: 34ch; }
     .choices { grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 22px; background: #fff; overflow: hidden; }
     .choice { border: 0; border-radius: 0; padding: 36px 34px 32px; }
     .choice + .choice { border-left: 1px solid var(--line); }
     .choice:hover { box-shadow: none; background: #FFFCF8; }
     section { padding: 84px 0; }
-    .steps.five { grid-template-columns: repeat(5, 1fr); }
+    .steps.five { grid-template-columns: repeat(3, 1fr); }
     .steps.three { grid-template-columns: repeat(3, 1fr); }
-    .steps.four { grid-template-columns: repeat(4, 1fr); }
-    .car-nav { display: flex; }
-    .car-track { margin: 0; padding: 2px 0 16px; scroll-padding-left: 0; }
+    .steps.four { grid-template-columns: repeat(2, 1fr); }
+    .hc-stage { width: min(100%, 300px); }
     .step { padding: 22px 20px 20px; }
     .step::before { position: static; display: block; margin-bottom: 10px; font-size: 38px; }
     .mbar { display: none; }
     footer { padding-bottom: 48px; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; }
   }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .choice { transition: none; } }
+  @media (min-width: 1040px) {
+    .steps.five { grid-template-columns: repeat(5, 1fr); }
+    .steps.four { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .choice, .choice-link { transition: none; } }
 </style>
 </head>
 <body>
@@ -312,18 +323,56 @@
       <h1><span class="en">Free demos at our studio, right off the Broad Causeway</span><span class="es">Demos gratis en nuestro estudio, a pasos del Broad Causeway</span></h1>
 
       <div class="choices">
-        <a class="choice" href="#weight-loss" data-track="choose_weight_loss">
-          <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis para</span></span>
-          <span class="title"><span class="en">Weight loss</span><span class="es">Bajar de peso</span></span>
-          <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About an hour.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Más o menos una hora.</span></p>
-          <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
-        </a>
-        <a class="choice" href="#face-lift" data-track="choose_face_lift">
-          <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis de</span></span>
-          <span class="title"><span class="en">Face lift</span><span class="es">Lifting facial</span></span>
-          <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins. About 45 minutes.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas. Unos 45 minutos.</span></p>
-          <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
-        </a>
+        <div class="choice">
+          <div class="choice-head">
+            <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis para</span></span>
+            <span class="title"><span class="en">Weight loss</span><span class="es">Bajar de peso</span></span>
+          </div>
+        <div class="hc" data-results="weight_loss" role="region" aria-roledescription="carousel" aria-label="Before and after photos, weight loss demo" data-aria-en="Before and after photos, weight loss demo" data-aria-es="Fotos de antes y después, demo para bajar de peso">
+          <div class="hc-stage">
+            <ul class="hc-track" tabindex="0" aria-label="Swipe or use the arrow keys." data-aria-en="Swipe or use the arrow keys." data-aria-es="Desliza o usa las flechas del teclado.">
+            <li class="hc-slide"><img src="/assets/results/wl-01.jpg" width="800" height="1067" loading="eager" fetchpriority="high" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-06.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            <li class="hc-slide"><img src="/assets/results/wl-07.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+            </ul>
+            <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+          <p class="hc-cap"><span class="hc-count" aria-hidden="true">1 / 7</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+        </div>
+          <a class="choice-link" href="#weight-loss" data-track="choose_weight_loss">
+            <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About an hour.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Más o menos una hora.</span></p>
+            <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
+          </a>
+        </div>
+        <div class="choice">
+          <div class="choice-head">
+            <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis de</span></span>
+            <span class="title"><span class="en">Face lift</span><span class="es">Lifting facial</span></span>
+          </div>
+        <div class="hc" data-results="face_lift" role="region" aria-roledescription="carousel" aria-label="Before and after photos, face lift demo" data-aria-en="Before and after photos, face lift demo" data-aria-es="Fotos de antes y después, demo de lifting facial">
+          <div class="hc-stage">
+            <ul class="hc-track" tabindex="0" aria-label="Swipe or use the arrow keys." data-aria-en="Swipe or use the arrow keys." data-aria-es="Desliza o usa las flechas del teclado.">
+            <li class="hc-slide"><img src="/assets/results/face-01.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
+            <li class="hc-slide"><img src="/assets/results/face-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
+            <li class="hc-slide"><img src="/assets/results/face-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
+            <li class="hc-slide"><img src="/assets/results/face-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
+            <li class="hc-slide"><img src="/assets/results/face-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting de rostro y cuello con Fusion Plasma"></li>
+            </ul>
+            <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+          <p class="hc-cap"><span class="hc-count" aria-hidden="true">1 / 5</span><span class="en">Fusion Plasma clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Fusion Plasma, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+        </div>
+          <a class="choice-link" href="#face-lift" data-track="choose_face_lift">
+            <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins. About 45 minutes.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas. Unos 45 minutos.</span></p>
+            <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
+          </a>
+        </div>
       </div>
 
       <p class="hero-note">
@@ -374,28 +423,6 @@
         </ul>
       </div>
 
-      <div class="results" data-results="weight_loss" role="region" aria-roledescription="carousel" aria-labelledby="wl-res-title">
-        <div class="results-head">
-          <div>
-            <h3 id="wl-res-title"><span class="en">Real results from our studio</span><span class="es">Resultados reales de nuestro estudio</span></h3>
-            <p class="results-note"><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
-          </div>
-          <div class="car-nav">
-            <button type="button" class="car-btn" data-dir="-1" aria-label="Previous photos" data-aria-en="Previous photos" data-aria-es="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <button type="button" class="car-btn" data-dir="1" aria-label="Next photos" data-aria-en="Next photos" data-aria-es="Fotos siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-        </div>
-        <ul class="car-track" tabindex="0" aria-label="Before and after photos" data-aria-en="Before and after photos. Swipe or use the arrow keys." data-aria-es="Fotos de antes y después. Desliza o usa las flechas del teclado.">
-          <li class="car-slide"><img src="/assets/results/wl-01.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-06.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-07.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-          <li class="car-slide"><img src="/assets/results/wl-08.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
-        </ul>
-      </div>
 
       <div class="cal-head">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
@@ -451,25 +478,6 @@
         </ul>
       </div>
 
-      <div class="results" data-results="face_lift" role="region" aria-roledescription="carousel" aria-labelledby="face-res-title">
-        <div class="results-head">
-          <div>
-            <h3 id="face-res-title"><span class="en">Real results from our studio</span><span class="es">Resultados reales de nuestro estudio</span></h3>
-            <p class="results-note"><span class="en">Fusion Plasma clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Fusion Plasma, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
-          </div>
-          <div class="car-nav">
-            <button type="button" class="car-btn" data-dir="-1" aria-label="Previous photos" data-aria-en="Previous photos" data-aria-es="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <button type="button" class="car-btn" data-dir="1" aria-label="Next photos" data-aria-en="Next photos" data-aria-es="Fotos siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-        </div>
-        <ul class="car-track" tabindex="0" aria-label="Before and after photos" data-aria-en="Before and after photos. Swipe or use the arrow keys." data-aria-es="Fotos de antes y después. Desliza o usa las flechas del teclado.">
-          <li class="car-slide"><img src="/assets/results/face-01.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
-          <li class="car-slide"><img src="/assets/results/face-02.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
-          <li class="car-slide"><img src="/assets/results/face-03.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting con Fusion Plasma"></li>
-          <li class="car-slide"><img src="/assets/results/face-04.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
-          <li class="car-slide"><img src="/assets/results/face-05.jpg" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck mini lift" data-alt-es="Fotos de antes y después de una persona real, mini lifting de rostro y cuello con Fusion Plasma"></li>
-        </ul>
-      </div>
 
       <div class="cal-head">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
@@ -701,45 +709,49 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
     });
   });
 
-  // ---------- Before and after carousels ----------
+  // ---------- Before and after carousels (one photo at a time) ----------
   var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var carousels = [];
   document.querySelectorAll("[data-results]").forEach(function (box) {
-    var track = box.querySelector(".car-track");
-    var prev = box.querySelector('[data-dir="-1"]');
-    var next = box.querySelector('[data-dir="1"]');
+    var track = box.querySelector(".hc-track");
+    var count = box.querySelector(".hc-count");
+    var total = track.children.length;
     var tracked = false;
 
-    function slideStep() {
-      var s = track.querySelector(".car-slide");
-      return s ? s.getBoundingClientRect().width + 14 : 300;
+    function current() {
+      var w = track.clientWidth || 1;
+      return Math.min(total - 1, Math.max(0, Math.round(track.scrollLeft / w)));
     }
-    function update() {
-      prev.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
-    }
+    function paint() { count.textContent = (current() + 1) + " / " + total; }
     function interacted() {
       if (tracked) return;
       tracked = true;
       if (window.gtag) gtag("event", "results_carousel", { section: box.getAttribute("data-results"), language: root.getAttribute("data-lang") });
     }
-    [prev, next].forEach(function (b) {
-      b.addEventListener("click", function () {
-        interacted();
-        var step = slideStep();
-        var visible = Math.max(1, Math.floor(track.clientWidth / step));
-        var pages = Math.max(1, visible - 1);
-        track.scrollBy({ left: Number(b.getAttribute("data-dir")) * pages * step, behavior: reduceMotion ? "auto" : "smooth" });
-      });
+    function go(dir) {
+      interacted();
+      var i = current() + dir, wrap = false;
+      if (i < 0) { i = total - 1; wrap = true; }
+      else if (i >= total) { i = 0; wrap = true; }
+      track.scrollTo({ left: i * track.clientWidth, behavior: (wrap || reduceMotion) ? "auto" : "smooth" });
+    }
+    box.querySelectorAll("[data-dir]").forEach(function (b) {
+      b.addEventListener("click", function () { go(Number(b.getAttribute("data-dir"))); });
+    });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
     });
     track.addEventListener("scroll", function () {
-      update();
+      paint();
       if (track.scrollLeft > 20) interacted();
     }, { passive: true });
-    carousels.push(update);
-    update();
+    window.addEventListener("resize", paint);
+    paint();
   });
-  window.addEventListener("resize", function () { carousels.forEach(function (u) { u(); }); });
+  // Fetch the other carousel photos once the page is up, so wrapping around never shows a blank slide
+  window.addEventListener("load", function () {
+    document.querySelectorAll('.hc-track img[loading="lazy"]').forEach(function (img) { img.loading = "eager"; });
+  });
 
   // ---------- Click tracking ----------
   document.addEventListener("click", function (e) {
