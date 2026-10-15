@@ -4,7 +4,7 @@ One-page site where people book a free demo: weight loss (herbalist + Invisa-RED
 
 - Hosting: Netlify project `demo-awakened-skin-body`, auto-deploys from `main`.
 - Booking: Cal.com, embedded inline. The event links are at the top of the script in `index.html` (`CAL`): weight loss in English and Spanish, and face lift. Each calendar loads only when its section gets close to the screen.
-- Cal.com events: `free-demo-weight-loss` (English) and `free-demo-weight-loss-es` (Spanish) are copies of the Invisa-RED events, kept separate so bookings from the signs can be counted and the awakened.skin events stay untouched. Both use the Cal.com availability schedule "Demo days" (weekly hours off, date overrides for Oct 22 to 25). Face lift uses the regular `consultation` event.
+- Cal.com events: `free-demo-weight-loss` (English), `free-demo-weight-loss-es` (Spanish) and `free-demo-face-lift` are copies of the Invisa-RED and Consultation events, kept separate so bookings from the signs can be counted and the awakened.skin events stay untouched. All three use the Cal.com availability schedule "Demo days" (weekly hours off, date overrides for Oct 22 to 25).
 - Demo days: the dated line at the top hides itself after `DEMO_DAYS_END`. To open more days, add date overrides to the "Demo days" schedule in Cal.com and move `DEMO_DAYS_END`.
 - Languages: English and Spanish on the same page. The page opens in Spanish when the phone is set to Spanish, or with `?lang=es` in the link.
 - Tracking: GA4 `G-N31V27CTCY`, Google Ads `AW-18174427039`, Meta Pixel `2112349302961771`. Events: `cta_click`, `language_switch`, `demo_booked` with `demo` = weight_loss or face_lift (GA4); `Contact` and `Schedule` (Meta).
