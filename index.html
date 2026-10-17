@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Free Weight Loss and Face Lift Demos | Awakened Skin + Body</title>
-<meta name="description" content="Free weight loss and face lift demos right off the Broad Causeway. Try a mini face lift with atmospheric plasma. Book online or call (305) 909-7069.">
-<meta name="theme-color" content="#412F23">
+<meta name="description" content="Don't take our word for it. Try a free weight loss or face lift demo at our studio right off the Broad Causeway, Oct 22 to 25. Book online or call (305) 909-7069.">
+<meta name="theme-color" content="#0E0C0A">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://freebodydemo.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -13,13 +13,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freebodydemo.com/">
 <meta property="og:title" content="Free demos for weight loss and face lift | Awakened Skin + Body">
-<meta property="og:description" content="Free demos at our studio right off the Broad Causeway. Book online, or call or text (305) 909-7069.">
+<meta property="og:description" content="Don't take our word for it. Try a free weight loss or face lift demo, Oct 22 to 25. Book online, or call or text (305) 909-7069.">
 <meta property="og:image" content="https://freebodydemo.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
 
 <!-- Google Analytics 4 + Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N31V27CTCY"></script>
@@ -43,268 +44,371 @@
 </script>
 
 <style>
+  /* Awakened Skin + Body, free demo page. Look follows the awakened.skin v6 system:
+     dark ink hero with a drifting plasma glow, tight grotesk headlines with one serif italic accent,
+     mono uppercase labels, rectangular buttons with an amber primary, floating pill nav, blur-in reveals. */
   :root {
     --porcelain: #FDFBF8;
     --cream: #EAE4DE;
-    --espresso: #412F23;
+    --cream2: #F4EFE9;
     --ink: #0E0C0A;
+    --surface: #151210;
+    --espresso: #412F23;
     --bronze: #9D764E;
+    --bronze-text: #7A5A38;
     --champagne: #CBAD8E;
-    --text: #2A1F18;
-    --muted: #6A574A;
-    --line: #DDD4CB;
+    --muted: #6F6259;
+    --amber: #E08A2E;
+    --amber2: #F2B35C;
+    --plasma: #8E7CFF;
+    --line: rgba(14, 12, 10, 0.12);
+    --line-dk: rgba(234, 228, 222, 0.14);
     --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
     --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    --wrap: 1080px;
-    --radius: 14px;
+    --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --r: 18px;
+    --rb: 8px;
+    --navh: 84px;
+    --max: 1320px;
+    --gut: clamp(20px, 4vw, 48px);
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  html, body { overflow-x: clip; }
   body {
     margin: 0;
     background: var(--porcelain);
-    color: var(--text);
+    color: var(--ink);
     font-family: var(--sans);
     font-size: 17px;
     line-height: 1.6;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+  ::selection { background: var(--champagne); color: var(--ink); }
+  [hidden] { display: none !important; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gut); }
   .nw { white-space: nowrap; }
-  [id] { scroll-margin-top: 76px; }
+  [id] { scroll-margin-top: 92px; }
 
   /* Language switching */
   html[data-lang="en"] .es { display: none !important; }
   html[data-lang="es"] .en { display: none !important; }
 
-  /* Header */
-  header.top {
-    position: sticky; top: 0; z-index: 20;
-    background: rgba(253, 251, 248, 0.94);
-    backdrop-filter: saturate(140%) blur(8px);
-    -webkit-backdrop-filter: saturate(140%) blur(8px);
-    border-bottom: 1px solid var(--line);
+  /* Floating pill nav. It sits over the page and flips to dark glass over dark sections. */
+  header.top { position: sticky; top: 0; z-index: 60; height: var(--navh); pointer-events: none; }
+  .nav { height: var(--navh); display: flex; align-items: center; justify-content: space-between; gap: 12px; pointer-events: none; }
+  .nav > * { pointer-events: auto; }
+  .pill {
+    display: flex; align-items: center; height: 50px; border-radius: 999px;
+    background: rgba(253, 251, 248, 0.78); border: 1px solid rgba(14, 12, 10, 0.08);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3);
+    box-shadow: 0 10px 30px -18px rgba(14, 12, 10, 0.35);
+    transition: background .3s ease, border-color .3s ease, color .3s ease;
   }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
-  .top .logo img { height: 38px; width: auto; }
-  .top-right { display: flex; align-items: center; gap: 14px; }
-  .lang {
-    display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  .brand { padding: 0 20px; }
+  .brand img { height: 30px; width: auto; }
+  .brand .lg-dk { display: none; }
+  .nav-cta { gap: 4px; padding: 0 6px 0 8px; }
+  .nav-phone {
+    display: none; font-family: var(--mono); font-size: .8rem; letter-spacing: 0; color: var(--ink);
+    text-decoration: none; padding: 10px 10px; white-space: nowrap; opacity: .85;
   }
+  .lang { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(14, 12, 10, 0.06); }
   .lang button {
-    appearance: none; border: 0; background: transparent; color: var(--muted);
-    padding: 7px 12px; cursor: pointer; font: inherit;
+    appearance: none; border: 0; background: transparent; color: var(--muted); cursor: pointer;
+    font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .08em;
+    min-height: 38px; padding: 0 13px; border-radius: 999px;
   }
-  .lang button[aria-pressed="true"] { background: var(--espresso); color: var(--porcelain); }
-  .top-call { display: none; font-weight: 600; font-size: 15px; text-decoration: none; color: var(--espresso); white-space: nowrap; }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--porcelain); }
+  .nav .nav-book { display: none; }
+  header.top.on-dark .pill { background: rgba(22, 18, 16, 0.72); border-color: rgba(234, 228, 222, 0.14); }
+  header.top.on-dark .brand .lg-lt { display: none; }
+  header.top.on-dark .brand .lg-dk { display: block; }
+  header.top.on-dark .nav-phone { color: var(--porcelain); }
+  header.top.on-dark .lang { background: rgba(253, 251, 248, 0.1); }
+  header.top.on-dark .lang button { color: rgba(234, 228, 222, 0.7); }
+  header.top.on-dark .lang button[aria-pressed="true"] { background: var(--porcelain); color: var(--ink); }
 
   /* Type */
-  h1, h2, h3 { font-family: var(--serif); font-weight: 600; color: var(--espresso); margin: 0; letter-spacing: -0.005em; }
-  h2 { font-size: clamp(34px, 6vw, 50px); line-height: 1.05; }
+  h1, h2, h3 { font-family: var(--sans); font-weight: 500; color: var(--ink); margin: 0; line-height: 1.02; letter-spacing: -.035em; }
+  h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); }
+  h2 em, h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.06em; letter-spacing: -.01em; color: var(--bronze); }
   .eyebrow {
-    display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--bronze); margin: 0 0 14px;
+    display: inline-block; margin: 0 0 18px; font-family: var(--mono); font-size: .7rem; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--bronze-text);
   }
-  .sub { color: var(--muted); margin: 12px 0 0; max-width: 36em; }
+  .eyebrow::before {
+    content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--amber);
+    vertical-align: middle; margin-right: 10px; box-shadow: 0 0 10px var(--amber2);
+  }
+  .sub { color: var(--espresso); font-weight: 300; font-size: 1.1rem; margin: 16px 0 0; max-width: 40em; }
 
-  /* Buttons */
+  /* Buttons: rectangles, mono caps, amber on dark */
   .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    min-height: 54px; padding: 0 26px; border-radius: 999px;
-    font-family: var(--sans); font-weight: 600; font-size: 17px; text-decoration: none; text-align: center;
-    border: 1.5px solid var(--espresso); cursor: pointer; transition: transform .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+    min-height: 52px; padding: 0 1.5em; border-radius: var(--rb);
+    font-family: var(--mono); font-weight: 500; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+    line-height: 1.2; text-decoration: none; text-align: center; border: 1px solid var(--ink); cursor: pointer;
+    transition: background .22s ease, color .22s ease, border-color .22s ease, transform .15s ease;
   }
   .btn:active { transform: scale(0.98); }
-  .btn-primary { background: var(--espresso); color: var(--porcelain); }
-  .btn-primary:hover { background: #2f2219; }
-  .btn-ghost { background: transparent; color: var(--espresso); }
-  .btn-ghost:hover { background: var(--cream); }
-  .btn svg { width: 19px; height: 19px; flex: none; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-primary { background: var(--ink); color: var(--porcelain); }
+  .btn-primary:hover { background: var(--bronze); border-color: var(--bronze); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--porcelain); }
+  .hx-hero .btn-primary, .talk .btn-primary, .mbar .btn-primary { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .hx-hero .btn-primary:hover, .talk .btn-primary:hover, .mbar .btn-primary:hover { background: var(--amber2); border-color: var(--amber2); }
+  .talk .btn-ghost, .mbar .btn-ghost { color: var(--porcelain); border-color: rgba(253, 251, 248, 0.5); }
+  .talk .btn-ghost:hover, .mbar .btn-ghost:hover { background: var(--porcelain); color: var(--ink); border-color: var(--porcelain); }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--bronze-text); outline-offset: 3px; border-radius: 4px; }
+  [data-theme="dark"] :focus-visible, .mbar :focus-visible, header.top.on-dark :focus-visible { outline-color: var(--amber2); }
+
+  /* Dark grain, shared by the hero and the closing band */
+  .hx-hero::before, .talk::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: screen; z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  }
 
   /* Hero */
-  .hero { padding: 34px 0 48px; }
+  .hx-hero {
+    position: relative; background: var(--ink); color: var(--porcelain); isolation: isolate; overflow: clip;
+    margin-top: calc(-1 * var(--navh)); padding: calc(var(--navh) + 20px) 0 clamp(52px, 7vw, 88px);
+  }
+  .hx-field { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(60% 40% at 78% 82%, rgba(224, 138, 46, 0.30), transparent 70%),
+      radial-gradient(45% 35% at 14% 70%, rgba(142, 124, 255, 0.22), transparent 72%),
+      radial-gradient(70% 30% at 50% 0%, rgba(203, 173, 142, 0.10), transparent 70%); }
+  .hx-field canvas { width: 100%; height: 100%; display: block; filter: blur(26px) saturate(1.15); transform: scale(1.08); opacity: .8; }
+  .hx-field::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14, 12, 10, .55), rgba(14, 12, 10, 0) 28%, rgba(14, 12, 10, .25) 100%); }
+  .hx-particles { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+  .hx-hero::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; z-index: 3;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent); box-shadow: 0 0 44px 6px rgba(224, 138, 46, .35);
+  }
+  .hx-grid { position: relative; z-index: 3; display: grid; gap: 30px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "cards" "note"; }
+  .hx-copy { grid-area: copy; max-width: 760px; }
+  .hero-note { grid-area: note; }
+  .choices { grid-area: cards; display: grid; gap: 16px; }
+
   .dates {
-    display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
-    background: var(--espresso); color: var(--porcelain); border-radius: 14px;
-    padding: 10px 16px; line-height: 1.4; font-size: 15px; font-weight: 500; margin: 0 0 22px;
+    display: inline-flex; align-items: center; gap: 6px 12px; flex-wrap: wrap; margin: 0;
+    background: rgba(21, 18, 16, 0.72); border: 1px solid var(--line-dk); border-radius: 14px;
+    padding: 10px 16px; line-height: 1.4; font-size: .92rem; color: var(--porcelain);
   }
-  .dates b { font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; color: var(--champagne); }
-  .hero h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.1; margin-bottom: 20px; max-width: 22ch; }
-  .choices { display: grid; gap: 14px; }
+  .dates b {
+    font-family: var(--mono); font-weight: 500; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--champagne);
+  }
+  .dates b::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); margin-right: 9px; vertical-align: middle; box-shadow: 0 0 12px var(--amber2); }
+  .hx-type {
+    margin: 24px 0 0; color: var(--porcelain); font-size: clamp(2.4rem, 9vw, 3.6rem); line-height: .98; letter-spacing: -.045em; text-wrap: balance;
+  }
+  .hx-type .en, .hx-type .es { display: block; }
+  .hx-type em { color: var(--amber2); font-size: 1.04em; letter-spacing: -.015em; display: block; margin-top: .04em; }
+  .hx-sub { margin: 22px 0 0; font-size: 1.1rem; font-weight: 300; color: rgba(234, 228, 222, 0.8); max-width: 34em; }
+
+  .hero-note { margin: 0; font-size: .98rem; font-weight: 300; color: rgba(234, 228, 222, 0.78); max-width: 34em; }
+  .hero-note a { color: var(--amber2); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(242, 179, 92, .45); }
+  .hx-where { margin: 16px 0 0; font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; line-height: 1.8; color: rgba(234, 228, 222, 0.55); }
+  .hx-where a { white-space: nowrap; color: var(--champagne); text-decoration: none; border-bottom: 1px solid rgba(203, 173, 142, .4); }
+
+  /* The two demo cards */
   .choice {
-    display: flex; flex-direction: column; gap: 18px;
-    background: #fff; border: 1px solid var(--line); border-radius: 18px;
-    padding: 24px 22px 22px; color: inherit;
-    transition: border-color .15s ease, box-shadow .15s ease;
+    display: flex; flex-direction: column; gap: 16px; text-align: center; color: var(--porcelain);
+    background: linear-gradient(180deg, rgba(30, 25, 22, .94), rgba(21, 18, 16, .94));
+    border: 1px solid var(--line-dk); border-radius: var(--r); padding: 26px 18px 22px;
+    box-shadow: 0 40px 90px -50px rgba(224, 138, 46, 0.4); transition: border-color .25s ease;
   }
-  .choice:hover { border-color: var(--bronze); box-shadow: 0 8px 28px rgba(65, 47, 35, 0.08); }
-  .choice { text-align: center; }
-  .choice-head { display: flex; flex-direction: column; gap: 8px; }
-  .choice-link {
-    display: flex; flex-direction: column; gap: 10px; flex: 1;
-    text-decoration: none; color: inherit; transition: transform .15s ease;
-  }
-  .choice-link:active { transform: scale(0.99); }
-  .choice .kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze); }
-  .choice .title { font-family: var(--serif); font-weight: 600; color: var(--espresso); font-size: clamp(38px, 9vw, 54px); line-height: 1; }
-  .choice p { margin: 0; color: var(--text); }
-  .choice .go { margin-top: auto; align-self: center; }
-  .choice-link p { margin-bottom: 8px; }
-  .hero-note { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
-  .hero-note a { color: var(--espresso); font-weight: 600; text-decoration: none; }
-
-  /* Sections */
-  section { padding: 56px 0; }
-  .alt { background: var(--cream); }
-  .section-head { margin-bottom: 26px; }
-
-  .steps { display: grid; gap: 12px; list-style: none; padding: 0; margin: 0; counter-reset: step; }
-  .step {
-    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 20px 20px 18px 66px; position: relative;
-  }
-  .step::before {
-    counter-increment: step; content: counter(step);
-    position: absolute; left: 20px; top: 16px;
-    font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--bronze);
-  }
-  .step h3 { font-size: 24px; line-height: 1.15; margin-bottom: 4px; }
-  .step p { margin: 0; }
-
-  .extra {
-    margin: 18px 0 0; padding: 18px 20px; border-left: 3px solid var(--bronze);
-    background: rgba(253, 251, 248, 0.7); border-radius: 0 var(--radius) var(--radius) 0;
-  }
-  .about { margin: 28px 0 0; max-width: 40em; }
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 16px 0 0; }
-  .chips li {
-    background: var(--porcelain); border: 1px solid var(--line); border-radius: 999px;
-    padding: 7px 15px; font-size: 15px; font-weight: 500; color: var(--espresso);
-  }
-  .alt .chips li { background: #fff; }
+  .choice:hover { border-color: rgba(203, 173, 142, 0.42); }
+  .choice-head { display: flex; flex-direction: column; gap: 10px; }
+  .choice .kicker { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--champagne); }
+  .choice .kicker::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); margin-right: 9px; vertical-align: middle; box-shadow: 0 0 10px var(--amber2); }
+  .choice .title { font-family: var(--sans); font-weight: 500; color: var(--porcelain); font-size: clamp(2.2rem, 7vw, 3rem); line-height: 1; letter-spacing: -.045em; }
+  .choice-link { display: flex; flex-direction: column; gap: 12px; flex: 1; text-decoration: none; color: inherit; }
+  .choice p { margin: 0; color: rgba(234, 228, 222, 0.8); font-weight: 300; font-size: .98rem; line-height: 1.55; }
+  .choice .go { margin-top: auto; align-self: stretch; }
+  .choice-link p { margin-bottom: 10px; }
 
   /* Before and after carousel in each demo card: one photo at a time */
-  .hc { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hc { display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .hc-stage { position: relative; width: min(100%, 280px); }
   .hc-track {
     display: flex; list-style: none; margin: 0; padding: 0; overflow-x: auto; border-radius: 12px;
     scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none;
     -webkit-overflow-scrolling: touch; background: var(--ink);
+    box-shadow: 0 0 0 1px rgba(234, 228, 222, 0.16), 0 30px 70px -34px rgba(224, 138, 46, 0.45);
   }
   .hc-track::-webkit-scrollbar { display: none; }
-  .hc-track:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  .hc-track:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
   .hc-slide { flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; }
   .hc-slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: var(--ink); }
   .hc-btn {
     appearance: none; position: absolute; top: 50%; transform: translateY(-50%);
-    width: 44px; height: 44px; border-radius: 50%; padding: 0; border: 0; cursor: pointer;
-    display: grid; place-items: center; color: var(--espresso);
-    background: rgba(253, 251, 248, 0.94); box-shadow: 0 2px 12px rgba(14, 12, 10, 0.3);
-    transition: background .15s ease;
+    width: 42px; height: 42px; border-radius: 50%; padding: 0; cursor: pointer; display: grid; place-items: center;
+    color: var(--porcelain); background: rgba(14, 12, 10, 0.66); border: 1px solid rgba(234, 228, 222, 0.3);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
   }
-  .hc-btn:hover { background: #fff; }
-  .hc-btn:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
-  .hc-btn.prev { left: -12px; }
-  .hc-btn.next { right: -12px; }
+  .hc-btn:hover { background: var(--amber); color: var(--ink); border-color: var(--amber); }
+  .hc-btn.prev { left: -14px; }
+  .hc-btn.next { right: -14px; }
   .hc-btn svg { width: 20px; height: 20px; }
-  .hc-cap { margin: 0; text-align: center; font-size: 14px; line-height: 1.4; color: var(--muted); max-width: 32em; }
-  .hc-count { display: block; font-weight: 600; letter-spacing: 0.1em; color: var(--espresso); margin-bottom: 2px; }
+  .hc-cap { margin: 0; text-align: center; font-size: .82rem; line-height: 1.45; font-weight: 300; color: rgba(234, 228, 222, 0.62); max-width: 32em; }
+  .hc-count { display: block; font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .16em; color: var(--amber2); margin-bottom: 4px; }
 
-  .cal-head { margin: 40px 0 16px; }
-  .cal-head h3 { font-size: 32px; }
-  .cal-head p { margin: 6px 0 0; color: var(--muted); }
-  .cal-card {
-    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-    min-height: 560px; overflow: hidden;
+  /* Sections */
+  section { padding: clamp(64px, 8vw, 112px) 0; position: relative; }
+  .alt { background: var(--cream2); }
+  .section-head { max-width: 720px; margin: 0 0 clamp(28px, 4vw, 48px); }
+
+  .steps { display: grid; gap: 0 32px; list-style: none; padding: 0; margin: 0; counter-reset: step; }
+  .step { border-top: 1px solid var(--line); padding: 18px 0 26px; position: relative; }
+  .step::before {
+    counter-increment: step; content: counter(step, decimal-leading-zero); display: block; margin-bottom: 16px;
+    font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .12em; color: var(--bronze-text);
   }
+  .step h3 { font-size: 1.3rem; line-height: 1.12; letter-spacing: -.03em; margin-bottom: 8px; }
+  .step p { margin: 0; color: var(--espresso); font-weight: 300; font-size: .97rem; line-height: 1.6; }
+
+  .extra {
+    margin: 22px 0 0; padding: 20px 24px; border-left: 2px solid var(--bronze);
+    background: rgba(253, 251, 248, 0.85); border-radius: 0 10px 10px 0; color: var(--espresso); font-weight: 300;
+  }
+  .about { margin: 30px 0 0; max-width: 42em; color: var(--espresso); font-weight: 300; }
+  .about > p { margin: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 18px 0 0; }
+  .chips li {
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .01em; color: var(--bronze-text);
+    border: 1px solid rgba(122, 90, 56, 0.4); border-radius: 999px; padding: .45em 1em; background: transparent;
+  }
+
+  .cal-head { margin: 44px 0 18px; }
+  .cal-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  .cal-head p { margin: 8px 0 0; color: var(--muted); font-weight: 300; }
+  .cal-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r); min-height: 560px; overflow: hidden; }
   .cal-inline { width: 100%; min-height: 560px; }
   .cal-fallback { padding: 36px 24px; text-align: center; }
-  .cal-fallback p { max-width: 30em; margin: 0 auto 22px; font-size: 18px; }
+  .cal-fallback p { max-width: 30em; margin: 0 auto 22px; font-size: 1.1rem; font-weight: 300; }
   .cal-fallback .cta-row { justify-content: center; }
 
   .faq details { border-bottom: 1px solid var(--line); }
   .faq details:first-of-type { border-top: 1px solid var(--line); }
   .faq summary {
-    list-style: none; cursor: pointer; padding: 20px 40px 20px 0; position: relative;
-    font-family: var(--serif); font-size: 25px; font-weight: 600; color: var(--espresso); line-height: 1.2;
+    list-style: none; cursor: pointer; padding: 22px 44px 22px 0; position: relative;
+    font-family: var(--sans); font-size: 1.2rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.25; color: var(--ink);
   }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: ""; position: absolute; right: 6px; top: 50%; width: 12px; height: 12px;
-    border-right: 1.5px solid var(--bronze); border-bottom: 1.5px solid var(--bronze);
-    transform: translateY(-70%) rotate(45deg); transition: transform .2s ease;
+  .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; font-weight: 300; font-size: 1.7rem; line-height: 1; color: var(--bronze); transform: translateY(-50%); transition: transform .25s ease; }
+  .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq details p { margin: 0 0 24px; max-width: 42em; color: var(--espresso); font-weight: 300; }
+  .faq details a { color: var(--ink); text-underline-offset: 3px; }
+
+  .talk { background: var(--ink); color: var(--porcelain); text-align: center; overflow: clip; isolation: isolate; }
+  .talk::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70%; z-index: 0; pointer-events: none;
+    background: radial-gradient(55% 80% at 50% 110%, rgba(224, 138, 46, 0.32), transparent 70%), radial-gradient(35% 60% at 15% 110%, rgba(142, 124, 255, 0.2), transparent 70%);
   }
-  .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
-  .faq details p { margin: 0 0 22px; max-width: 40em; }
-
-  .talk { background: var(--espresso); color: var(--porcelain); text-align: center; }
+  .talk .wrap { position: relative; z-index: 2; }
   .talk h2 { color: var(--porcelain); }
-  .talk p { color: #E9DFD4; margin: 14px auto 28px; max-width: 30em; }
+  .talk h2 em { color: var(--amber2); }
+  .talk p { color: rgba(234, 228, 222, 0.8); font-weight: 300; margin: 18px auto 30px; max-width: 30em; }
   .talk .cta-row { justify-content: center; }
-  .talk .btn-primary { background: var(--porcelain); color: var(--espresso); border-color: var(--porcelain); }
-  .talk .btn-primary:hover { background: var(--cream); }
-  .talk .btn-ghost { color: var(--porcelain); border-color: rgba(253,251,248,0.55); }
-  .talk .btn-ghost:hover { background: rgba(253,251,248,0.08); }
 
-  footer { background: var(--ink); color: #CFC5BA; padding: 44px 0 120px; font-size: 15px; }
-  footer .logo img { height: 46px; width: auto; margin-bottom: 18px; }
-  footer a { color: #F2EBE3; }
+  footer { background: var(--ink); color: rgba(234, 228, 222, 0.7); padding: 52px 0 120px; font-size: .94rem; border-top: 1px solid var(--line-dk); }
+  footer .logo img { height: 46px; width: auto; margin-bottom: 20px; }
+  footer a { color: var(--porcelain); }
   footer .info { display: grid; gap: 4px; margin-bottom: 26px; }
-  .fine { font-size: 12px; line-height: 1.55; color: #9F9388; margin: 0 0 12px; max-width: 70em; }
+  .fine { font-size: .74rem; line-height: 1.6; color: rgba(234, 228, 222, 0.5); margin: 0 0 12px; max-width: 70em; }
 
   /* Sticky bar on phones */
   .mbar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-    display: grid; grid-template-columns: 1fr auto; gap: 10px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: grid; grid-template-columns: 1fr auto; gap: 10px;
     padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(253, 251, 248, 0.97); border-top: 1px solid var(--line);
-    box-shadow: 0 -6px 20px rgba(65, 47, 35, 0.08);
+    background: rgba(14, 12, 10, 0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-top: 1px solid rgba(234, 228, 222, 0.12);
   }
-  .mbar .btn { min-height: 50px; font-size: 16px; padding: 0 20px; }
+  .mbar .btn { min-height: 50px; padding: 0 1.2em; }
 
+  /* Motion: blur-in reveals and a soft hero entrance (both off for reduced motion) */
+  .js .reveal { opacity: 0; filter: blur(6px); transform: translateY(10px); transition: opacity .8s ease, filter .8s ease, transform .8s ease; }
+  .js .reveal.visible { opacity: 1; filter: blur(0); transform: none; }
+  .steps .step:nth-child(2) { transition-delay: .06s; }
+  .steps .step:nth-child(3) { transition-delay: .12s; }
+  .steps .step:nth-child(4) { transition-delay: .18s; }
+  .steps .step:nth-child(5) { transition-delay: .24s; }
+  @keyframes rise { from { opacity: 0; filter: blur(8px); transform: translateY(12px); } to { opacity: 1; filter: blur(0); transform: none; } }
+  .hx-copy > *, .choice, .hero-note { animation: rise 1s cubic-bezier(.2, .7, .2, 1) both; }
+  .hx-copy > :nth-child(2) { animation-delay: .1s; }
+  .hx-copy > :nth-child(3) { animation-delay: .2s; }
+  .choice:nth-child(1) { animation-delay: .25s; }
+  .choice:nth-child(2) { animation-delay: .4s; }
+  .hero-note { animation-delay: .5s; }
+
+  @media (min-width: 560px) { .nav-phone { display: inline-block; } }
   @media (min-width: 760px) {
-    .top .logo img { height: 44px; }
-    .top-call { display: inline; }
-    .hero { padding: 44px 0 76px; }
-    .hero h1 { max-width: 34ch; }
-    .choices { grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 22px; background: #fff; overflow: hidden; }
-    .choice { border: 0; border-radius: 0; padding: 36px 34px 32px; }
-    .choice + .choice { border-left: 1px solid var(--line); }
-    .choice:hover { box-shadow: none; background: #FFFCF8; }
-    section { padding: 84px 0; }
-    .steps.five { grid-template-columns: repeat(3, 1fr); }
-    .steps.three { grid-template-columns: repeat(3, 1fr); }
-    .steps.four { grid-template-columns: repeat(2, 1fr); }
+    .brand img { height: 34px; }
+    .nav .nav-book { display: inline-flex; min-height: 38px; padding: 0 1.2em; border-radius: 999px; background: var(--ink); color: var(--porcelain); border-color: var(--ink); }
+    .nav .nav-book:hover { background: var(--bronze); border-color: var(--bronze); }
+    header.top.on-dark .nav-book { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+    header.top.on-dark .nav-book:hover { background: var(--amber2); border-color: var(--amber2); }
+    .choices { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .choice { padding: 30px 22px 26px; }
+    .choice .title { font-size: clamp(2rem, 3.4vw, 3rem); }
+    .hx-type { font-size: clamp(2.8rem, 6vw, 4.2rem); }
     .hc-stage { width: min(100%, 300px); }
-    .step { padding: 22px 20px 20px; }
-    .step::before { position: static; display: block; margin-bottom: 10px; font-size: 38px; }
+    .steps.five, .steps.three { grid-template-columns: repeat(3, 1fr); }
+    .steps.four { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; }
     .mbar { display: none; }
-    footer { padding-bottom: 48px; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; }
+    footer { padding-bottom: 56px; }
   }
   @media (min-width: 1040px) {
     .steps.five { grid-template-columns: repeat(5, 1fr); }
     .steps.four { grid-template-columns: repeat(4, 1fr); }
   }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .choice, .choice-link { transition: none; } }
+  @media (min-width: 1180px) {
+    .hx-grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.5fr); grid-template-rows: 1fr 1fr; grid-template-areas: "copy cards" "note cards"; column-gap: clamp(32px, 4vw, 64px); row-gap: 0; align-items: start; }
+    .hx-copy { align-self: end; padding-bottom: 28px; }
+    .hero-note { align-self: start; }
+    .hx-type { font-size: clamp(2.8rem, 4.1vw, 4.1rem); }
+  }
+  /* Short laptop screens: keep the Book button above the fold */
+  @media (min-width: 1180px) and (max-height: 960px) {
+    .hx-hero { padding-top: calc(var(--navh) + 4px); }
+    .choice { padding: 22px 20px 22px; gap: 14px; }
+    .choice .title { font-size: clamp(2rem, 3vw, 2.7rem); }
+    .hc-stage { width: min(100%, 272px); }
+    .hc-cap { font-size: .78rem; }
+    .choice p { font-size: .94rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .choice, .hc-btn { transition: none; }
+    .js .reveal { opacity: 1; filter: none; transform: none; transition: none; }
+    .hx-copy > *, .choice, .hero-note { animation: none; }
+  }
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="top on-dark">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Awakened Skin + Body">
-      <img src="/assets/logo-espresso.png" alt="Awakened Skin + Body" width="640" height="208">
-    </a>
-    <div class="top-right">
-      <a class="top-call" href="tel:+13059097069" data-track="call">(305) 909-7069</a>
-      <div class="lang" role="group" aria-label="Language / Idioma">
-        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    <div class="nav">
+      <a class="pill brand" href="#top" aria-label="Awakened Skin + Body">
+        <img class="lg-lt" src="/assets/logo-espresso.png" alt="Awakened Skin + Body" width="640" height="208">
+        <img class="lg-dk" src="/assets/logo-porcelain.png" alt="" width="640" height="208">
+      </a>
+      <div class="pill nav-cta">
+        <a class="nav-phone" href="tel:+13059097069" data-track="call">(305) 909-7069</a>
+        <div class="lang" role="group" aria-label="Language / Idioma">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn nav-book" href="#demos" data-track="nav_book"><span class="en">Book free</span><span class="es">Reserva gratis</span></a>
       </div>
     </div>
   </div>
@@ -313,14 +417,19 @@
 <main id="top">
 
   <!-- Hero: the two demos -->
-  <div class="hero" id="demos">
-    <div class="wrap">
-      <p class="dates" id="demo-dates">
-        <b><span class="en">Demo days</span><span class="es">Días de demo</span></b>
-        <span class="en">Thu, Oct 22 (afternoon) to Sun, Oct 25 · <span class="nw">9 AM to 7 PM</span></span>
-        <span class="es">Del jueves 22 de octubre (en la tarde) al domingo 25 · <span class="nw">de 9 a. m. a 7 p. m.</span></span>
-      </p>
-      <h1><span class="en">Free demos at our studio, right off the Broad Causeway</span><span class="es">Demos gratis en nuestro estudio, a pasos del Broad Causeway</span></h1>
+  <div class="hero hx-hero" id="demos" data-theme="dark">
+    <div class="hx-field" aria-hidden="true"><canvas class="hx-fieldcv"></canvas></div>
+    <canvas class="hx-particles" aria-hidden="true"></canvas>
+    <div class="wrap hx-grid">
+      <div class="hx-copy">
+        <p class="dates" id="demo-dates">
+          <b><span class="en">Demo days</span><span class="es">Días de demo</span></b>
+          <span class="en">Thu, Oct 22 (afternoon) to Sun, Oct 25 · <span class="nw">9 AM to 7 PM</span></span>
+          <span class="es">Del jueves 22 de octubre (en la tarde) al domingo 25 · <span class="nw">de 9 a. m. a 7 p. m.</span></span>
+        </p>
+        <h1 class="hx-type"><span class="en">Don’t take our word for it. <em>Try it free.</em></span><span class="es">No tienes que creernos. <em>Pruébalo gratis.</em></span></h1>
+        <p class="hx-sub"><span class="en">Two free demos at our studio, right off the Broad Causeway. Pick one, pick a time and come in. You don't have to buy a thing.</span><span class="es">Dos demos gratis en nuestro estudio, a pasos del Broad Causeway. Elige una, elige tu horario y ven. No tienes que comprar nada.</span></p>
+      </div>
 
       <div class="choices">
         <div class="choice">
@@ -341,7 +450,7 @@
             <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
             <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
-          <p class="hc-cap"><span class="hc-count" aria-hidden="true">1 / 6</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+          <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
         </div>
           <a class="choice-link" href="#weight-loss" data-track="choose_weight_loss">
             <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About an hour.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Más o menos una hora.</span></p>
@@ -366,7 +475,7 @@
             <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
             <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
-          <p class="hc-cap"><span class="hc-count" aria-hidden="true">1 / 6</span><span class="en">Plasma and Fibroblast clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de plasma y Fibroblast, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+          <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Plasma and Fibroblast clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de plasma y Fibroblast, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
         </div>
           <a class="choice-link" href="#face-lift" data-track="choose_face_lift">
             <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins. About 45 minutes.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas. Unos 45 minutos.</span></p>
@@ -375,46 +484,47 @@
         </div>
       </div>
 
-      <p class="hero-note">
-        <span class="en">Both are free, and you don't have to buy a thing. Rather talk first? Call or text <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>. Hablamos español.</span>
-        <span class="es">Las dos son gratis y no tienes que comprar nada. ¿Prefieres hablar primero? Llama o escribe al <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>.</span>
-      </p>
+      <div class="hero-note">
+        <p><span class="en">Rather talk first? Call or text <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>. Hablamos español.</span>
+        <span class="es">¿Prefieres hablar primero? Llama o escribe al <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>.</span></p>
+        <p class="hx-where"><span class="en">2106 NE 123rd Street, Miami · Free parking · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Get directions</a></span><span class="es">2106 NE 123rd Street, Miami · Estacionamiento gratis · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Cómo llegar</a></span></p>
+      </div>
     </div>
   </div>
 
   <!-- Weight loss demo -->
   <section class="alt" id="weight-loss" aria-labelledby="wl-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow"><span class="en">Free demo</span><span class="es">Demo gratis</span></p>
-        <h2 id="wl-title"><span class="en">Your weight loss demo</span><span class="es">Tu demo para bajar de peso</span></h2>
+        <h2 id="wl-title"><span class="en">Your weight loss <em>demo</em></span><span class="es">Tu <em>demo</em> para bajar de peso</span></h2>
         <p class="sub"><span class="en">About an hour, here in our studio. Here's what happens:</span><span class="es">Más o menos una hora, aquí en nuestro estudio. Así es la visita:</span></p>
       </div>
       <ol class="steps five">
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Meet our herbalist</span><span class="es">Consulta con herbalista</span></h3>
           <p><span class="en">Tell us what you want to change. We talk about your goals and your routine.</span><span class="es">Cuéntanos qué quieres cambiar. Hablamos de tus metas y tu rutina.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Before measurements</span><span class="es">Medidas de antes</span></h3>
           <p><span class="en">We measure your waist, hips and thighs before your session.</span><span class="es">Medimos tu cintura, caderas y muslos antes de la sesión.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Your Invisa-RED session</span><span class="es">Tu sesión de Invisa-RED</span></h3>
           <p><span class="en">You lie back and relax while the laser works. No needles, no downtime.</span><span class="es">Te recuestas y te relajas mientras trabaja el láser. Sin agujas y sin tiempo de recuperación.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">After measurements</span><span class="es">Medidas de después</span></h3>
           <p><span class="en">We measure again, so you see your own numbers.</span><span class="es">Volvemos a medir, para que veas tus propios números.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Drainage on the vibration plate</span><span class="es">Drenaje en la plataforma vibratoria</span></h3>
           <p><span class="en">The last step before you head out.</span><span class="es">El último paso antes de irte.</span></p>
         </li>
       </ol>
-      <p class="extra"><span class="en">Depending on your goals, you may also qualify for a cleanse protocol, a foot detox and more. We'll go over it at your visit.</span><span class="es">Según tus metas, también podrías calificar para un protocolo de limpieza, un detox de pies y más. Lo vemos en tu visita.</span></p>
+      <p class="extra reveal"><span class="en">Depending on your goals, you may also qualify for a cleanse protocol, a foot detox and more. We'll go over it at your visit.</span><span class="es">Según tus metas, también podrías calificar para un protocolo de limpieza, un detox de pies y más. Lo vemos en tu visita.</span></p>
 
-      <div class="about">
+      <div class="about reveal">
         <p><span class="en">Invisa-RED Elite uses red and infrared laser light. We use it for circumference reduction of the waist, hips and thighs. Invisa-RED is an FDA-cleared laser.</span><span class="es">Invisa-RED Elite usa luz láser roja e infrarroja. La usamos para la reducción de circunferencia en la cintura, las caderas y los muslos. Invisa-RED es un láser autorizado por la FDA.</span></p>
         <ul class="chips">
           <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
@@ -424,7 +534,7 @@
       </div>
 
 
-      <div class="cal-head">
+      <div class="cal-head reveal">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
         <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
       </div>
@@ -445,30 +555,30 @@
   <!-- Face lift demo -->
   <section id="face-lift" aria-labelledby="face-title">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow"><span class="en">Free demo</span><span class="es">Demo gratis</span></p>
-        <h2 id="face-title"><span class="en">Your face lift demo</span><span class="es">Tu demo de lifting facial</span></h2>
+        <h2 id="face-title"><span class="en">Your face lift <em>demo</em></span><span class="es">Tu <em>demo</em> de lifting facial</span></h2>
         <p class="sub"><span class="en">About 45 minutes, here in our studio. Here's what happens:</span><span class="es">Unos 45 minutos, aquí en nuestro estudio. Así es la visita:</span></p>
       </div>
       <ol class="steps four">
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">We look at your skin with you</span><span class="es">Revisamos tu piel contigo</span></h3>
           <p><span class="en">Tell us what's bothering you, and we'll look at it up close together.</span><span class="es">Cuéntanos qué te molesta y lo vemos de cerca contigo.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Your mini face lift</span><span class="es">Tu mini lifting facial</span></h3>
           <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">Straight answers</span><span class="es">Respuestas claras</span></h3>
           <p><span class="en">Whether Fusion Plasma or Fibroblast fits you, what it costs, and what the downtime would really look like.</span><span class="es">Si te conviene Fusion Plasma o Fibroblast, cuánto cuesta y cómo sería de verdad el tiempo de recuperación.</span></p>
         </li>
-        <li class="step">
+        <li class="step reveal">
           <h3><span class="en">You decide</span><span class="es">Tú decides</span></h3>
           <p><span class="en">No pressure. If it's not the right fit, we'll tell you.</span><span class="es">Sin presión. Si no es para ti, te lo decimos.</span></p>
         </li>
       </ol>
-      <div class="about">
+      <div class="about reveal">
         <ul class="chips">
           <li><span class="en">No surgery</span><span class="es">Sin cirugía</span></li>
           <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
@@ -479,7 +589,7 @@
       </div>
 
 
-      <div class="cal-head">
+      <div class="cal-head reveal">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
         <p><span class="en">You'll get a confirmation right away.</span><span class="es">El calendario está en inglés, pero hablamos español. Te llega la confirmación al instante.</span></p>
       </div>
@@ -499,10 +609,10 @@
   <!-- FAQ -->
   <section class="faq alt" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
-      <div class="section-head">
-        <h2 id="faq-title"><span class="en">Questions people ask</span><span class="es">Preguntas frecuentes</span></h2>
+      <div class="section-head reveal">
+        <h2 id="faq-title"><span class="en">Questions people <em>ask</em></span><span class="es">Preguntas <em>frecuentes</em></span></h2>
       </div>
-      <div>
+      <div class="reveal">
         <details>
           <summary><span class="en">Is it really free?</span><span class="es">¿De verdad es gratis?</span></summary>
           <p><span class="en">Yes. Both demos are free and you don't have to buy anything. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. Las dos demos son gratis y no tienes que comprar nada. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
@@ -537,9 +647,9 @@
   </section>
 
   <!-- Talk to a person -->
-  <section class="talk" aria-labelledby="talk-title">
+  <section class="talk" aria-labelledby="talk-title" data-theme="dark">
     <div class="wrap">
-      <h2 id="talk-title"><span class="en">Rather talk to a person?</span><span class="es">¿Prefieres hablar con alguien?</span></h2>
+      <h2 id="talk-title"><span class="en">Rather talk to a <em>person</em>?</span><span class="es">¿Prefieres hablar con <em>alguien</em>?</span></h2>
       <p><span class="en">Call, text or WhatsApp us at (305) 909-7069. Hablamos español.</span><span class="es">Llámanos, escríbenos o mándanos un WhatsApp al (305) 909-7069.</span></p>
       <div class="cta-row">
         <a class="btn btn-primary" href="tel:+13059097069" data-track="call"><span class="en">Call</span><span class="es">Llamar</span></a>
@@ -551,7 +661,7 @@
 
 </main>
 
-<footer>
+<footer data-theme="dark">
   <div class="wrap">
     <div class="logo"><img src="/assets/logo-porcelain.png" alt="Awakened Skin + Body" width="640" height="208"></div>
     <div class="info">
@@ -721,7 +831,8 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
       var w = track.clientWidth || 1;
       return Math.min(total - 1, Math.max(0, Math.round(track.scrollLeft / w)));
     }
-    function paint() { count.textContent = (current() + 1) + " / " + total; }
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function paint() { count.textContent = pad(current() + 1) + " / " + pad(total); }
     function interacted() {
       if (tracked) return;
       tracked = true;
@@ -763,6 +874,115 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+
+<script>
+/* Look and feel only. Kept apart from the booking and tracking script above. */
+(function () {
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Pill nav goes dark glass over dark sections
+  var header = document.querySelector("header.top");
+  var tick = false;
+  function themeNav() {
+    if (!header || !document.elementsFromPoint) return;
+    var els = document.elementsFromPoint(Math.floor(window.innerWidth / 2), 42), dark = false;
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (el === document.documentElement || el === document.body || header.contains(el)) continue;
+      dark = !!el.closest('[data-theme="dark"]');
+      break;
+    }
+    header.classList.toggle("on-dark", dark);
+  }
+  window.addEventListener("scroll", function () {
+    if (tick) return; tick = true;
+    requestAnimationFrame(function () { themeNav(); tick = false; });
+  }, { passive: true });
+  window.addEventListener("resize", themeNav);
+  themeNav();
+
+  // Blur-in reveals
+  var els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: "0px 0px -5% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  if (reduce) return;
+
+  // Hero plasma glow: slow drifting blobs of amber and violet, drawn small and blurred up by CSS
+  var field = document.querySelector("canvas.hx-fieldcv");
+  if (field && field.getContext) {
+    var fctx = field.getContext("2d"), FW = 1, FH = 1, t0 = performance.now(), fvis = true, last = 0;
+    var blobs = [
+      { c: [224, 138, 46], r: .55, ax: .70, ay: .82, dx: .08, dy: .06, s: .00011, a: .55 },
+      { c: [142, 124, 255], r: .38, ax: .22, ay: .72, dx: .1, dy: .05, s: .00017, a: .5 },
+      { c: [203, 173, 142], r: .5, ax: .8, ay: .3, dx: .06, dy: .08, s: .00009, a: .28 },
+      { c: [242, 179, 92], r: .3, ax: .4, ay: .9, dx: .12, dy: .07, s: .00014, a: .35 }
+    ];
+    var fsize = function () { var r = field.getBoundingClientRect(); FW = Math.max(1, Math.round(r.width / 8)); FH = Math.max(1, Math.round(r.height / 8)); field.width = FW; field.height = FH; };
+    fsize(); window.addEventListener("resize", fsize);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { fvis = es[0].isIntersecting; }).observe(field);
+    (function fframe(now) {
+      requestAnimationFrame(fframe);
+      if (!fvis || now - last < 33) return;
+      last = now;
+      var t = now - t0;
+      fctx.clearRect(0, 0, FW, FH);
+      fctx.globalCompositeOperation = "lighter";
+      for (var i = 0; i < blobs.length; i++) {
+        var b = blobs[i];
+        var x = (b.ax + Math.sin(t * b.s + i) * b.dx) * FW, y = (b.ay + Math.cos(t * b.s * 1.3 + i) * b.dy) * FH, rad = b.r * Math.max(FW, FH * .6);
+        var g = fctx.createRadialGradient(x, y, 0, x, y, rad);
+        g.addColorStop(0, "rgba(" + b.c.join(",") + "," + b.a + ")"); g.addColorStop(1, "rgba(" + b.c.join(",") + ",0)");
+        fctx.fillStyle = g; fctx.fillRect(0, 0, FW, FH);
+      }
+    })(t0);
+  }
+
+  // Hero particles: tiny embers drifting up
+  var cv = document.querySelector("canvas.hx-particles");
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext("2d"), P = [], W = 0, H = 0, dpr = Math.min(1.5, window.devicePixelRatio || 1), vis = true;
+    var count = function () { return window.innerWidth < 760 ? 45 : 80; };
+    var size = function () {
+      var b = cv.getBoundingClientRect(); W = b.width; H = b.height;
+      if (!W || !H) return false;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    };
+    var mk = function (fresh) {
+      var warm = Math.random() < 0.7;
+      var p = { x: W * Math.random(), y: H * (0.35 + Math.random() * 0.65), r: 0.5 + Math.random() * 1.7,
+        vx: (Math.random() - 0.5) * 0.14, vy: -(0.08 + Math.random() * 0.24), life: 0, max: 260 + Math.random() * 340,
+        c: warm ? "242,179,92" : "160,144,255" };
+      if (!fresh) p.life = Math.random() * p.max;
+      return p;
+    };
+    if ("ResizeObserver" in window) new ResizeObserver(function () { if (size()) P = []; }).observe(cv);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }).observe(cv);
+    (function frame() {
+      requestAnimationFrame(frame);
+      if (!vis) return;
+      if (!W || !H) { if (!size()) return; }
+      if (!P.length) for (var k = 0; k < count(); k++) P.push(mk(false));
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i]; p.life++;
+        p.x += p.vx + Math.sin((p.life + i) * 0.02) * 0.1; p.y += p.vy;
+        var t = p.life / p.max, a = t < 0.2 ? t / 0.2 : t > 0.75 ? (1 - t) / 0.25 : 1;
+        if (p.life >= p.max || p.y < 0) { P[i] = mk(true); continue; }
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+        ctx.fillStyle = "rgba(" + p.c + "," + (a * 0.75).toFixed(3) + ")"; ctx.fill();
+      }
+    })();
+  }
 })();
 </script>
 </body>
