@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Free Weight Loss and Face Lift Demos | Awakened Skin + Body</title>
-<meta name="description" content="Don't take our word for it. Try a free weight loss or face lift demo at our studio right off the Broad Causeway, Oct 22 to 25. Book online or call (305) 909-7069.">
+<title>Free Weight Loss Demo | Awakened Skin + Body</title>
+<meta name="description" content="Don't take our word for it. Try a free weight loss demo at our studio right off the Broad Causeway, Oct 22 to 25. Book online or call (305) 909-7069.">
 <meta name="theme-color" content="#0E0C0A">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://freebodydemo.com/">
@@ -12,8 +12,8 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freebodydemo.com/">
-<meta property="og:title" content="Free demos for weight loss and face lift | Awakened Skin + Body">
-<meta property="og:description" content="Don't take our word for it. Try a free weight loss or face lift demo, Oct 22 to 25. Book online, or call or text (305) 909-7069.">
+<meta property="og:title" content="Free weight loss demo | Awakened Skin + Body">
+<meta property="og:description" content="Don't take our word for it. Try a free weight loss demo, Oct 22 to 25. Book online, or call or text (305) 909-7069.">
 <meta property="og:image" content="https://freebodydemo.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -194,7 +194,7 @@
   .hx-grid { position: relative; z-index: 3; display: grid; gap: 30px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "cards" "note"; }
   .hx-copy { grid-area: copy; max-width: 760px; }
   .hero-note { grid-area: note; }
-  .choices { grid-area: cards; display: grid; gap: 16px; }
+  .choices { grid-area: cards; display: grid; gap: 16px; width: 100%; max-width: 460px; justify-self: start; }
 
   .dates {
     display: inline-flex; align-items: center; gap: 6px 12px; flex-wrap: wrap; margin: 0;
@@ -217,7 +217,7 @@
   .hx-where { margin: 16px 0 0; font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; line-height: 1.8; color: rgba(234, 228, 222, 0.55); }
   .hx-where a { white-space: nowrap; color: var(--champagne); text-decoration: none; border-bottom: 1px solid rgba(203, 173, 142, .4); }
 
-  /* The two demo cards */
+  /* The demo card */
   .choice {
     display: flex; flex-direction: column; gap: 16px; text-align: center; color: var(--porcelain);
     background: linear-gradient(180deg, rgba(30, 25, 22, .94), rgba(21, 18, 16, .94));
@@ -355,7 +355,6 @@
     .nav .nav-book:hover { background: var(--bronze); border-color: var(--bronze); }
     header.top.on-dark .nav-book { background: var(--amber); border-color: var(--amber); color: var(--ink); }
     header.top.on-dark .nav-book:hover { background: var(--amber2); border-color: var(--amber2); }
-    .choices { grid-template-columns: 1fr 1fr; gap: 20px; }
     .choice { padding: 30px 22px 26px; }
     .choice .title { font-size: clamp(2rem, 3.4vw, 3rem); }
     .hx-type { font-size: clamp(2.8rem, 6vw, 4.2rem); }
@@ -370,8 +369,17 @@
     .steps.five { grid-template-columns: repeat(5, 1fr); }
     .steps.four { grid-template-columns: repeat(4, 1fr); }
   }
+  /* Tablet: the one card goes wide, photo on the left and words on the right */
+  @media (min-width: 760px) and (max-width: 1179px) {
+    .choices { max-width: 720px; }
+    .choice { display: grid; grid-template-columns: 300px minmax(0, 1fr); grid-template-areas: "hc head" "hc link"; column-gap: 34px; row-gap: 14px; text-align: left; align-items: start; }
+    .choice-head { grid-area: head; align-self: end; }
+    .choice .hc { grid-area: hc; }
+    .choice-link { grid-area: link; align-self: start; }
+    .choice .title { font-size: clamp(2.2rem, 4.6vw, 3rem); }
+  }
   @media (min-width: 1180px) {
-    .hx-grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.5fr); grid-template-rows: 1fr 1fr; grid-template-areas: "copy cards" "note cards"; column-gap: clamp(32px, 4vw, 64px); row-gap: 0; align-items: start; }
+    .hx-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); grid-template-rows: 1fr 1fr; grid-template-areas: "copy cards" "note cards"; column-gap: clamp(32px, 4vw, 64px); row-gap: 0; align-items: start; }
     .hx-copy { align-self: end; padding-bottom: 28px; }
     .hero-note { align-self: start; }
     .hx-type { font-size: clamp(2.8rem, 4.1vw, 4.1rem); }
@@ -408,7 +416,7 @@
           <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
         </div>
-        <a class="btn nav-book" href="#demos" data-track="nav_book"><span class="en">Book free</span><span class="es">Reserva gratis</span></a>
+        <a class="btn nav-book" href="#pick-time" data-track="nav_book"><span class="en">Book free</span><span class="es">Reserva gratis</span></a>
       </div>
     </div>
   </div>
@@ -416,7 +424,7 @@
 
 <main id="top">
 
-  <!-- Hero: the two demos -->
+  <!-- Hero: the free body demo -->
   <div class="hero hx-hero" id="demos" data-theme="dark">
     <div class="hx-field" aria-hidden="true"><canvas class="hx-fieldcv"></canvas></div>
     <canvas class="hx-particles" aria-hidden="true"></canvas>
@@ -428,7 +436,7 @@
           <span class="es">Del jueves 22 de octubre (en la tarde) al domingo 25 · <span class="nw">de 9 a. m. a 7 p. m.</span></span>
         </p>
         <h1 class="hx-type"><span class="en">Don’t take our word for it. <em>Try it free.</em></span><span class="es">No tienes que creernos. <em>Pruébalo gratis.</em></span></h1>
-        <p class="hx-sub"><span class="en">Two free demos at our studio, right off the Broad Causeway. Pick one, pick a time and come in. You don't have to buy a thing.</span><span class="es">Dos demos gratis en nuestro estudio, a pasos del Broad Causeway. Elige una, elige tu horario y ven. No tienes que comprar nada.</span></p>
+        <p class="hx-sub"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
       </div>
 
       <div class="choices">
@@ -452,33 +460,8 @@
           </div>
           <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
         </div>
-          <a class="choice-link" href="#weight-loss" data-track="choose_weight_loss">
+          <a class="choice-link" href="#pick-time" data-track="choose_weight_loss">
             <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About an hour.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Más o menos una hora.</span></p>
-            <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
-          </a>
-        </div>
-        <div class="choice">
-          <div class="choice-head">
-            <span class="kicker"><span class="en">Free demo for</span><span class="es">Demo gratis de</span></span>
-            <span class="title"><span class="en">Face lift</span><span class="es">Lifting facial</span></span>
-          </div>
-        <div class="hc" data-results="face_lift" role="region" aria-roledescription="carousel" aria-label="Before and after photos, face lift demo" data-aria-en="Before and after photos, face lift demo" data-aria-es="Fotos de antes y después, demo de lifting facial">
-          <div class="hc-stage">
-            <ul class="hc-track" tabindex="0" aria-label="Swipe or use the arrow keys." data-aria-en="Swipe or use the arrow keys." data-aria-es="Desliza o usa las flechas del teclado.">
-            <li class="hc-slide"><img src="/assets/results/face-01.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma"></li>
-            <li class="hc-slide"><img src="/assets/results/face-02.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-en="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-es="Fotos de antes y después de una persona real, rostro completo con Fibroblast, ya sanado"></li>
-            <li class="hc-slide"><img src="/assets/results/face-03.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-en="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-es="Fotos de antes y después de una persona real, rostro completo y cuello con Fusion Plasma, con una semana de diferencia"></li>
-            <li class="hc-slide"><img src="/assets/results/face-04.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-en="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-es="Fotos de antes y después de una persona real, mini lift con Plasma Current, sin tiempo de recuperación"></li>
-            <li class="hc-slide"><img src="/assets/results/face-05.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-es="Fotos de antes y después de una persona real, mini lift con Fusion Plasma, zona de los ojos, dos semanas después"></li>
-            <li class="hc-slide"><img src="/assets/results/face-06.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma, un mes después"></li>
-            </ul>
-            <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-          <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Plasma and Fibroblast clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de plasma y Fibroblast, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
-        </div>
-          <a class="choice-link" href="#face-lift" data-track="choose_face_lift">
-            <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins. About 45 minutes.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas. Unos 45 minutos.</span></p>
             <span class="btn btn-primary go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span></span>
           </a>
         </div>
@@ -534,7 +517,7 @@
       </div>
 
 
-      <div class="cal-head reveal">
+      <div class="cal-head reveal" id="pick-time">
         <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
         <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
       </div>
@@ -552,60 +535,6 @@
     </div>
   </section>
 
-  <!-- Face lift demo -->
-  <section id="face-lift" aria-labelledby="face-title">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span class="en">Free demo</span><span class="es">Demo gratis</span></p>
-        <h2 id="face-title"><span class="en">Your face lift <em>demo</em></span><span class="es">Tu <em>demo</em> de lifting facial</span></h2>
-        <p class="sub"><span class="en">About 45 minutes, here in our studio. Here's what happens:</span><span class="es">Unos 45 minutos, aquí en nuestro estudio. Así es la visita:</span></p>
-      </div>
-      <ol class="steps four">
-        <li class="step reveal">
-          <h3><span class="en">We look at your skin with you</span><span class="es">Revisamos tu piel contigo</span></h3>
-          <p><span class="en">Tell us what's bothering you, and we'll look at it up close together.</span><span class="es">Cuéntanos qué te molesta y lo vemos de cerca contigo.</span></p>
-        </li>
-        <li class="step reveal">
-          <h3><span class="en">Your mini face lift</span><span class="es">Tu mini lifting facial</span></h3>
-          <p><span class="en">You get a mini face lift, so you can see what atmospheric plasma does for your skin. No needles, no fillers, no toxins.</span><span class="es">Te hacemos un mini lifting facial para que veas lo que el plasma atmosférico puede hacer por tu piel. Sin agujas, sin rellenos, sin toxinas.</span></p>
-        </li>
-        <li class="step reveal">
-          <h3><span class="en">Straight answers</span><span class="es">Respuestas claras</span></h3>
-          <p><span class="en">Whether Fusion Plasma or Fibroblast fits you, what it costs, and what the downtime would really look like.</span><span class="es">Si te conviene Fusion Plasma o Fibroblast, cuánto cuesta y cómo sería de verdad el tiempo de recuperación.</span></p>
-        </li>
-        <li class="step reveal">
-          <h3><span class="en">You decide</span><span class="es">Tú decides</span></h3>
-          <p><span class="en">No pressure. If it's not the right fit, we'll tell you.</span><span class="es">Sin presión. Si no es para ti, te lo decimos.</span></p>
-        </li>
-      </ol>
-      <div class="about reveal">
-        <ul class="chips">
-          <li><span class="en">No surgery</span><span class="es">Sin cirugía</span></li>
-          <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
-          <li><span class="en">No fillers</span><span class="es">Sin rellenos</span></li>
-          <li><span class="en">No toxins</span><span class="es">Sin toxinas</span></li>
-          <li><span class="en">Come as you are</span><span class="es">Ven como estés</span></li>
-        </ul>
-      </div>
-
-
-      <div class="cal-head reveal">
-        <h3><span class="en">Pick a time</span><span class="es">Elige tu horario</span></h3>
-        <p><span class="en">You'll get a confirmation right away.</span><span class="es">El calendario está en inglés, pero hablamos español. Te llega la confirmación al instante.</span></p>
-      </div>
-      <div class="cal-card" data-cal-section="face">
-        <div id="cal-face" class="cal-inline" hidden></div>
-        <div class="cal-fallback">
-          <p><span class="en">Online booking is almost ready. For now, call or text us at (305) 909-7069 and we'll hold a time for you.</span><span class="es">La reserva en línea ya casi está lista. Por ahora, llámanos o escríbenos al (305) 909-7069 y te apartamos un horario.</span></p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="tel:+13059097069" data-track="call"><span class="en">Call us</span><span class="es">Llámanos</span></a>
-            <a class="btn btn-ghost js-sms" href="sms:+13059097069" data-track="text" data-msg="face"><span class="en">Text us</span><span class="es">Escríbenos</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="faq alt" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
@@ -615,7 +544,7 @@
       <div class="reveal">
         <details>
           <summary><span class="en">Is it really free?</span><span class="es">¿De verdad es gratis?</span></summary>
-          <p><span class="en">Yes. Both demos are free and you don't have to buy anything. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. Las dos demos son gratis y no tienes que comprar nada. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
+          <p><span class="en">Yes. The demo is free and you don't have to buy anything. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis y no tienes que comprar nada. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
         </details>
         <details>
           <summary><span class="en">How much weight will I lose?</span><span class="es">¿Cuánto peso voy a bajar?</span></summary>
@@ -626,12 +555,8 @@
           <p><span class="en">Yes. Invisa-RED is an FDA-cleared laser.</span><span class="es">Sí. Invisa-RED es un láser autorizado por la FDA.</span></p>
         </details>
         <details>
-          <summary><span class="en">Is the face lift surgery?</span><span class="es">¿El lifting facial es cirugía?</span></summary>
-          <p><span class="en">No, it's non-surgical. Your mini face lift uses atmospheric plasma, with no needles, no fillers and no toxins. Afterward we'll go over Fusion Plasma and Fibroblast and what the downtime looks like for each one.</span><span class="es">No, no es cirugía. Tu mini lifting facial usa plasma atmosférico, sin agujas, sin rellenos y sin toxinas. Después te explicamos Fusion Plasma y Fibroblast y cómo es el tiempo de recuperación de cada uno.</span></p>
-        </details>
-        <details>
           <summary><span class="en">What should I wear?</span><span class="es">¿Qué me pongo?</span></summary>
-          <p><span class="en">For the weight loss demo, something comfortable, and skip lotion, oil and self-tanner on your waist, hips and thighs that day. For the face lift demo, come as you are.</span><span class="es">Para la demo de peso, ropa cómoda, y evita cremas, aceites y autobronceador en la cintura, las caderas y los muslos ese día. Para la demo de lifting facial, ven como estés.</span></p>
+          <p><span class="en">Something comfortable, and skip lotion, oil and self-tanner on your waist, hips and thighs that day.</span><span class="es">Ropa cómoda, y evita cremas, aceites y autobronceador en la cintura, las caderas y los muslos ese día.</span></p>
         </details>
         <details>
           <summary><span class="en">Where are you?</span><span class="es">¿Dónde están?</span></summary>
@@ -677,7 +602,7 @@
 
 <!-- Sticky bar on phones -->
 <div class="mbar" role="region" aria-label="Quick actions">
-  <a class="btn btn-primary" href="#demos" data-track="sticky_book"><span class="en">Book a free demo</span><span class="es">Reserva tu demo gratis</span></a>
+  <a class="btn btn-primary" href="#pick-time" data-track="sticky_book"><span class="en">Book a free demo</span><span class="es">Reserva tu demo gratis</span></a>
   <a class="btn btn-ghost" href="tel:+13059097069" data-track="call" aria-label="Call (305) 909-7069">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
     <span class="en">Call</span><span class="es">Llamar</span>
@@ -694,8 +619,7 @@
    ========================================================= */
 var CAL = {
   wl_en: "awakened-skin-and-body/free-demo-weight-loss",
-  wl_es: "awakened-skin-and-body/free-demo-weight-loss-es",
-  face:  "awakened-skin-and-body/free-demo-face-lift"
+  wl_es: "awakened-skin-and-body/free-demo-weight-loss-es"
 };
 var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
 
@@ -703,12 +627,12 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
   var root = document.documentElement;
   var TEXT = {
     en: {
-      title: "Free Weight Loss and Face Lift Demos | Awakened Skin + Body",
-      msg: { wl: "Hi, I'd like to book a free weight loss demo.", face: "Hi, I'd like to book a free face lift demo.", any: "Hi, I'd like to book a free demo." }
+      title: "Free Weight Loss Demo | Awakened Skin + Body",
+      msg: { wl: "Hi, I'd like to book a free weight loss demo.", any: "Hi, I'd like to book a free demo." }
     },
     es: {
-      title: "Demos gratis para bajar de peso y lifting facial | Awakened Skin + Body",
-      msg: { wl: "Hola, quiero reservar una demo gratis para bajar de peso.", face: "Hola, quiero reservar una demo gratis de lifting facial.", any: "Hola, quiero reservar una demo gratis." }
+      title: "Demo gratis para bajar de peso | Awakened Skin + Body",
+      msg: { wl: "Hola, quiero reservar una demo gratis para bajar de peso.", any: "Hola, quiero reservar una demo gratis." }
     }
   };
 
@@ -723,12 +647,12 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
   }
 
   // ---------- Cal.com ----------
-  var anyCal = !!(clean(CAL.wl_en) || clean(CAL.wl_es) || clean(CAL.face));
+  var anyCal = !!(clean(CAL.wl_en) || clean(CAL.wl_es));
   if (anyCal) {
     (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   }
   var loaded = {};
-  var seen = { wl: false, face: false };
+  var seen = { wl: false };
 
   function mount(key, boxId, link, demo) {
     if (loaded[key] || !link) return;
@@ -760,12 +684,8 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
   function loadSection(section) {
     seen[section] = true;
     var lang = root.getAttribute("data-lang");
-    if (section === "wl") {
-      var link = clean(CAL["wl_" + lang]) || clean(CAL.wl_en) || clean(CAL.wl_es);
-      mount("wl_" + lang, "cal-wl-" + lang, link, "weight_loss");
-    } else {
-      mount("face", "cal-face", clean(CAL.face), "face_lift");
-    }
+    var link = clean(CAL["wl_" + lang]) || clean(CAL.wl_en) || clean(CAL.wl_es);
+    mount("wl_" + lang, "cal-wl-" + lang, link, "weight_loss");
   }
 
   // Load each calendar only when its section gets close to the screen
@@ -777,7 +697,7 @@ var DEMO_DAYS_END = "2026-10-26T00:00:00-04:00";
     }, { rootMargin: "700px 0px" });
     document.querySelectorAll("[data-cal-section]").forEach(function (el) { io.observe(el); });
   } else if (anyCal) {
-    loadSection("wl"); loadSection("face");
+    loadSection("wl");
   }
 
   // ---------- Language ----------
