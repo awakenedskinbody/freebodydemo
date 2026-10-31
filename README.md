@@ -15,6 +15,7 @@ Sarah's ask: the v10 look on the exact structure of the live October page. Same 
 - Design: white and black, wide Archivo caps + Instrument Serif italic, live white silk in the hero, giant TRY IT FREE / PRUÉBALO GRATIS fitted to the width, the demo section and the Invisa-RED paragraph as split panels with DEMO and LIGHT/LUZ words that hold still in the window on laptops, giant AWAKENED in the footer.
 - OG image: `assets/og-nov-v10.jpg`.
 - Live "Already taken" meter (hero and above the calendar, with a per-day row there). It reads the open times from the Cal.com public slots API (`api.cal.com/v2/slots`, no key) on every visit and every 3 minutes, for `free-demo-weight-loss`. Taken = 40-minute times in `DEMO_GRID` that are no longer open, for any reason (a demo booking or another appointment on the connected calendar). Past times drop out. Hidden below `TAKEN_SHOW_FROM` (15%) or if Cal.com doesn't answer. Settings sit at the top of that script block.
+- Card hold (Oct 31, 2026): both Cal.com demo events take a card through Stripe with a $25 no-show fee (auto-charged on cancels inside 24 hours). The box `#card-hold` under "Pick a time" and two FAQ answers explain it in EN and ES. Cal's button says "Pay to book" (Cal text, not ours); a required checkbox `card-hold-ok` above it repeats the terms.
 
 ## v10 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
 
