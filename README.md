@@ -2,18 +2,19 @@
 
 One-page site where people book a free demo: weight loss (herbalist + Invisa-RED + before and after measurements). The domain goes on the street signs.
 
-**v7 look since the Nov 10 to 14, 2026 round.** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
+**v8 look for the Nov 10 to 14, 2026 round.** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
-## v7 (Nov 2026), what's where
+## v8 (Nov 2026), what's where
 
-- Look (white version, Oct 31): white background, near-black Inter type, one warm red-to-amber accent (`--grad` in the `<style>` block). Things that move: soft drifting glow and a slow turning ring of light behind the hero, a pulsing dot in the hero label, gently bobbing day tiles, a ticker strip under the hero, numbers that count up with a gradient bar, a laser beam sweeping across step 03, floating step icons, words that light up in the laser section, red and infrared waves, a turning gradient border on the booking card, and a thin progress line under the nav. Black pill buttons with a breathing orange glow. Everything that moves is CSS transforms and stops for people who turn on reduced motion. The first dark take is in commit 311cc59 on `preview-v7` if Sarah wants it back.
-- Demo length: 40 minutes, one person per slot (Sarah, Oct 31). Every "about an hour" line is gone.
-- Dates: Nov 10 (1 PM to 7 PM) and Nov 11 to 14 (9 AM to 7 PM). They appear in the hero eyebrow, the day tiles (hero and booking), the hours lines, the booking eyebrow, the page title in `TEXT` and the meta/og tags. Next round: search the file for "Nov" and "nov." and change them all, plus `data-day` on the tiles.
-- Sold out days: put the date in `SOLD_OUT` at the top of the main script, for example `["2026-11-10"]`. That day's tiles get crossed out with a "Full" / "Agotado" tag. No banner text to rewrite.
-- No-show copy: under the calendar ("Plans change? Text us and we'll move you", the text link prefills a reschedule message) and the FAQ "What if I can't make it?".
-- Link preview image: `assets/og-nov-white.jpg` (1200 x 630, white, dates on it; the dark take is `assets/og-nov.jpg`). The old logo-only `assets/og.jpg` is still in the repo.
-- Booking events tracked with `design: "v7w"` on `demo_booked` (GA4) and `metadata[design]=v7w` on the Cal booking, so October and November can be told apart.
-- Before and after gallery: horizontal swipe, 6 photos (`assets/results/wl-*`), arrow buttons, `results_carousel` event on first use.
+- Look (Oct 31, Sarah picked the brown direction and wanted the elegance of classic med spa sites plus real motion): porcelain and white background, brand browns (espresso `#412F23`, bronze `#9D764E`, champagne `#CBAD8E`), Cormorant Garamond for headings with one italic bronze accent per heading, DM Sans for text, uppercase tracked buttons. One dark espresso section (the laser).
+- Motion, all of it reacting to the visitor, no looping decorations: a live silk surface (WebGL shader) inside the arch in the hero that drifts and follows the mouse; the hero text drifts on scroll (desktop only); a ticker that runs with your scroll; numbers that count up once; a pinned "40 minutes" section where the 5 steps change as you scroll and a ring fills from step 1 to 5; laser paragraph words light up as you scroll; red and infrared light waves drawn live in a canvas; on wide screens the before and after photos slide sideways as you scroll down (`rail-on`); magnetic buttons on desktop. `html.motion` is only set when the visitor allows motion; without it everything is static and the 5 steps show as a plain list.
+- If WebGL is not available the arch shows a static champagne gradient.
+- Demo length: 40 minutes, one person per slot. Dates: Nov 10 (1 PM to 7 PM) and Nov 11 to 14 (9 AM to 7 PM), in the hero eyebrow, the arch card, the day tiles (hero and booking), the hours lines, the booking eyebrow, the ticker, the page title in `TEXT` and the meta/og tags. Next round: search the file for "Nov" and "nov." and change them all, plus `data-day` on the tiles.
+- Sold out days: put the date in `SOLD_OUT` at the top of the main script, for example `["2026-11-10"]`. That day's tiles get crossed out with a "Full" / "Agotado" tag.
+- No-show copy: under the calendar ("Plans change? Text us and we'll move you") and the FAQ "What if I can't make it?".
+- Link preview image: `assets/og-nov-champagne.jpg` (earlier takes: `og-nov.jpg` dark, `og-nov-white.jpg` white).
+- Booking events tracked with `design: "v8"` on `demo_booked` (GA4) and `metadata[design]=v8` on the Cal booking.
+- Earlier takes on `preview-v7`: dark (311cc59), white with orange (db750a2), four switchable palettes (d458e08).
 
 Everything below describes the older parts that still apply (Cal.com, tracking, photo rules, copy rules).
 
