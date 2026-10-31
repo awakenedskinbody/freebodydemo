@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@400;500;600&family=Italiana&family=Jost:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <script>
   document.documentElement.classList.add("js");
   if (!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) document.documentElement.classList.add("motion");
@@ -75,10 +75,15 @@
   --r-lg:30px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --navh:56px;
-  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  /* Type set. Default: Instrument Serif + Inter Tight. Others: html[data-font="bodoni|italiana|cormorant"] */
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter Tight",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --hw:400;--h1w:400;--hls:-.02em;--gstyle:italic;--hk:.9;
   --dark:#211813;
 }
+html[data-font="bodoni"]{--serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;--sans:"Manrope",ui-sans-serif,system-ui,sans-serif;--hw:400;--h1w:400;--hls:-.025em;--gstyle:italic;--hk:.8}
+html[data-font="italiana"]{--serif:"Italiana",Georgia,serif;--sans:"Jost",ui-sans-serif,system-ui,sans-serif;--hw:400;--h1w:400;--hls:.005em;--gstyle:normal;--hk:.88}
+html[data-font="cormorant"]{--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",ui-sans-serif,system-ui,sans-serif;--hw:400;--h1w:300;--hls:-.012em;--gstyle:italic;--hk:.92}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:hidden}
@@ -91,13 +96,13 @@ button{font:inherit;color:inherit}
 html[data-lang="en"] .es{display:none!important}
 html[data-lang="es"] .en{display:none!important}
 
-h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.012em;line-height:1.02}
-h2{font-size:clamp(44px,6.2vw,84px)}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.02}
+h2{font-size:calc(clamp(44px,6.2vw,84px) * var(--hk))}
 h3{font-size:clamp(24px,2.4vw,30px);line-height:1.1;font-weight:500}
 p{margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px;color:var(--accent)}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
-.grad{font-style:italic;font-weight:400;background:linear-gradient(95deg,#5c4130 0%,#9D764E 55%,#b48a5e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.grad{font-style:var(--gstyle);font-weight:var(--hw);background:linear-gradient(95deg,#5c4130 0%,#9D764E 55%,#b48a5e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
 .lead{font-size:clamp(18px,1.7vw,21px);line-height:1.5;color:var(--mute);font-weight:400}
 .lead strong{color:var(--ink);font-weight:600}
 
@@ -135,33 +140,46 @@ p{margin:0}
 .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:calc(var(--navh) + 40px) 0 60px;overflow:hidden;isolation:isolate;background:radial-gradient(50% 60% at 85% 30%,rgba(203,173,142,.28),transparent 70%),var(--porcelain)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px;align-items:center}
 .hero-inner{position:relative;will-change:transform,opacity}
-.hero h1{font-size:clamp(54px,7.4vw,112px);font-weight:300;letter-spacing:-.02em;line-height:.96}
+.hero h1{font-size:calc(clamp(54px,7.4vw,112px) * var(--hk));font-weight:var(--h1w);letter-spacing:var(--hls);line-height:.98}
 .hero h1 .l1,.hero h1 .l2{display:block}
-.hero h1 .l2{font-weight:300;padding-bottom:.06em}
+.hero h1 .l2{font-weight:var(--h1w);padding-bottom:.06em}
 .hero .lead{max-width:520px;margin-top:26px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .hero-where{margin-top:16px;font-size:14px;color:var(--mute)}
 .hero-where a{color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(65,47,35,.3)}
 .hero-where a:hover{border-color:var(--ink)}
 /* the arch: live silk inside */
-.arch-wrap{position:relative;justify-self:end;width:100%;max-width:470px}
+.arch-wrap{position:relative;justify-self:end;width:100%;max-width:440px;margin-bottom:60px}
 .arch-line{position:absolute;inset:-14px -14px 14px 14px;border:1px solid rgba(157,118,78,.45);border-radius:999px 999px 26px 26px;pointer-events:none}
 .arch{position:relative;aspect-ratio:4/5.4;border-radius:999px 999px 26px 26px;overflow:hidden;background:linear-gradient(160deg,#efe2d3,#cbad8e 55%,#9d764e);box-shadow:0 50px 90px -50px rgba(65,47,35,.6)}
 .silk{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.6s ease}
 .silk.ready{opacity:1}
-.arch-card{position:absolute;left:-28px;bottom:42px;padding:16px 20px;border-radius:18px;background:rgba(253,251,248,.78);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 40px -24px rgba(65,47,35,.5);min-width:200px}
-.arch-card .ac-k{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-.arch-card .ac-v{display:block;font-family:var(--serif);font-size:30px;line-height:1.05;margin-top:4px;font-variant-numeric:lining-nums}
-.arch-card .ac-s{display:block;font-size:13px;color:var(--mute);margin-top:2px}
+/* before and after carousel over the arch: one photo at a time */
+.ba{position:absolute;left:-44px;bottom:-34px;width:60%;z-index:2}
+.ba-frame{position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;background:#141110;box-shadow:0 40px 70px -34px rgba(33,24,19,.75),0 0 0 1px rgba(255,255,255,.55);cursor:pointer;outline:none}
+.ba-frame:focus-visible{box-shadow:0 0 0 3px var(--bronze)}
+.ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
+.ba-frame img.on{opacity:1;transform:none}
+.ba-tabs{position:relative;width:max-content;margin:0 auto 10px;z-index:3;display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(253,251,248,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 6px 18px -8px rgba(0,0,0,.4)}
+.ba-tabs button{border:0;background:transparent;border-radius:999px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);cursor:pointer}
+.ba-tabs button[aria-pressed="true"]{background:var(--btn);color:#fff}
+.ba-bars{display:flex;gap:4px;margin:12px 4px 0}
+.ba-bars span{flex:1;height:2px;border-radius:2px;background:rgba(65,47,35,.16);overflow:hidden;cursor:pointer}
+.ba-bars span i{display:block;height:100%;width:100%;background:var(--espresso);transform:scaleX(0);transform-origin:0 50%}
+.ba-bars span.done i{transform:scaleX(1)}
+.ba-cap{margin:10px 4px 0;font-size:12px;line-height:1.45;color:var(--mute);max-width:300px}
 @media (max-width:899px){
   .hero{padding-top:calc(var(--navh) + 28px)}
   .hero .eyebrow::before{display:none}
   .hero .cta-row .btn{flex:1 1 100%}
   .hero-grid{grid-template-columns:1fr;gap:34px}
   .arch-wrap{justify-self:center;max-width:none}
-  .arch{aspect-ratio:auto;height:280px;border-radius:999px 999px 22px 22px / 260px 260px 22px 22px}
-  .arch-line{border-radius:999px 999px 22px 22px / 260px 260px 22px 22px;inset:-10px -10px 10px 10px}
-  .arch-card{left:16px;bottom:16px}
+  .arch-wrap{padding-bottom:0}
+  .arch{aspect-ratio:auto;height:min(118vw,520px);border-radius:999px 999px 22px 22px / 300px 300px 22px 22px}
+  .arch-line{border-radius:999px 999px 22px 22px / 300px 300px 22px 22px;inset:-10px -10px 10px 10px}
+  .ba{position:relative;left:auto;bottom:auto;width:min(calc((100vw - 44px) * .72),330px);margin:calc(-1 * (min(calc((100vw - 44px) * .72),330px) * 1.3333 + 24px)) auto 0}
+  .arch-line{bottom:auto;height:min(118vw,520px)}
+  .ba-cap{max-width:none}
 }
 .motion .hero .in{opacity:0;transform:translateY(24px);animation:up 1.2s var(--ease) forwards}
 .motion .arch-wrap{opacity:0;transform:translateY(30px) scale(.98);animation:up 1.4s var(--ease) .3s forwards}
@@ -173,7 +191,7 @@ p{margin:0}
 .day{position:relative;padding:12px 6px 10px;border-radius:14px;background:rgba(255,255,255,.7);border:1px solid var(--line);box-shadow:none;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .day:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(65,47,35,.45)}
 .day .dw{display:block;font-size:10.5px;font-weight:600;color:var(--accent);letter-spacing:.16em;text-transform:uppercase}
-.day .dn{display:block;font-family:var(--serif);font-size:34px;font-weight:400;line-height:1.05;margin-top:2px;font-variant-numeric:lining-nums}
+.day .dn{display:block;font-family:var(--serif);font-size:calc(34px * var(--hk));font-weight:var(--hw);line-height:1.05;margin-top:2px;font-variant-numeric:lining-nums}
 .day .dm{display:block;font-size:12px;color:var(--mute2);font-weight:500}
 .day .full{display:none;position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .day.is-full{opacity:.5}
@@ -186,15 +204,15 @@ p{margin:0}
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--porcelain);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .tk-track{display:flex;width:max-content;will-change:transform}
 .tk-set{display:flex;align-items:center;flex:none}
-.tk-set .it{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.8vw,34px);font-weight:400;white-space:nowrap;padding:0 30px}
+.tk-set .it{font-family:var(--serif);font-style:var(--gstyle);font-size:calc(clamp(24px,2.8vw,34px) * var(--hk));font-weight:var(--hw);white-space:nowrap;padding:0 30px}
 .tk-set i{flex:none;width:6px;height:6px;transform:rotate(45deg);background:var(--champagne)}
 
 /* ========== Numbers ========== */
 .specs{padding:90px 0 40px}
 .spec-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
 .spec{padding:10px 22px 0 0}
-.spec .big{display:block;font-family:var(--serif);font-size:clamp(60px,7vw,96px);font-weight:300;line-height:.95;font-variant-numeric:lining-nums tabular-nums}
-.spec .big small{font-size:.34em;font-style:italic;margin-left:4px;color:var(--accent)}
+.spec .big{display:block;font-family:var(--serif);font-size:calc(clamp(60px,7vw,96px) * var(--hk));font-weight:var(--h1w);line-height:.95;font-variant-numeric:lining-nums tabular-nums}
+.spec .big small{font-size:.34em;font-style:var(--gstyle);margin-left:4px;color:var(--accent)}
 .spec .cap{display:block;margin-top:12px;font-size:15px;color:var(--mute);line-height:1.4;max-width:220px}
 .spec .cap b{color:var(--ink);font-weight:600;display:block}
 .spec .bar{display:block;height:2px;border-radius:2px;background:var(--bg2);margin:18px 22px 0 0;overflow:hidden}
@@ -206,7 +224,7 @@ p{margin:0}
 /* ========== The 40 minutes: pinned scroll story ========== */
 .how{padding:90px 0 40px}
 .story-head{margin-bottom:40px}
-.how h2{font-size:clamp(40px,5.4vw,76px)}
+.how h2{font-size:calc(clamp(40px,5.4vw,76px) * var(--hk))}
 .sec-head.story-head{max-width:none}
 .sec-head{max-width:820px;margin-bottom:56px}
 .sec-head .lead{margin-top:20px}
@@ -215,7 +233,7 @@ p{margin:0}
 .st-list{list-style:none;margin:0;padding:0;position:relative}
 .st{margin-bottom:46px}
 .st .k{display:block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.st h3{font-size:clamp(38px,5vw,68px);font-weight:300;line-height:1}
+.st h3{font-size:calc(clamp(38px,5vw,68px) * var(--hk));font-weight:var(--h1w);line-height:1.02}
 .st p{margin-top:16px;font-size:clamp(18px,1.8vw,22px);line-height:1.4;color:var(--mute);max-width:470px}
 .dial{display:none}
 .extra{margin-top:28px;color:var(--mute);font-size:15px;max-width:720px}
@@ -238,7 +256,7 @@ p{margin:0}
 .dial-ico{width:44px;height:44px;color:var(--bronze);margin-bottom:10px;position:relative}
 .dial-ico svg{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(.8);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .dial-ico svg.on{opacity:1;transform:none}
-.dial-n{font-family:var(--serif);font-size:clamp(64px,8vw,110px);font-weight:300;line-height:1;font-variant-numeric:lining-nums}
+.dial-n{font-family:var(--serif);font-size:calc(clamp(64px,8vw,110px) * var(--hk));font-weight:var(--h1w);line-height:1;font-variant-numeric:lining-nums}
 .dial-l{margin-top:8px;font-size:14px;font-weight:500;color:var(--mute)}
 .dial-l b{color:var(--ink);font-weight:600}
 @media (max-width:899px){
@@ -260,7 +278,7 @@ p{margin:0}
 .laser .eyebrow{color:var(--champagne)}
 .laser h2 .grad{background:linear-gradient(95deg,#CBAD8E,#e8d5bf 60%,#CBAD8E);-webkit-background-clip:text;background-clip:text}
 .laser h2{max-width:900px}
-.lit{margin-top:34px;max-width:920px;font-family:var(--serif);font-size:clamp(30px,4vw,52px);line-height:1.14;font-weight:300}
+.lit{margin-top:34px;max-width:920px;font-family:var(--serif);font-size:calc(clamp(30px,4vw,52px) * var(--hk));line-height:1.16;font-weight:var(--h1w)}
 .motion .lit .w{color:#4d3d32;transition:color .35s ease}
 .motion .lit .w.on{color:var(--porcelain)}
 .fda{margin-top:30px;font-size:16px;color:#bfae9c}
@@ -315,10 +333,10 @@ p{margin:0}
 /* FAQ */
 .faq{padding:110px 0 120px}
 .faq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px}
-.faq h2{font-size:clamp(42px,5vw,64px)}
+.faq h2{font-size:calc(clamp(42px,5vw,64px) * var(--hk))}
 details{border-bottom:1px solid var(--line)}
 details:first-of-type{border-top:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-family:var(--serif);font-size:24px;font-weight:500}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-family:var(--serif);font-size:calc(25px * var(--hk));font-weight:var(--hw)}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/14px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 14px no-repeat;transition:transform .3s var(--ease)}
 details[open] summary::after{transform:rotate(45deg)}
@@ -393,13 +411,31 @@ footer .fine{margin-top:10px;font-size:11.5px;line-height:1.55;max-width:900px}
           <p class="hero-where"><span class="en">2106 NE 123rd Street, Miami · Free parking · <a class="nw" href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Get directions</a></span><span class="es">2106 NE 123rd Street, Miami · Estacionamiento gratis · <a class="nw" href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Cómo llegar</a></span></p>
         </div>
       </div>
-      <div class="arch-wrap" aria-hidden="true">
-        <span class="arch-line"></span>
-        <div class="arch"><canvas class="silk"></canvas></div>
-        <div class="arch-card">
-          <span class="ac-k"><span class="en">Free demo</span><span class="es">Demo gratis</span></span>
-          <span class="ac-v"><span class="en">40 minutes</span><span class="es">40 minutos</span></span>
-          <span class="ac-s"><span class="en">Nov 10 to 14 · North Miami</span><span class="es">10 al 14 de nov. · North Miami</span></span>
+      <div class="arch-wrap">
+        <span class="arch-line" aria-hidden="true"></span>
+        <div class="arch" aria-hidden="true"><canvas class="silk"></canvas></div>
+        <div class="ba" data-ba role="region" aria-roledescription="carousel" aria-label="Before and after photos" data-aria-en="Before and after photos" data-aria-es="Fotos de antes y después">
+          <div class="ba-tabs" role="group" aria-label="Show results for" data-aria-en="Show results for" data-aria-es="Ver resultados de">
+            <button type="button" data-ba-set="body" aria-pressed="true"><span class="en">Body</span><span class="es">Cuerpo</span></button>
+            <button type="button" data-ba-set="face" aria-pressed="false"><span class="en">Face</span><span class="es">Rostro</span></button>
+          </div>
+          <div class="ba-frame" tabindex="0" aria-live="polite">
+            <img class="on" data-set="body" src="/assets/results/wl-01.jpg?v=2" width="800" height="1067" loading="eager" fetchpriority="high" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite">
+            <img data-set="body" src="/assets/results/wl-02.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite">
+            <img data-set="body" src="/assets/results/wl-05.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado">
+            <img data-set="body" src="/assets/results/wl-03.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite">
+            <img data-set="body" src="/assets/results/wl-06.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado">
+            <img data-set="body" src="/assets/results/wl-04.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-en="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-es="Fotos de antes y después de una persona real, programa de Invisa-RED para estrías">
+            <img data-set="face" src="/assets/results/face-01.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma">
+            <img data-set="face" src="/assets/results/face-02.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-en="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-es="Fotos de antes y después de una persona real, rostro completo con Fibroblast, ya sanado">
+            <img data-set="face" src="/assets/results/face-03.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-en="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-es="Fotos de antes y después de una persona real, rostro completo y cuello con Fusion Plasma, con una semana de diferencia">
+            <img data-set="face" src="/assets/results/face-04.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-en="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-es="Fotos de antes y después de una persona real, mini lift con Plasma Current, sin tiempo de recuperación">
+            <img data-set="face" src="/assets/results/face-05.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-es="Fotos de antes y después de una persona real, mini lift con Fusion Plasma, zona de los ojos, dos semanas después">
+            <img data-set="face" src="/assets/results/face-06.jpg?v=2" width="800" height="1067" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma, un mes después">
+          </div>
+          <div class="ba-bars" aria-hidden="true"></div>
+          <p class="ba-cap" data-cap="body"><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían.</span></p>
+          <p class="ba-cap" data-cap="face" hidden><span class="en">Plasma and Fibroblast clients, photographed in our studio with their consent. Results vary. This round’s free demo is for the body.</span><span class="es">Clientes de plasma y Fibroblast, fotografiados en nuestro estudio con su permiso. Los resultados varían. La demo gratis de esta vez es para el cuerpo.</span></p>
         </div>
       </div>
     </div>
@@ -1087,6 +1123,76 @@ var SOLD_OUT = [];
       });
       b.addEventListener("pointerleave", function () { b.style.transform = ""; });
     });
+  }
+
+  // ---------- Hero before and after: one photo at a time, Body / Face ----------
+  var ba = document.querySelector("[data-ba]");
+  if (ba) {
+    var frame = ba.querySelector(".ba-frame"), bars = ba.querySelector(".ba-bars");
+    var baSet = "body", baIdx = 0, DUR = 4800, elapsed = 0, baLast = performance.now(), held = false, baVis = true, baTracked = false;
+    var baList = function () { return frame.querySelectorAll('img[data-set="' + baSet + '"]'); };
+    var baTrack = function () {
+      if (baTracked) return; baTracked = true;
+      if (window.gtag) gtag("event", "results_carousel", { section: "hero_" + baSet, language: root.getAttribute("data-lang") });
+    };
+    var buildBars = function () {
+      bars.innerHTML = "";
+      baList().forEach(function (_, k) {
+        var sp = document.createElement("span"); sp.appendChild(document.createElement("i"));
+        sp.addEventListener("click", function () { baShow(k); baTrack(); });
+        bars.appendChild(sp);
+      });
+    };
+    var baShow = function (k) {
+      var L = baList(); baIdx = (k + L.length) % L.length;
+      frame.querySelectorAll("img").forEach(function (im) { im.classList.remove("on"); });
+      var im = L[baIdx]; if (im.loading === "lazy") im.loading = "eager"; im.classList.add("on");
+      var nx = L[(baIdx + 1) % L.length]; if (nx.loading === "lazy") nx.loading = "eager";
+      var B = bars.children;
+      for (var j = 0; j < B.length; j++) { B[j].classList.toggle("done", j < baIdx); B[j].firstChild.style.transform = j < baIdx ? "scaleX(1)" : "scaleX(0)"; }
+      elapsed = 0;
+    };
+    var baSetTo = function (n) {
+      baSet = n;
+      ba.querySelectorAll("[data-ba-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-ba-set") === n ? "true" : "false"); });
+      ba.querySelectorAll("[data-cap]").forEach(function (c) { c.hidden = c.getAttribute("data-cap") !== n; });
+      buildBars(); baShow(0);
+    };
+    ba.querySelectorAll("[data-ba-set]").forEach(function (b) {
+      b.addEventListener("click", function () { baSetTo(b.getAttribute("data-ba-set")); baTrack(); });
+    });
+    var downX = null, downY = null;
+    frame.addEventListener("pointerdown", function (e) { downX = e.clientX; downY = e.clientY; });
+    frame.addEventListener("pointerup", function (e) {
+      if (downX === null) return;
+      var dx = e.clientX - downX, dy = e.clientY - downY; downX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { baShow(baIdx + (dx < 0 ? 1 : -1)); baTrack(); return; }
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
+        var r = frame.getBoundingClientRect();
+        baShow(baIdx + (e.clientX < r.left + r.width / 3 ? -1 : 1)); baTrack();
+      }
+    });
+    frame.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); baShow(baIdx - 1); baTrack(); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); baShow(baIdx + 1); baTrack(); }
+    });
+    ba.addEventListener("mouseenter", function () { held = true; });
+    ba.addEventListener("mouseleave", function () { held = false; });
+    ba.addEventListener("focusin", function () { held = true; });
+    ba.addEventListener("focusout", function () { held = false; });
+    baSetTo("body");
+    if (motion) {
+      visibleWatch(ba, function (v) { baVis = v; });
+      (function baLoop(now) {
+        requestAnimationFrame(baLoop);
+        var dt = Math.min(100, now - baLast); baLast = now;
+        if (held || !baVis || document.hidden) return;
+        elapsed += dt;
+        var cur = bars.children[baIdx];
+        if (cur) cur.firstChild.style.transform = "scaleX(" + Math.min(1, elapsed / DUR).toFixed(3) + ")";
+        if (elapsed >= DUR) baShow(baIdx + 1);
+      })(baLast);
+    }
   }
 
   // ---------- Scroll: hero drift, progress line, phone bar ----------
