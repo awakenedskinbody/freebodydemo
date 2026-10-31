@@ -641,10 +641,26 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
       hideEventTypeDetails: true,
       layout: "month_view"
     });
+    // Funnel tracking (Oct 31, 2026): cal_loaded -> calendar_seen -> demo_booked.
+    // Note: Cal fires bookingSuccessful when the form is sent, BEFORE the Stripe card page,
+    // so demo_booked = "sent the form"; bookings that never finish the card step stay unpaid in Cal.
+    Cal.ns[key]("on", {
+      action: "bookerViewed",
+      callback: function (e) {
+        var d = (e && e.detail && e.detail.data) || {};
+        if (window.gtag) gtag("event", "cal_loaded", { demo: demo, language: root.getAttribute("data-lang"), slots_loaded: d.slotsLoaded ? "yes" : "no", design: "v11" });
+      }
+    });
+    Cal.ns[key]("on", {
+      action: "linkFailed",
+      callback: function () {
+        if (window.gtag) gtag("event", "cal_failed", { demo: demo, language: root.getAttribute("data-lang") });
+      }
+    });
     Cal.ns[key]("on", {
       action: "bookingSuccessful",
       callback: function () {
-        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11" });
+        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11", payment: "card_hold" });
         if (window.fbq) fbq("track", "Schedule", { content_name: demo });
         if (window.__takenRefresh) setTimeout(window.__takenRefresh, 2000);
       }
@@ -669,6 +685,27 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
   } else if (anyCal) {
     loadSection("wl");
   }
+
+  // "calendar_seen": the calendar box is really on screen (at least 35% of it, for 1.5 seconds), once per visit.
+  // Compare with demo_booked to see how many people look at the calendar and don't book.
+  (function () {
+    var card = document.querySelector(".cal-card[data-cal-section]");
+    if (!card || !("IntersectionObserver" in window)) return;
+    var timer = null, sent = false;
+    var seenIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (sent) return;
+        if (e.isIntersecting && e.intersectionRatio >= 0.35) {
+          if (!timer) timer = setTimeout(function () {
+            sent = true; seenIo.disconnect();
+            if (window.gtag) gtag("event", "calendar_seen", { demo: "weight_loss", language: root.getAttribute("data-lang"), design: "v11" });
+            if (window.fbq) fbq("trackCustom", "CalendarSeen", { content_name: "weight_loss" });
+          }, 1500);
+        } else if (timer) { clearTimeout(timer); timer = null; }
+      });
+    }, { threshold: [0, 0.35, 0.6] });
+    seenIo.observe(card);
+  })();
 
   // ---------- Language ----------
   function setLang(lang, remember) {
