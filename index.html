@@ -229,6 +229,12 @@ h1,h2,h3,p{margin:0}
 .pword{position:absolute;left:0;right:0;bottom:22px;z-index:0;margin:0;text-align:center;font-stretch:125%;font-weight:600;text-transform:uppercase;line-height:.8;letter-spacing:.02em;white-space:nowrap;pointer-events:none;color:var(--black);font-size:var(--pw,16vw)}
 .panel.black .pword{color:#fff}
 .pword.win{top:0;bottom:auto;will-change:transform}
+/* LIGHT / LASER take turns in the same spot, sized together so nothing jumps */
+.pword[data-swap]{display:grid;justify-items:center}
+.pword[data-swap] > .en,.pword[data-swap] > .es{display:grid;justify-items:center;overflow:hidden;padding-top:.1em;margin-top:-.1em}
+.pword[data-swap] .w{grid-area:1/1;display:block;transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.pword[data-swap] .w:not(.on){opacity:0;transform:translateY(60%)}
+.pword[data-swap] .w.out{opacity:0;transform:translateY(-60%)}
 
 .section-head{display:flex;flex-direction:column;gap:20px}
 .steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:500px;counter-reset:st}
@@ -443,7 +449,7 @@ footer{padding:0 0 40px}
         <div class="panel black">
           <canvas class="waves" aria-hidden="true"></canvas>
           <div class="wave-labels tiny" aria-hidden="true"><span><span class="en">Red light</span><span class="es">Luz roja</span></span><span class="ir"><span class="en">Infrared light</span><span class="es">Luz infrarroja</span></span></div>
-          <p class="pword" aria-hidden="true" data-fit><span class="en">Light</span><span class="es">Luz</span></p>
+          <p class="pword" aria-hidden="true" data-fit data-swap><span class="en"><span class="w on">Light</span><span class="w">Laser</span></span><span class="es"><span class="w on">Luz</span><span class="w">Láser</span></span></p>
         </div>
       </div>
     </div>
@@ -893,7 +899,7 @@ var TAKEN_SHOW_FROM = 15;
       if (!p.classList.contains("win")) { p.style.transform = ""; return; }
       var r = p.parentNode.getBoundingClientRect();
       if (r.bottom < -50 || r.top > vh + 50) return;
-      var y = vh - p.offsetHeight - 26 - r.top;
+      var y = clamp(vh - p.offsetHeight - 26 - r.top, 22, r.height - p.offsetHeight - 22);  // held at the bottom of the window, never outside the panel
       p.style.transform = "translate3d(0," + y.toFixed(1) + "px,0)";
     });
   }
@@ -978,6 +984,24 @@ var TAKEN_SHOW_FROM = 15;
       (function wl(now) { requestAnimationFrame(wl); if (!wVis || document.hidden || now - wLast < 30) return; wLast = now; wdraw(now); })(performance.now());
     }
   }
+
+  // LIGHT / LASER take turns while the panel is on screen
+  document.querySelectorAll("[data-swap]").forEach(function (p) {
+    if (!motion) return;
+    var vis = false;
+    watch(p.parentNode, function (v) { vis = v; }, "0px");
+    setInterval(function () {
+      if (!vis || document.hidden) return;
+      p.querySelectorAll(":scope > span").forEach(function (lang) {
+        var ws = lang.querySelectorAll(".w"), i = 0;
+        ws.forEach(function (w, k) { if (w.classList.contains("on")) i = k; });
+        var cur = ws[i], nx = ws[(i + 1) % ws.length];
+        cur.classList.remove("on"); cur.classList.add("out");
+        nx.classList.remove("out"); nx.classList.add("on");
+        setTimeout(function () { cur.classList.remove("out"); }, 950);
+      });
+    }, 3200);
+  });
 
   // Steps light up one by one as you scroll through the list
   var stepsEl = document.querySelector("[data-steps]");
