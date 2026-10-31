@@ -6,13 +6,13 @@ One-page site where people book a free demo: weight loss (herbalist + Invisa-RED
 
 ## v7 (Nov 2026), what's where
 
-- Look: black and white, big tight Inter type, one red-to-amber light accent for the laser (`--grad` in the `<style>` block). Hero has a slow turning ring of light (pure CSS, off for reduced motion). Light gray and white sections for the photos, booking and FAQ, like Apple's product pages.
+- Look (white version, Oct 31): white background, near-black Inter type, one warm red-to-amber accent (`--grad` in the `<style>` block). Things that move: soft drifting glow and a slow turning ring of light behind the hero, a pulsing dot in the hero label, gently bobbing day tiles, a ticker strip under the hero, numbers that count up with a gradient bar, a laser beam sweeping across step 03, floating step icons, words that light up in the laser section, red and infrared waves, a turning gradient border on the booking card, and a thin progress line under the nav. Black pill buttons with a breathing orange glow. Everything that moves is CSS transforms and stops for people who turn on reduced motion. The first dark take is in commit 311cc59 on `preview-v7` if Sarah wants it back.
 - Demo length: 40 minutes, one person per slot (Sarah, Oct 31). Every "about an hour" line is gone.
 - Dates: Nov 10 (1 PM to 7 PM) and Nov 11 to 14 (9 AM to 7 PM). They appear in the hero eyebrow, the day tiles (hero and booking), the hours lines, the booking eyebrow, the page title in `TEXT` and the meta/og tags. Next round: search the file for "Nov" and "nov." and change them all, plus `data-day` on the tiles.
 - Sold out days: put the date in `SOLD_OUT` at the top of the main script, for example `["2026-11-10"]`. That day's tiles get crossed out with a "Full" / "Agotado" tag. No banner text to rewrite.
 - No-show copy: under the calendar ("Plans change? Text us and we'll move you", the text link prefills a reschedule message) and the FAQ "What if I can't make it?".
-- Link preview image: `assets/og-nov.jpg` (1200 x 630, dates on it). The old logo-only `assets/og.jpg` is still in the repo.
-- Booking events tracked with `design: "v7"` on `demo_booked` (GA4) and `metadata[design]=v7` on the Cal booking, so October and November can be told apart.
+- Link preview image: `assets/og-nov-white.jpg` (1200 x 630, white, dates on it; the dark take is `assets/og-nov.jpg`). The old logo-only `assets/og.jpg` is still in the repo.
+- Booking events tracked with `design: "v7w"` on `demo_booked` (GA4) and `metadata[design]=v7w` on the Cal booking, so October and November can be told apart.
 - Before and after gallery: horizontal swipe, 6 photos (`assets/results/wl-*`), arrow buttons, `results_carousel` event on first use.
 
 Everything below describes the older parts that still apply (Cal.com, tracking, photo rules, copy rules).
