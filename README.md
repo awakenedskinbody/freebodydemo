@@ -4,6 +4,19 @@ One-page site where people book a free demo: weight loss (herbalist + Invisa-RED
 
 **v9 look for the Nov 10 to 14, 2026 round (not live yet, on branch `preview-v7`).** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
+## v10 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
+
+A mix of A.N Other (an-other.com) and Organic Care (organiccare.framer.website), on Sarah's ask.
+
+- Pure white and black. Archivo stretched wide (font-stretch 125%) in capitals for headings, labels and buttons; Instrument Serif italic for the soft second line ("FORTY MINUTES / *one visit*").
+- Hero (Organic Care): live white silk (WebGL) full bleed, copy and CTA on the left, before and after card crossfading on the right, giant "TRY IT FREE" / "PRUÉBALO GRATIS" fitted to the width at the bottom, letters rise in.
+- Facts strip: 40 min, $0, 2x, 0 needles.
+- Split sections (A.N Other): text left, full-height panel right (The demo, Invisa-RED, Results). Each panel has a giant word (DEMO, LIGHT/LUZ, REAL) that stays put in the window while the panel slides past on laptops; static at the bottom on phones. Panels open with a clip wipe. Steps light up one by one as you scroll.
+- Results panel holds the full Body/Face carousel (tabs, counter, arrows, swipe, tap, keys).
+- Booking centered, then FAQ with sticky title, black "Rather talk to a person?" band, footer with the giant AWAKENED word fitted to the width.
+- Booking/tracking script is the same as v9; the Cal metadata and `demo_booked` event carry `design: "v10"`.
+- OG image: `assets/og-nov-v10.jpg`.
+
 ## v9 (Nov 2026), built from scratch, what's where
 
 - Direction (Oct 31): rebuilt from Sarah's references (Nailora, Ovelle, Skin & Body, Celune, I'm Beauty, Organic Care, Moral, A.N Other, Reelrise, Thrive, DMCG, Chimie). Ivory `#FAF7F2` and sand `#F1EAE1` backgrounds, one espresso band, warm brown accent `#8C5B45`, gold labels `#A07A52`. Instrument Serif headlines with one italic accent, Plus Jakarta Sans text, pill buttons with an arrow circle, small uppercase labels with a dot.
