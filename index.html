@@ -195,6 +195,27 @@ h1,h2,h3,p{margin:0}
   .choice-link p{font-size:14px}
 }
 
+/* Live count of demo times taken (Cal.com) */
+.taken{width:100%;max-width:460px}
+.taken[hidden]{display:none!important}
+.taken-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.taken-top b{font-stretch:125%;font-weight:600;font-size:26px;line-height:1;letter-spacing:-.01em}
+.taken-bar{height:6px;margin-top:10px;background:rgba(0,0,0,.1);overflow:hidden}
+.taken-bar i{display:block;height:100%;width:0;background:var(--black);transition:width 1.4s var(--ease)}
+.taken-sub{margin-top:9px;font-size:13px;color:#333}
+.taken-sub .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#1f9d55;margin-right:8px;vertical-align:1px;box-shadow:0 0 0 0 rgba(31,157,85,.5)}
+.motion .taken-sub .live{animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.45)}70%{box-shadow:0 0 0 7px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+.taken-days{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.taken-days li{display:flex;flex-direction:column;gap:6px;text-align:left}
+.taken-days .d{font-size:10.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.12em;font-weight:500}
+.taken-days .mb{height:3px;background:rgba(0,0,0,.1);overflow:hidden}
+.taken-days .mb i{display:block;height:100%;width:0;background:var(--black);transition:width 1.4s var(--ease)}
+.taken-days .n{font-size:12px;color:var(--grey);line-height:1.3}
+.taken-days li.full .d{text-decoration:line-through}
+.taken-days li.full .n{color:var(--black);font-weight:600}
+.book .taken{max-width:620px;margin:30px auto 0;text-align:left}
+
 /* ========== Split sections ========== */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:100vh;border-top:1px solid var(--line)}
 .split-l{display:flex;flex-direction:column;justify-content:center;gap:26px;padding:96px 64px 96px max(28px,calc((100vw - 1360px)/2 + 28px))}
@@ -323,6 +344,11 @@ footer{padding:0 0 40px}
           <span class="en"><strong class="nw">Tuesday, Nov 10</strong> from <span class="nw">1 PM to 7 PM</span>, and <strong class="nw">Wednesday to Saturday</strong> from <span class="nw">9 AM to 7 PM</span>.</span>
           <span class="es"><strong class="nw">Martes 10</strong> <span class="nw">de 1 a 7 p. m.</span> y <strong class="nw">de miércoles a sábado</strong> <span class="nw">de 9 a. m. a 7 p. m.</span></span>
         </p>
+        <div class="taken reveal" data-taken hidden aria-live="polite">
+          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
+          <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
+          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
+        </div>
         <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="sr"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
         <p class="txt reveal d2"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
       </div>
@@ -427,6 +453,12 @@ footer{padding:0 0 40px}
         <div class="cal-head reveal" id="pick-time">
           <h3 class="duo"><span class="en"><span class="caps">Pick</span> <span class="serif">a time</span></span><span class="es"><span class="caps">Elige</span> <span class="serif">tu horario</span></span></h3>
           <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
+        </div>
+        <div class="taken" data-taken data-taken-days hidden aria-live="polite">
+          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
+          <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
+          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
+          <ul class="taken-days"></ul>
         </div>
         <div class="cal-card" data-cal-section="wl">
           <div id="cal-wl-en" class="cal-inline en" hidden></div>
@@ -583,6 +615,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
       callback: function () {
         if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11" });
         if (window.fbq) fbq("track", "Schedule", { content_name: demo });
+        if (window.__takenRefresh) setTimeout(window.__takenRefresh, 2000);
       }
     });
   }
@@ -701,6 +734,98 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+
+<script>
+/* =========================================================
+   LIVE COUNT OF DEMO TIMES TAKEN
+   Reads the open times straight from Cal.com (public slots API,
+   no key) every time the page opens, and again every 3 minutes
+   while it's open. "Taken" = every 40-minute demo time from the
+   grid below that is no longer open on Cal.com, for any reason
+   (a demo booking or another appointment on the calendar).
+   Times that already passed don't count either way.
+   DEMO_GRID: the demo days and hours, studio time (EST, -05:00).
+   TAKEN_SHOW_FROM: below this %, the meter stays hidden.
+   ========================================================= */
+var DEMO_GRID = {
+  "2026-11-10": ["13:00", "19:00"],
+  "2026-11-11": ["09:00", "19:00"],
+  "2026-11-12": ["09:00", "19:00"],
+  "2026-11-13": ["09:00", "19:00"],
+  "2026-11-14": ["09:00", "19:00"]
+};
+var DEMO_SLOT_MIN = 40, DEMO_TZ = "America/New_York", DEMO_OFFSET = "-05:00";
+var TAKEN_SHOW_FROM = 15;
+
+(function () {
+  var boxes = document.querySelectorAll("[data-taken]");
+  if (!boxes.length || !window.fetch || typeof CAL === "undefined") return;
+  var link = (CAL.wl_en || "").trim().replace(/^https?:\/\/(app\.)?cal\.com\//, "").replace(/\/$/, "");
+  var parts = link.split("/");
+  if (parts.length < 2) return;
+  var days = Object.keys(DEMO_GRID).sort();
+  var url = "https://api.cal.com/v2/slots?eventTypeSlug=" + encodeURIComponent(parts[1]) + "&username=" + encodeURIComponent(parts[0]) +
+    "&start=" + days[0] + "&end=" + days[days.length - 1] + "&timeZone=" + encodeURIComponent(DEMO_TZ);
+  var DW = { en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], es: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"] };
+
+  function grid(day, now) {
+    var a = DEMO_GRID[day][0].split(":"), b = DEMO_GRID[day][1].split(":");
+    var t = +a[0] * 60 + +a[1], end = +b[0] * 60 + +b[1], out = [];
+    for (; t + DEMO_SLOT_MIN <= end; t += DEMO_SLOT_MIN) {
+      var hh = ("0" + Math.floor(t / 60)).slice(-2), mm = ("0" + (t % 60)).slice(-2);
+      if (new Date(day + "T" + hh + ":" + mm + ":00" + DEMO_OFFSET).getTime() > now) out.push(hh + ":" + mm);
+    }
+    return out;
+  }
+  function setAll(sel, val) { document.querySelectorAll(sel).forEach(function (e) { e.textContent = val; }); }
+
+  function paint(slots) {
+    var now = Date.now(), total = 0, open = 0, rows = [];
+    days.forEach(function (day) {
+      var g = grid(day, now);
+      if (!g.length) return;
+      var o = (slots[day] || []).filter(function (s) { return new Date(s.start).getTime() > now; }).length;
+      o = Math.min(o, g.length);
+      total += g.length; open += o;
+      rows.push({ day: day, total: g.length, open: o });
+    });
+    if (!total) { boxes.forEach(function (b) { b.hidden = true; }); return; }
+    var pct = Math.round(100 * (total - open) / total);
+    var show = pct >= TAKEN_SHOW_FROM;
+    setAll("[data-taken-pct]", pct + "%");
+    setAll("[data-taken-open]", open);
+    setAll("[data-taken-total]", total);
+    boxes.forEach(function (b) {
+      b.hidden = !show;
+      var f = b.querySelector("[data-taken-fill]");
+      if (f) requestAnimationFrame(function () { f.style.width = pct + "%"; });
+      var ul = b.querySelector(".taken-days");
+      if (!ul) return;
+      ul.innerHTML = "";
+      rows.forEach(function (r) {
+        var d = new Date(r.day + "T12:00:00" + DEMO_OFFSET), n = r.day.slice(8).replace(/^0/, "");
+        var li = document.createElement("li"); if (!r.open) li.className = "full";
+        var tk = Math.round(100 * (r.total - r.open) / r.total);
+        li.innerHTML = '<span class="d"><span class="en">' + DW.en[d.getUTCDay()] + " " + n + '</span><span class="es">' + DW.es[d.getUTCDay()] + " " + n + "</span></span>" +
+          '<span class="mb"><i style="width:0"></i></span>' +
+          '<span class="n">' + (r.open ? '<span class="en">' + r.open + ' left</span><span class="es">quedan ' + r.open + "</span>" : '<span class="en">Full</span><span class="es">Agotado</span>') + "</span>";
+        ul.appendChild(li);
+        var bar = li.querySelector(".mb i"); requestAnimationFrame(function () { bar.style.width = tk + "%"; });
+      });
+    });
+  }
+
+  function load() {
+    fetch(url, { headers: { "cal-api-version": "2024-09-04" } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { if (j && j.data) paint(j.data); })
+      .catch(function () { boxes.forEach(function (b) { b.hidden = true; }); });
+  }
+  window.__takenRefresh = load;
+  load();
+  setInterval(function () { if (!document.hidden) load(); }, 180000);
 })();
 </script>
 

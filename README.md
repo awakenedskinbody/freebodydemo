@@ -4,7 +4,7 @@ One-page site where people book a free demo: weight loss (herbalist + Invisa-RED
 
 **v9 look for the Nov 10 to 14, 2026 round (not live yet, on branch `preview-v7`).** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
-## v11 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
+## v11 look (live since Oct 31, 2026)
 
 Sarah's ask: the v10 look on the exact structure of the live October page. Same sections, same order, same copy and same booking/tracking script as `main`. Only the design changed, plus the facts for the new round:
 
@@ -14,6 +14,7 @@ Sarah's ask: the v10 look on the exact structure of the live October page. Same 
 - Cal brand color is black; `metadata[design]` and the `demo_booked` event carry `"v11"`.
 - Design: white and black, wide Archivo caps + Instrument Serif italic, live white silk in the hero, giant TRY IT FREE / PRUÉBALO GRATIS fitted to the width, the demo section and the Invisa-RED paragraph as split panels with DEMO and LIGHT/LUZ words that hold still in the window on laptops, giant AWAKENED in the footer.
 - OG image: `assets/og-nov-v10.jpg`.
+- Live "Already taken" meter (hero and above the calendar, with a per-day row there). It reads the open times from the Cal.com public slots API (`api.cal.com/v2/slots`, no key) on every visit and every 3 minutes, for `free-demo-weight-loss`. Taken = 40-minute times in `DEMO_GRID` that are no longer open, for any reason (a demo booking or another appointment on the connected calendar). Past times drop out. Hidden below `TAKEN_SHOW_FROM` (15%) or if Cal.com doesn't answer. Settings sit at the top of that script block.
 
 ## v10 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
 
