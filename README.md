@@ -2,19 +2,17 @@
 
 One-page site where people book a free demo: weight loss (herbalist + Invisa-RED + before and after measurements). The domain goes on the street signs.
 
-**v8 look for the Nov 10 to 14, 2026 round.** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
+**v9 look for the Nov 10 to 14, 2026 round (not live yet, on branch `preview-v7`).** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
-## v8 (Nov 2026), what's where
+## v9 (Nov 2026), built from scratch, what's where
 
-- Look (Oct 31, Sarah picked the brown direction and wanted the elegance of classic med spa sites plus real motion): porcelain and white background, brand browns (espresso `#412F23`, bronze `#9D764E`, champagne `#CBAD8E`), Cormorant Garamond for headings with one italic bronze accent per heading, DM Sans for text, uppercase tracked buttons. One dark espresso section (the laser).
-- Motion, all of it reacting to the visitor, no looping decorations: a live silk surface (WebGL shader) inside the arch in the hero that drifts and follows the mouse; the hero text drifts on scroll (desktop only); a ticker that runs with your scroll; numbers that count up once; a pinned "40 minutes" section where the 5 steps change as you scroll and a ring fills from step 1 to 5; laser paragraph words light up as you scroll; red and infrared light waves drawn live in a canvas; on wide screens the before and after photos slide sideways as you scroll down (`rail-on`); magnetic buttons on desktop. `html.motion` is only set when the visitor allows motion; without it everything is static and the 5 steps show as a plain list.
-- If WebGL is not available the arch shows a static champagne gradient.
-- Demo length: 40 minutes, one person per slot. Dates: Nov 10 (1 PM to 7 PM) and Nov 11 to 14 (9 AM to 7 PM), in the hero eyebrow, the arch card, the day tiles (hero and booking), the hours lines, the booking eyebrow, the ticker, the page title in `TEXT` and the meta/og tags. Next round: search the file for "Nov" and "nov." and change them all, plus `data-day` on the tiles.
-- Sold out days: put the date in `SOLD_OUT` at the top of the main script, for example `["2026-11-10"]`. That day's tiles get crossed out with a "Full" / "Agotado" tag.
-- No-show copy: under the calendar ("Plans change? Text us and we'll move you") and the FAQ "What if I can't make it?".
-- Link preview image: `assets/og-nov-champagne.jpg` (earlier takes: `og-nov.jpg` dark, `og-nov-white.jpg` white).
-- Booking events tracked with `design: "v8"` on `demo_booked` (GA4) and `metadata[design]=v8` on the Cal booking.
-- Earlier takes on `preview-v7`: dark (311cc59), white with orange (db750a2), four switchable palettes (d458e08).
+- Direction (Oct 31): rebuilt from Sarah's references (Nailora, Ovelle, Skin & Body, Celune, I'm Beauty, Organic Care, Moral, A.N Other, Reelrise, Thrive, DMCG, Chimie). Ivory `#FAF7F2` and sand `#F1EAE1` backgrounds, one espresso band, warm brown accent `#8C5B45`, gold labels `#A07A52`. Instrument Serif headlines with one italic accent, Plus Jakarta Sans text, pill buttons with an arrow circle, small uppercase labels with a dot.
+- Sections: top bar, floating glass nav, hero (chips with + that open a short note, headline, CTA, 3 facts; right side a stage with live silk and before and after prints that crossfade every 5 s, Body and Face tabs, counter, arrows, swipe, a floating "Demo days" card), marquee that runs with your scroll, a big statement with round picture chips whose words light up on scroll, 5 step cards (horizontal swipe on phones), results with 4 tilted prints that drift at different speeds, Invisa-RED band with live red and infrared waves, sticky booking column with day tiles and the Cal embed, FAQ, final call, a giant "Try it free." footer word.
+- Photos: clean crops of the 12 result posters live in `assets/results/c/` (poster frames and text removed, the Before and After tags kept). The original posters stay in `assets/results/`.
+- Missing on purpose: lifestyle photography or video (a real body or silhouette in motion). When Sarah sends it, it goes behind the prints in the hero stage (replace the silk canvas with a `<video autoplay muted loop playsinline>` or an `<img>`).
+- Sold out days: `SOLD_OUT` at the top of the main script (tiles get crossed out and the floating card dots go grey).
+- Tracking: `design: "v9"` on `demo_booked`, `metadata[design]=v9` on the Cal booking. Link preview: `assets/og-nov-v9.jpg`.
+- Earlier takes are in the history of `preview-v7` (v7 dark, v7 white, palettes, v8 brown with arch).
 
 Everything below describes the older parts that still apply (Cal.com, tracking, photo rules, copy rules).
 
