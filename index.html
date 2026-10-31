@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Free Weight Loss Demo, Nov 10 to 14 | Awakened Skin + Body</title>
-<meta name="description" content="A free 40-minute body demo at our North Miami studio, Nov 10 to 14. Meet our herbalist, try one Invisa-RED session and see your own before and after measurements. Book online or call (305) 909-7069.">
+<title>Free Weight Loss Demo | Awakened Skin + Body</title>
+<meta name="description" content="Don't take our word for it. Try a free weight loss demo at our studio right off the Broad Causeway, Nov 10 to 14. Book online or call (305) 909-7069.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://freebodydemo.com/">
@@ -12,8 +12,8 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freebodydemo.com/">
-<meta property="og:title" content="Free weight loss demo, Nov 10 to 14 | Awakened Skin + Body">
-<meta property="og:description" content="Don't take our word for it. Try it free. A 40-minute body demo at our North Miami studio, Nov 10 to 14. Book online, or call or text (305) 909-7069.">
+<meta property="og:title" content="Free weight loss demo | Awakened Skin + Body">
+<meta property="og:description" content="Don't take our word for it. Try a free weight loss demo, Nov 10 to 14. Book online, or call or text (305) 909-7069.">
 <meta property="og:image" content="https://freebodydemo.com/assets/og-nov-v10.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -50,12 +50,12 @@
 
 <style>
 /* =========================================================
-   v10 (Nov 2026): A.N Other + Organic Care.
-   Pure white and black. Archivo stretched wide for capitals
-   (A.N Other), Instrument Serif italic for the soft second
-   line (Organic Care). Hero with one giant word over a live
-   white silk, split sections with a giant word that stays in
-   place while the pages scroll past it. Reduced motion: still.
+   v11 (Nov 2026): the October page, same sections and copy,
+   in the v10 look (A.N Other + Organic Care).
+   White and black. Archivo stretched wide in capitals, Instrument
+   Serif italic for the soft line. Live white silk in the hero, giant
+   TRY IT FREE, split panels with words that hold still in the window.
+   Reduced motion: everything still.
    ========================================================= */
 :root{
   --white:#ffffff;
@@ -83,164 +83,173 @@ html[data-lang="en"] .es{display:none!important}
 html[data-lang="es"] .en{display:none!important}
 h1,h2,h3,p{margin:0}
 
-/* Type helpers */
+/* Type */
 .caps{font-stretch:125%;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
 .tiny{font-size:11.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.16em;font-weight:500}
 .serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;text-transform:none}
-.duo{display:flex;flex-direction:column;line-height:.95}
+.duo{display:flex;flex-direction:column;line-height:.95;font-weight:400}
+.duo > .en,.duo > .es{display:flex;flex-direction:column}
 .duo .caps{font-size:clamp(30px,3.6vw,52px);letter-spacing:.02em;font-weight:500}
 .duo .serif{font-size:clamp(40px,4.8vw,70px);line-height:.95}
-.txt{font-size:16px;color:#333;line-height:1.65;max-width:440px}
+.txt{font-size:16px;color:#333;line-height:1.65;max-width:460px}
 .muted{color:var(--grey)}
 
-/* Buttons: black block, underlined link */
+/* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:52px;padding:0 28px;background:var(--black);color:#fff;text-decoration:none;font-size:12.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;font-weight:500;border:0;cursor:pointer;transition:background-color .3s}
 .btn:hover{background:#333}
-.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .4s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
 .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
 .btn.ghost:hover{background:rgba(0,0,0,.05)}
-.ul{display:inline-block;font-size:12px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;font-weight:500;text-decoration:none;padding-bottom:5px;border-bottom:1px solid currentColor;transition:opacity .3s}
-.ul:hover{opacity:.6}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
 
-/* Announcement + nav */
-.annc{background:var(--black);color:#fff;text-align:center;padding:9px 16px;font-size:11px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em}
-.annc a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
-@media (max-width:520px){.annc .hide-s{display:none}}
+/* Nav */
 .nav{position:sticky;top:0;z-index:50;height:var(--navh);background:rgba(255,255,255,.88);-webkit-backdrop-filter:saturate(160%) blur(16px);backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
 .nav.stuck{border-bottom-color:var(--line)}
 .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand img{height:26px;width:auto;filter:grayscale(1) brightness(.2)}
-.nav-r{display:flex;align-items:center;gap:26px}
-.nav-links{display:flex;gap:26px}
-.nav-links a{font-size:11.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;font-weight:500;text-decoration:none}
-.nav-links a:hover{opacity:.55}
+.nav-r{display:flex;align-items:center;gap:24px}
+.nav-phone{font-size:11.5px;font-stretch:125%;letter-spacing:.14em;font-weight:500;text-decoration:none}
+.nav-phone:hover{opacity:.55}
 .lang{display:inline-flex;gap:2px}
 .lang button{border:0;background:transparent;padding:4px 6px;font-size:11.5px;font-stretch:125%;letter-spacing:.12em;font-weight:500;color:var(--grey2);cursor:pointer}
 .lang button[aria-pressed="true"]{color:var(--black);text-decoration:underline;text-underline-offset:4px}
 .nav .btn{min-height:40px;padding:0 18px;font-size:11px}
-@media (max-width:960px){.nav-links{display:none}}
-@media (max-width:520px){.nav-r{gap:12px}.brand img{height:21px}.nav .btn{padding:0 14px}}
+@media (max-width:760px){.nav-phone{display:none}}
+@media (max-width:520px){.nav-r{gap:10px}.brand img{height:21px}.nav .btn{padding:0 14px}}
 
 /* Reveal */
-.motion .rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.motion .rv.in{opacity:1;transform:none}
-.motion .rv.d1{transition-delay:.08s}.motion .rv.d2{transition-delay:.16s}.motion .rv.d3{transition-delay:.24s}.motion .rv.d4{transition-delay:.32s}
+.motion .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.motion .reveal.visible{opacity:1;transform:none}
+.motion .d1{transition-delay:.08s}.motion .d2{transition-delay:.16s}.motion .d3{transition-delay:.24s}
 
-/* ========== Hero (Organic Care) ========== */
-.hero{position:relative;height:calc(100svh - var(--navh) - 34px);min-height:640px;max-height:980px;overflow:hidden;background:#f6f6f6;isolation:isolate}
+/* ========== Hero ========== */
+.hero{position:relative;min-height:calc(100svh - var(--navh));display:flex;flex-direction:column;overflow:hidden;background:#f6f6f6;isolation:isolate}
 .hero .silk{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.6s ease;z-index:-1}
 .hero .silk.ready{opacity:1}
-.hero-top{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding-top:44px;height:100%}
-.hero-l{display:flex;flex-direction:column;gap:22px;max-width:420px;padding-top:4vh}
-.hero-l .serif{font-size:clamp(30px,3vw,44px);line-height:1}
-.hero-l .txt{max-width:380px}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:6px}
-.hero-r{position:relative;display:flex;justify-content:flex-end;align-items:flex-start;padding-top:2vh}
-.pcard{position:relative;width:min(100%,520px);aspect-ratio:3/2}
-.pcard img{position:absolute;inset:0;margin:auto;max-width:100%;max-height:100%;width:auto;height:auto;border:6px solid #fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);opacity:0;transform:scale(.97);transition:opacity 1s var(--ease),transform 1.4s var(--ease)}
-.pcard img.on{opacity:1;transform:none}
-.pcard-cap{position:absolute;left:0;right:0;bottom:-30px;display:flex;justify-content:space-between;font-size:10.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;color:var(--grey)}
-.mega{position:absolute;left:0;right:0;bottom:max(14px,2.2vh);margin:0;padding:0 18px;clip-path:inset(-30% -2% 0 -2%);font-family:var(--wide);font-stretch:125%;font-weight:600;text-transform:uppercase;line-height:.8;letter-spacing:-.02em;white-space:nowrap;text-align:center;color:var(--black);font-size:var(--mega,14.2vw);will-change:transform}
+.hero-grid{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);grid-template-areas:"copy card" "note card";grid-template-rows:auto 1fr;column-gap:56px;row-gap:28px;padding-top:44px;padding-bottom:36px}
+.hero-l{grid-area:copy;display:flex;flex-direction:column;gap:22px;max-width:520px}
+.hero-note{grid-area:note;align-self:end;display:flex;flex-direction:column;gap:6px;max-width:520px;font-size:14px;color:#333}
+.hero-note a{color:var(--black)}
+.hero-note .where{font-size:11px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;color:var(--grey)}
+.hero-note .where a{color:var(--black)}
+
+/* The dates line */
+.dates{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;font-size:14px;line-height:1.55;color:#333}
+.dates b{flex:none;display:inline-block;background:var(--black);color:#fff;padding:3px 10px 2px;font-size:10.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.16em;font-weight:500}
+.dates strong{font-weight:600;color:var(--black)}
+.dates > span{flex:1 1 260px}
+
+.hero h1 .serif{display:block;font-size:clamp(38px,4vw,58px);line-height:1}
+
+/* Choice card: free demo for weight loss */
+.choice{grid-area:card;align-self:start;background:#fff;box-shadow:0 40px 80px -40px rgba(0,0,0,.45);display:flex;flex-direction:column}
+.choice-head{display:flex;flex-direction:column;gap:6px;padding:18px 22px 16px}
+.choice-head .title{font-size:24px;font-stretch:125%;text-transform:uppercase;letter-spacing:.04em;font-weight:500;line-height:1}
+.hc-stage{position:relative;background:var(--black)}
+.hc-track{list-style:none;margin:0;padding:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:3/2;outline:0}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-track:focus-visible{box-shadow:inset 0 0 0 2px #fff}
+.hc-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;overflow:hidden}
+.hc-slide img{width:100%;height:100%;object-fit:contain}
+.hc-btn{position:absolute;bottom:12px;width:40px;height:40px;border:0;background:#fff;color:var(--black);display:grid;place-items:center;cursor:pointer;transition:background-color .25s,color .25s}
+.hc-btn:hover{background:var(--black);color:#fff;box-shadow:inset 0 0 0 1px #fff}
+.hc-btn svg{width:16px;height:16px}
+.hc-btn.prev{right:58px}.hc-btn.next{right:12px}
+.hc-cap{display:flex;gap:14px;align-items:baseline;padding:12px 22px 0;font-size:12.5px;line-height:1.5;color:var(--grey)}
+.hc-count{flex:none;font-size:11px;font-stretch:125%;letter-spacing:.14em;color:var(--black)}
+.choice-link{display:flex;flex-direction:column;gap:16px;padding:16px 22px 22px;text-decoration:none}
+.choice-link p{font-size:15px;line-height:1.55;color:#333}
+.choice-link .go{width:100%;justify-content:space-between}
+.choice-link:hover .go{background:#333}
+.choice-link:hover .go svg{transform:translateX(4px)}
+
+/* Giant word */
+.mega{position:relative;margin:0;padding:0 18px max(14px,2vh);clip-path:inset(-30% -2% 0 -2%);font-family:var(--wide);font-stretch:125%;font-weight:600;text-transform:uppercase;line-height:.8;letter-spacing:-.02em;white-space:nowrap;text-align:center;color:var(--black);font-size:var(--mega,14vw);will-change:transform}
 .mega .ch{display:inline-block}
 .motion .mega .ch{transform:translateY(105%);animation:rise 1.2s var(--ease) forwards}
 @keyframes rise{to{transform:none}}
-@media (max-width:900px){
-  .hero{height:auto;min-height:0;max-height:none;padding-bottom:calc(16vw + 18px)}
-  .hero-top{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px;padding-bottom:78px}
-  .hero-l{padding-top:0;max-width:none}
-  .hero-r{justify-content:center;padding-top:0}
-  .pcard{width:100%;max-width:600px}
-  .pcard-cap{bottom:auto;top:calc(100% + 14px);flex-direction:column;gap:2px}
+
+@media (max-width:960px){
+  .hero{min-height:0}
+  .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "card" "note";grid-template-rows:auto;padding-top:30px;row-gap:30px}
+  .hero-l{max-width:none}
+  .choice{width:100%;max-width:560px}
+  .hero-note{align-self:start}
+}
+@media (max-width:520px){
+  .choice-head .title{font-size:21px}
+  .choice-head,.hc-cap,.choice-link{padding-left:18px;padding-right:18px}
+  .choice-link .go{padding:0 18px;letter-spacing:.1em}
+  .nav .btn{white-space:nowrap;padding:0 12px;font-size:10.5px;letter-spacing:.1em}
+  .mbar .btn{padding:0 14px;font-size:11px;letter-spacing:.08em;white-space:nowrap}
+}
+@media (max-width:380px){.choice-link .go{letter-spacing:.06em;font-size:11.5px}}
+/* Short laptop screens: keep the giant word in the first view */
+@media (min-width:961px) and (max-height:860px){
+  .hero-grid{padding-top:26px;padding-bottom:18px;row-gap:20px}
+  .hc-track{aspect-ratio:2/1}
+  .choice-head{padding-top:14px;padding-bottom:12px}
+  .choice-link{padding-top:12px;padding-bottom:18px;gap:12px}
+  .choice-link p{font-size:14px}
 }
 
-/* Facts strip */
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
-.fact{padding:30px 28px 28px;border-right:1px solid var(--line)}
-.fact:last-child{border-right:0}
-.fact b{display:block;font-stretch:125%;font-weight:500;font-size:clamp(34px,3.4vw,52px);line-height:1;letter-spacing:-.02em}
-.fact span{display:block;margin-top:10px}
-@media (max-width:820px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}.fact{padding:24px 20px}}
-
-/* ========== Split sections (A.N Other) ========== */
-.splits{position:relative}
+/* ========== Split sections ========== */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:100vh;border-top:1px solid var(--line)}
-.split-l{display:flex;flex-direction:column;justify-content:center;gap:26px;padding:90px 64px 90px max(28px,calc((100vw - 1360px)/2 + 28px))}
+.split-l{display:flex;flex-direction:column;justify-content:center;gap:26px;padding:96px 64px 96px max(28px,calc((100vw - 1360px)/2 + 28px))}
 .split-r{position:relative;overflow:hidden;min-height:560px}
 .panel{position:absolute;inset:0}
 .panel.grey{background:var(--soft)}
 .panel.black{background:var(--black)}
-.panel img.big{position:absolute;left:50%;top:44%;width:78%;max-height:70%;object-fit:contain;transform:translate(-50%,-50%);border:7px solid #fff;box-shadow:0 40px 80px -36px rgba(0,0,0,.5)}
+.panel img.big{position:absolute;left:50%;top:44%;width:78%;max-height:68%;object-fit:contain;transform:translate(-50%,-50%);border:7px solid #fff;box-shadow:0 40px 80px -36px rgba(0,0,0,.5);z-index:1}
 .motion .split-r .panel{clip-path:inset(12% 0 12% 0);transition:clip-path 1.4s var(--ease)}
-.motion .split-r.in .panel{clip-path:inset(0 0 0 0)}
-.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:480px}
-.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 10px;padding:16px 0;border-bottom:1px solid var(--line);transition:opacity .5s}
-.steps .n{font-size:11px;font-stretch:125%;letter-spacing:.14em;color:var(--grey2);padding-top:3px}
-.steps b{font-stretch:125%;font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-.steps p{grid-column:2;font-size:14.5px;color:var(--grey)}
-.motion .steps.live li{opacity:.35}
-.motion .steps.live li.on{opacity:1}
-.list-inline{display:flex;flex-wrap:wrap;gap:8px 20px}
-.list-inline li{list-style:none}
-.waves{position:absolute;left:0;right:0;top:50%;height:240px;transform:translateY(-50%);width:100%}
-.wave-labels{position:absolute;left:28px;right:28px;top:26px;z-index:2;display:flex;justify-content:space-between;color:#9a9a9a}
-.wave-labels > span::before{content:"";display:inline-block;width:18px;height:2px;vertical-align:middle;margin-right:8px;background:#ff4d4d}
-.wave-labels > span.ir::before{background:#a3222a}
-.stage .silk{position:absolute;inset:0;width:100%;height:100%;display:block}
-.stage .pr{position:absolute;left:50%;top:45%;max-width:80%;max-height:62%;width:auto;height:auto;border:7px solid #fff;box-shadow:0 40px 80px -34px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,-50%) scale(.97);transition:opacity .9s var(--ease),transform 1.4s var(--ease);pointer-events:none}
-.stage .pr.on{opacity:1;transform:translate(-50%,-50%)}
-.st-tabs{position:absolute;top:24px;left:24px;display:flex;gap:18px;z-index:3}
-.st-tabs button{border:0;background:transparent;padding:0 0 4px;cursor:pointer;color:var(--grey);border-bottom:1px solid transparent}
-.st-tabs button[aria-pressed="true"]{color:var(--black);border-bottom-color:var(--black)}
-.st-foot{position:absolute;left:24px;right:24px;top:20px;justify-content:flex-end;display:flex;align-items:center;gap:16px;z-index:3}
-.st-count{font-stretch:125%;font-size:12px;letter-spacing:.14em}
-.st-nav{display:flex;gap:6px}
-.st-nav button{width:42px;height:42px;border:0;background:#fff;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;display:grid;place-items:center}
-.st-nav button:hover{background:var(--black);color:#fff}
-.st-nav svg{width:16px;height:16px}
-.st-bar{position:absolute;left:0;right:0;top:0;height:2px;background:rgba(0,0,0,.08);z-index:3}
-.st-bar i{display:block;height:100%;background:var(--black);transform:scaleX(0);transform-origin:0 50%}
-@media (max-width:900px){
-  .split{grid-template-columns:minmax(0,1fr);min-height:0}
-  .split-l{padding:64px 28px 40px}
-  .split-r{min-height:0;aspect-ratio:4/4.4}
-  .split.rev .split-r{order:2}
-  .waves{height:180px}
-}
-/* Giant word in each panel. On laptops it stays put in the window while the panel slides past (A.N Other). */
+.motion .split-r.visible .panel{clip-path:inset(0 0 0 0)}
 .pword{position:absolute;left:0;right:0;bottom:22px;z-index:0;margin:0;text-align:center;font-stretch:125%;font-weight:600;text-transform:uppercase;line-height:.8;letter-spacing:.02em;white-space:nowrap;pointer-events:none;color:var(--black);font-size:var(--pw,16vw)}
 .panel.black .pword{color:#fff}
 .pword.win{top:0;bottom:auto;will-change:transform}
-.panel img.big,.stage .pr,.waves{z-index:1}
 
-/* ========== Booking (Organic Care heading) ========== */
-.book{padding:130px 0 120px;text-align:center;border-top:1px solid var(--line)}
-.book .duo{align-items:center}
-.book .txt{margin:22px auto 0;text-align:center}
-.days{list-style:none;margin:34px auto 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:620px;border:1px solid var(--line)}
-.day{position:relative;padding:14px 4px 12px;border-right:1px solid var(--line)}
-.day:last-child{border-right:0}
-.day .dw{display:block;font-size:10.5px;font-stretch:125%;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
-.day .dn{display:block;font-stretch:125%;font-weight:500;font-size:30px;line-height:1.1}
-.day .full{display:none;position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);background:var(--black);color:#fff;font-size:9.5px;font-stretch:125%;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;white-space:nowrap}
-.day.is-full{color:var(--grey2)}
-.day.is-full .dn{text-decoration:line-through;text-decoration-thickness:2px}
-.day.is-full .full{display:block}
-.hours{margin-top:16px;color:var(--grey);font-size:14px}
-.hours b{color:var(--black);font-weight:500}
+.section-head{display:flex;flex-direction:column;gap:20px}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:500px;counter-reset:st}
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 10px;padding:16px 0;border-bottom:1px solid var(--line);counter-increment:st;transition:opacity .5s}
+.step::before{content:"0" counter(st);font-size:11px;font-stretch:125%;letter-spacing:.14em;color:var(--grey2);padding-top:3px}
+.step h3{font-stretch:125%;font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.08em;line-height:1.5}
+.step p{grid-column:2;font-size:14.5px;color:var(--grey)}
+.motion .steps.live .step{opacity:.35}
+.motion .steps.live .step.on{opacity:1}
+.extra{font-size:14px;color:var(--grey);max-width:500px}
+
+.about .split-l{gap:28px}
+.statement{font-size:clamp(22px,2.1vw,30px);line-height:1.35;letter-spacing:-.005em;max-width:560px}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:8px 14px 7px;box-shadow:inset 0 0 0 1px var(--black);font-size:11px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;font-weight:500}
+.split.about{min-height:86vh}
+.waves{position:absolute;left:0;right:0;top:50%;height:240px;transform:translateY(-50%);width:100%;z-index:1}
+.wave-labels{position:absolute;left:28px;right:28px;top:26px;z-index:2;display:flex;justify-content:space-between;color:#9a9a9a}
+.wave-labels > span::before{content:"";display:inline-block;width:18px;height:2px;vertical-align:middle;margin-right:8px;background:#ff4d4d}
+.wave-labels > span.ir::before{background:#a3222a}
+
+@media (max-width:900px){
+  .split,.split.about{grid-template-columns:minmax(0,1fr);min-height:0}
+  .split-l{padding:64px 28px 40px}
+  .split-r{min-height:0;aspect-ratio:4/4.2}
+  .waves{height:180px}
+}
+
+/* ========== Booking ========== */
+.book{padding:120px 0 120px;text-align:center;border-top:1px solid var(--line)}
+.cal-head{display:flex;flex-direction:column;align-items:center;gap:20px}
+.cal-head .duo,.cal-head .duo > span{align-items:center}
+.cal-head p{font-size:16px;color:#333}
 .cal-card{max-width:980px;margin:40px auto 0;border:1px solid var(--line);background:#fff;min-height:420px;padding:10px;text-align:left}
 .cal-inline{width:100%;min-height:560px}
 .cal-fallback{padding:48px 26px;text-align:center}
-.cal-fallback p{font-size:17px;max-width:460px;margin:0 auto}
-.cal-fallback .hero-cta{justify-content:center;margin-top:22px}
-.book-note{margin-top:20px;font-size:14px;color:var(--grey)}
-.book-note a{color:var(--black)}
+.cal-fallback p{font-size:17px;max-width:480px;margin:0 auto}
+.cal-fallback .cta-row{justify-content:center;margin-top:22px}
 
 /* ========== FAQ ========== */
 .faq{padding:120px 0;border-top:1px solid var(--line)}
 .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}
 .faq-l{position:sticky;top:calc(var(--navh) + 30px);align-self:start}
-.faq-l .txt{margin-top:22px}
 details{border-bottom:1px solid var(--line)}
 details:first-of-type{border-top:1px solid var(--line)}
 summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-size:17px;font-weight:500;letter-spacing:.005em}
@@ -251,231 +260,202 @@ details p{padding:0 0 24px;color:var(--grey);font-size:15.5px;max-width:620px}
 details p a{color:var(--black)}
 @media (max-width:900px){.faq-grid{grid-template-columns:minmax(0,1fr);gap:28px}.faq-l{position:static}.faq,.book{padding:90px 0}}
 
-/* ========== Talk (black) + footer ========== */
+/* ========== Talk + footer ========== */
 .talk{background:var(--black);color:#fff;padding:110px 0;text-align:center}
-.talk .duo{align-items:center}
-.talk .txt{color:#bdbdbd;margin:22px auto 0;text-align:center}
-.talk .hero-cta{justify-content:center;margin-top:30px}
+.talk .duo,.talk .duo > span{align-items:center}
+.talk p{color:#bdbdbd;margin:22px auto 0;max-width:460px}
+.talk .cta-row{justify-content:center;margin-top:30px}
 .talk .btn{background:#fff;color:var(--black)}
 .talk .btn:hover{background:#ddd}
 .talk .btn.ghost{background:transparent;color:#fff}
-footer{padding:0 0 120px;border-top:1px solid var(--line)}
+.talk .btn.ghost:hover{background:rgba(255,255,255,.08)}
+footer{padding:0 0 40px}
 .wordmark{overflow:hidden;text-align:center;padding:40px 0 10px}
 .wordmark span{display:inline-block;font-stretch:125%;font-weight:600;text-transform:uppercase;font-size:var(--wm,10vw);line-height:.86;letter-spacing:.12em;margin-right:-.12em;white-space:nowrap}
-.f-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 30px;padding-top:26px;border-top:1px solid var(--line);margin-top:30px}
-.f-row a{text-decoration:none;overflow-wrap:anywhere}
-.f-row a[href^="mailto"]{text-transform:none;letter-spacing:.04em}
-.f-row a:hover{text-decoration:underline}
-.fine{margin-top:20px;font-size:11px;line-height:1.6;color:var(--grey);max-width:980px}
-@media (min-width:821px){footer{padding-bottom:40px}}
+.info{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 30px;padding-top:26px;border-top:1px solid var(--line);margin-top:30px;font-size:11.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.14em;font-weight:500}
+.info a{text-decoration:none;overflow-wrap:anywhere}
+.info a:hover{text-decoration:underline}
+.info a[href^="mailto"]{text-transform:none;letter-spacing:.04em}
+.fine{margin-top:18px;font-size:11px;line-height:1.6;color:var(--grey);max-width:980px}
+@media (max-width:820px){footer{padding-bottom:110px}}
 
 /* Phone bar */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:0;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .45s var(--ease)}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .45s var(--ease)}
 .mbar.show{transform:none}
 .mbar .btn{flex:1}
-.mbar .call{display:grid;place-items:center;width:52px;flex:none;margin-left:8px;box-shadow:inset 0 0 0 1px var(--black);color:var(--black)}
-.mbar .call svg{width:18px;height:18px}
+.mbar .call{flex:none;margin-left:8px;padding:0 16px;gap:8px;background:#fff;color:var(--black);box-shadow:inset 0 0 0 1px var(--black)}
+.mbar .call:hover{background:#f2f2f2}
+.mbar .call svg{width:16px;height:16px}
 @media (max-width:820px){.mbar{display:flex}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn,.btn svg{transition:none}
+}
 </style>
 </head>
 <body>
-
-<div class="annc"><span class="en">Free body demo days · Nov 10 to 14 · <span class="hide-s">Hablamos español · </span><a href="tel:+13059097069" data-track="call">(305) 909-7069</a></span><span class="es">Días de demo corporal gratis · 10 al 14 de nov. · <a href="tel:+13059097069" data-track="call">(305) 909-7069</a></span></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Awakened Skin + Body"><img src="/assets/logo-espresso.png" alt="Awakened Skin + Body" width="640" height="208"></a>
     <div class="nav-r">
-      <nav class="nav-links" aria-label="Sections">
-        <a href="#demo"><span class="en">The demo</span><span class="es">La demo</span></a>
-        <a href="#invisa-red">Invisa-RED</a>
-        <a href="#results"><span class="en">Results</span><span class="es">Resultados</span></a>
-        <a href="#faq"><span class="en">Questions</span><span class="es">Preguntas</span></a>
-      </nav>
+      <a class="nav-phone" href="tel:+13059097069" data-track="call">(305) 909-7069</a>
       <div class="lang" role="group" aria-label="Language / Idioma">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn" href="#pick-time" data-track="nav_book"><span class="en">Book free</span><span class="es">Reservar</span></a>
+      <a class="btn" href="#pick-time" data-track="nav_book"><span class="en">Book free</span><span class="es">Reserva gratis</span></a>
     </div>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-title">
+  <!-- Hero: the free body demo -->
+  <div class="hero" id="demos">
     <canvas class="silk" aria-hidden="true"></canvas>
-    <div class="wrap hero-top">
+    <div class="wrap hero-grid">
       <div class="hero-l">
-        <p class="tiny rv"><span class="en">Free body demo · Nov 10 to 14</span><span class="es">Demo corporal gratis · 10 al 14 de nov.</span></p>
-        <h1 id="hero-title" class="rv d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="sr"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
-        <p class="txt rv d2"><span class="en">A free 40-minute body demo at our studio in North Miami. Meet our herbalist, try one Invisa-RED session and see your own numbers. You don’t have to buy a thing.</span><span class="es">Una demo corporal gratis de 40 minutos en nuestro estudio en North Miami. Habla con herbalista, prueba una sesión de Invisa-RED y mira tus propios números. No tienes que comprar nada.</span></p>
-        <div class="hero-cta rv d3">
-          <a class="btn" href="#pick-time" data-track="hero_book"><span class="en">Pick a time</span><span class="es">Elige tu horario</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="ul" href="tel:+13059097069" data-track="call"><span class="en">Call (305) 909-7069</span><span class="es">Llama al (305) 909-7069</span></a>
-        </div>
+        <p class="dates reveal" id="demo-dates" role="status">
+          <b><span class="en">Nov 10 to 14</span><span class="es">10 al 14 de nov.</span></b>
+          <span class="en"><strong class="nw">Tuesday, Nov 10</strong> from <span class="nw">1 PM to 7 PM</span>, and <strong class="nw">Wednesday to Saturday</strong> from <span class="nw">9 AM to 7 PM</span>.</span>
+          <span class="es"><strong class="nw">Martes 10</strong> <span class="nw">de 1 a 7 p. m.</span> y <strong class="nw">de miércoles a sábado</strong> <span class="nw">de 9 a. m. a 7 p. m.</span></span>
+        </p>
+        <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="sr"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
+        <p class="txt reveal d2"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
       </div>
-      <div class="hero-r rv d2" aria-hidden="true">
-        <div class="pcard" data-pcard>
-          <img class="on" src="/assets/results/c/wl-01.jpg" width="773" height="385" loading="eager" decoding="async" alt="">
-          <img  src="/assets/results/c/wl-02.jpg" width="640" height="473" loading="eager" decoding="async" alt="">
-          <img  src="/assets/results/c/wl-05.jpg" width="625" height="448" loading="lazy" decoding="async" alt="">
-          <img  src="/assets/results/c/wl-03.jpg" width="706" height="421" loading="lazy" decoding="async" alt="">
-          <img  src="/assets/results/c/wl-06.jpg" width="559" height="462" loading="lazy" decoding="async" alt="">
-          <div class="pcard-cap"><span class="en">Real client · Invisa-RED Elite</span><span class="es">Cliente real · Invisa-RED Elite</span><span class="en">Results vary</span><span class="es">Los resultados varían</span></div>
+
+      <div class="choice reveal d2">
+        <div class="choice-head">
+          <span class="tiny muted"><span class="en">Free demo for</span><span class="es">Demo gratis para</span></span>
+          <span class="title"><span class="en">Weight loss</span><span class="es">Bajar de peso</span></span>
         </div>
+        <div class="hc" data-results="weight_loss" role="region" aria-roledescription="carousel" aria-label="Before and after photos, weight loss demo" data-aria-en="Before and after photos, weight loss demo" data-aria-es="Fotos de antes y después, demo para bajar de peso">
+          <div class="hc-stage">
+            <ul class="hc-track" tabindex="0" aria-label="Swipe or use the arrow keys." data-aria-en="Swipe or use the arrow keys." data-aria-es="Desliza o usa las flechas del teclado.">
+              <li class="hc-slide"><img src="/assets/results/c/wl-01.jpg" width="773" height="385" loading="eager" fetchpriority="high" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+              <li class="hc-slide"><img src="/assets/results/c/wl-02.jpg" width="640" height="473" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+              <li class="hc-slide"><img src="/assets/results/c/wl-03.jpg" width="706" height="421" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite"></li>
+              <li class="hc-slide"><img src="/assets/results/c/wl-04.jpg" width="748" height="318" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-en="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-es="Fotos de antes y después de una persona real, programa de Invisa-RED para estrías"></li>
+              <li class="hc-slide"><img src="/assets/results/c/wl-05.jpg" width="625" height="448" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado"></li>
+              <li class="hc-slide"><img src="/assets/results/c/wl-06.jpg" width="559" height="462" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado"></li>
+            </ul>
+            <button type="button" class="hc-btn prev" data-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="hc-btn next" data-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+          <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
+        </div>
+        <a class="choice-link" href="#pick-time" data-track="choose_weight_loss">
+          <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About 40 minutes.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Unos 40 minutos.</span></p>
+          <span class="btn go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+      <div class="hero-note reveal d3">
+        <p><span class="en">Rather talk first? Call or text <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>. Hablamos español.</span>
+        <span class="es">¿Prefieres hablar primero? Llama o escribe al <a href="tel:+13059097069" data-track="call" class="nw">(305) 909-7069</a>.</span></p>
+        <p class="where"><span class="en">2106 NE 123rd Street, Miami · Free parking · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Get directions</a></span><span class="es">2106 NE 123rd Street, Miami · Estacionamiento gratis · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Cómo llegar</a></span></p>
       </div>
     </div>
     <p class="mega" aria-hidden="true"><span class="en" data-mega>Try it free</span><span class="es" data-mega>Pruébalo gratis</span></p>
-  </section>
-
-  <!-- Facts -->
-  <div class="facts" role="list">
-    <div class="fact rv" role="listitem"><b>40 min</b><span class="tiny muted"><span class="en">The whole visit</span><span class="es">Toda la visita</span></span></div>
-    <div class="fact rv d1" role="listitem"><b>$0</b><span class="tiny muted"><span class="en">No purchase needed</span><span class="es">Sin compromiso</span></span></div>
-    <div class="fact rv d2" role="listitem"><b>2x</b><span class="tiny muted"><span class="en">Measured, before and after</span><span class="es">Medidas, antes y después</span></span></div>
-    <div class="fact rv d3" role="listitem"><b>0</b><span class="tiny muted"><span class="en">Needles, no downtime</span><span class="es">Agujas, sin recuperación</span></span></div>
   </div>
 
-  <!-- Splits with the giant word that stays -->
-  <div class="splits">
-
-    <section class="split" id="demo" aria-labelledby="demo-title">
+  <!-- Weight loss demo -->
+  <section id="weight-loss" aria-labelledby="wl-title">
+    <div class="split">
       <div class="split-l">
-        <p class="tiny muted rv"><span class="en">01 · The demo</span><span class="es">01 · La demo</span></p>
-        <h2 id="demo-title" class="duo rv d1"><span class="caps"><span class="en">Forty minutes</span><span class="es">Cuarenta minutos</span></span><span class="serif"><span class="en">one visit</span><span class="es">una visita</span></span></h2>
-        <ol class="steps rv d2" data-steps>
-          <li><span class="n">01</span><b><span class="en">Meet our herbalist</span><span class="es">Consulta con herbalista</span></b><p><span class="en">Tell us what you want to change. We talk about your goals and your routine.</span><span class="es">Cuéntanos qué quieres cambiar. Hablamos de tus metas y tu rutina.</span></p></li>
-          <li><span class="n">02</span><b><span class="en">Before measurements</span><span class="es">Medidas de antes</span></b><p><span class="en">We measure your waist, hips and thighs.</span><span class="es">Medimos tu cintura, caderas y muslos.</span></p></li>
-          <li><span class="n">03</span><b><span class="en">Your Invisa-RED session</span><span class="es">Tu sesión de Invisa-RED</span></b><p><span class="en">You lie back and relax while the laser works. No needles, no downtime.</span><span class="es">Te recuestas y te relajas mientras trabaja el láser. Sin agujas y sin tiempo de recuperación.</span></p></li>
-          <li><span class="n">04</span><b><span class="en">After measurements</span><span class="es">Medidas de después</span></b><p><span class="en">We measure again, so you see your own numbers.</span><span class="es">Volvemos a medir, para que veas tus propios números.</span></p></li>
-          <li><span class="n">05</span><b><span class="en">Drainage on the vibration plate</span><span class="es">Drenaje en la plataforma vibratoria</span></b><p><span class="en">The last step before you head out.</span><span class="es">El último paso antes de irte.</span></p></li>
+        <div class="section-head reveal">
+          <p class="tiny muted"><span class="en">Free demo</span><span class="es">Demo gratis</span></p>
+          <h2 id="wl-title" class="duo"><span class="en"><span class="caps">Your weight loss</span> <span class="serif">demo</span></span><span class="es"><span class="caps">Tu demo</span> <span class="serif">para bajar de peso</span></span></h2>
+          <p class="txt"><span class="en">About 40 minutes, here in our studio. Here's what happens:</span><span class="es">Unos 40 minutos, aquí en nuestro estudio. Así es la visita:</span></p>
+        </div>
+        <ol class="steps reveal d1" data-steps>
+          <li class="step">
+            <h3><span class="en">Meet our herbalist</span><span class="es">Consulta con herbalista</span></h3>
+            <p><span class="en">Tell us what you want to change. We talk about your goals and your routine.</span><span class="es">Cuéntanos qué quieres cambiar. Hablamos de tus metas y tu rutina.</span></p>
+          </li>
+          <li class="step">
+            <h3><span class="en">Before measurements</span><span class="es">Medidas de antes</span></h3>
+            <p><span class="en">We measure your waist, hips and thighs before your session.</span><span class="es">Medimos tu cintura, caderas y muslos antes de la sesión.</span></p>
+          </li>
+          <li class="step">
+            <h3><span class="en">Your Invisa-RED session</span><span class="es">Tu sesión de Invisa-RED</span></h3>
+            <p><span class="en">You lie back and relax while the laser works. No needles, no downtime.</span><span class="es">Te recuestas y te relajas mientras trabaja el láser. Sin agujas y sin tiempo de recuperación.</span></p>
+          </li>
+          <li class="step">
+            <h3><span class="en">After measurements</span><span class="es">Medidas de después</span></h3>
+            <p><span class="en">We measure again, so you see your own numbers.</span><span class="es">Volvemos a medir, para que veas tus propios números.</span></p>
+          </li>
+          <li class="step">
+            <h3><span class="en">Drainage on the vibration plate</span><span class="es">Drenaje en la plataforma vibratoria</span></h3>
+            <p><span class="en">The last step before you head out.</span><span class="es">El último paso antes de irte.</span></p>
+          </li>
         </ol>
-        <p class="txt muted rv d3" style="font-size:14px"><span class="en">Depending on your goals, you may also qualify for a cleanse protocol, a foot detox and more. We’ll go over it at your visit.</span><span class="es">Según tus metas, también podrías calificar para un protocolo de limpieza, un detox de pies y más. Lo vemos en tu visita.</span></p>
-        <a class="ul rv d4" href="#pick-time" data-track="demo_book"><span class="en">Pick a time</span><span class="es">Elige tu horario</span></a>
+        <p class="extra reveal d2"><span class="en">Depending on your goals, you may also qualify for a cleanse protocol, a foot detox and more. We'll go over it at your visit.</span><span class="es">Según tus metas, también podrías calificar para un protocolo de limpieza, un detox de pies y más. Lo vemos en tu visita.</span></p>
       </div>
-      <div class="split-r" data-clip>
+      <div class="split-r reveal">
         <div class="panel grey">
           <p class="pword" aria-hidden="true" data-fit><span class="en">Demo</span><span class="es">Demo</span></p>
           <img class="big" src="/assets/results/c/wl-05.jpg" width="625" height="448" loading="lazy" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado">
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="split" id="invisa-red" aria-labelledby="light-title">
+    <div class="split about">
       <div class="split-l">
-        <p class="tiny muted rv"><span class="en">02 · Invisa-RED Elite</span><span class="es">02 · Invisa-RED Elite</span></p>
-        <h2 id="light-title" class="duo rv d1"><span class="caps"><span class="en">Light does</span><span class="es">La luz hace</span></span><span class="serif"><span class="en">the work</span><span class="es">el trabajo</span></span></h2>
-        <p class="txt rv d2"><span class="en">Invisa-RED Elite uses red and infrared laser light. We use it for circumference reduction of the waist, hips and thighs. Invisa-RED is an FDA-cleared laser.</span><span class="es">Invisa-RED Elite usa luz láser roja e infrarroja. La usamos para la reducción de circunferencia en la cintura, las caderas y los muslos. Invisa-RED es un láser autorizado por la FDA.</span></p>
-        <ul class="list-inline tiny rv d3" style="padding:0;margin:0">
+        <p class="tiny muted reveal">Invisa-RED Elite</p>
+        <p class="statement reveal d1"><span class="en">Invisa-RED Elite uses red and infrared laser light. We use it for circumference reduction of the waist, hips and thighs. Invisa-RED is an FDA-cleared laser.</span><span class="es">Invisa-RED Elite usa luz láser roja e infrarroja. La usamos para la reducción de circunferencia en la cintura, las caderas y los muslos. Invisa-RED es un láser autorizado por la FDA.</span></p>
+        <ul class="chips reveal d2">
           <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
           <li><span class="en">No downtime</span><span class="es">Sin tiempo de recuperación</span></li>
           <li><span class="en">Wear something comfortable</span><span class="es">Ven con ropa cómoda</span></li>
         </ul>
       </div>
-      <div class="split-r" data-clip>
+      <div class="split-r reveal">
         <div class="panel black">
-          <p class="pword" aria-hidden="true" data-fit><span class="en">Light</span><span class="es">Luz</span></p>
           <canvas class="waves" aria-hidden="true"></canvas>
           <div class="wave-labels tiny" aria-hidden="true"><span><span class="en">Red light</span><span class="es">Luz roja</span></span><span class="ir"><span class="en">Infrared light</span><span class="es">Luz infrarroja</span></span></div>
+          <p class="pword" aria-hidden="true" data-fit><span class="en">Light</span><span class="es">Luz</span></p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="split" id="results" aria-labelledby="res-title">
-      <div class="split-l">
-        <p class="tiny muted rv"><span class="en">03 · Results</span><span class="es">03 · Resultados</span></p>
-        <h2 id="res-title" class="duo rv d1"><span class="caps"><span class="en">Real clients</span><span class="es">Clientes reales</span></span><span class="serif"><span class="en">real photos</span><span class="es">fotos reales</span></span></h2>
-        <p class="txt rv d2"><span class="en">Every photo is one of our own clients, taken in our studio and shared with their consent. No filters, no retouching. Results vary.</span><span class="es">Cada foto es de uno de nuestros clientes, tomada en nuestro estudio y compartida con su permiso. Sin filtros ni retoques. Los resultados varían.</span></p>
-        <p class="txt muted rv d3" data-st-cap="body" style="font-size:13.5px"><span class="en">Body: Invisa-RED Elite clients.</span><span class="es">Cuerpo: clientes de Invisa-RED Elite.</span></p>
-        <p class="txt muted" data-st-cap="face" hidden style="font-size:13.5px"><span class="en">Face: plasma and Fibroblast clients. This round’s free demo is for the body.</span><span class="es">Rostro: clientes de plasma y Fibroblast. La demo gratis de esta vez es para el cuerpo.</span></p>
-        <a class="ul rv d4" href="#pick-time" data-track="results_book"><span class="en">Book your free demo</span><span class="es">Reserva tu demo gratis</span></a>
-      </div>
-      <div class="split-r" data-clip>
-        <div class="panel stage" data-stage role="region" aria-roledescription="carousel" aria-label="Before and after photos" data-aria-en="Before and after photos" data-aria-es="Fotos de antes y después">
-          <canvas class="silk" aria-hidden="true"></canvas>
-          <p class="pword" aria-hidden="true" data-fit><span class="en">Real</span><span class="es">Real</span></p>
-          <div class="prints" tabindex="0">
-            <img class="pr on" data-set="body" src="/assets/results/c/wl-01.jpg" width="773" height="385" loading="eager" fetchpriority="high" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite">
-            <img class="pr" data-set="body" src="/assets/results/c/wl-02.jpg" width="640" height="473" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, vista de lado">
-            <img class="pr" data-set="body" src="/assets/results/c/wl-05.jpg" width="625" height="448" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado">
-            <img class="pr" data-set="body" src="/assets/results/c/wl-03.jpg" width="706" height="421" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite" data-alt-en="Before and after photos of a real person, Invisa-RED Elite" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite">
-            <img class="pr" data-set="body" src="/assets/results/c/wl-06.jpg" width="559" height="462" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-en="Before and after photos of a real person, Invisa-RED Elite body contouring, side view" data-alt-es="Fotos de antes y después de una persona real, Invisa-RED Elite, contorno corporal, vista de lado">
-            <img class="pr" data-set="body" src="/assets/results/c/wl-04.jpg" width="748" height="318" loading="lazy" decoding="async" alt="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-en="Before and after photos of a real person, Invisa-RED program for stretch marks" data-alt-es="Fotos de antes y después de una persona real, programa de Invisa-RED para estrías">
-            <img class="pr" data-set="face" src="/assets/results/c/face-04.jpg" width="713" height="547" loading="lazy" decoding="async" alt="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-en="Before and after photos of a real person, Plasma Current mini lift, no downtime" data-alt-es="Fotos de antes y después de una persona real, mini lift con Plasma Current, sin tiempo de recuperación">
-            <img class="pr" data-set="face" src="/assets/results/c/face-02.jpg" width="763" height="577" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-en="Before and after photos of a real person, Fibroblast full face, fully healed" data-alt-es="Fotos de antes y después de una persona real, rostro completo con Fibroblast, ya sanado">
-            <img class="pr" data-set="face" src="/assets/results/c/face-01.jpg" width="762" height="514" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck, three weeks later" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck, three weeks later" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma, tres semanas después">
-            <img class="pr" data-set="face" src="/assets/results/c/face-03.jpg" width="709" height="710" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-en="Before and after photos of a real person, Fusion Plasma full face and neck, one week apart" data-alt-es="Fotos de antes y después de una persona real, rostro completo y cuello con Fusion Plasma, con una semana de diferencia">
-            <img class="pr" data-set="face" src="/assets/results/c/face-05.jpg" width="671" height="746" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-en="Before and after photos of a real person, Fusion Plasma mini lift, eye area, two weeks later" data-alt-es="Fotos de antes y después de una persona real, mini lift con Fusion Plasma, zona de los ojos, dos semanas después">
-            <img class="pr" data-set="face" src="/assets/results/c/face-06.jpg" width="623" height="652" loading="lazy" decoding="async" alt="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-en="Before and after photos of a real person, Fusion Plasma face and neck, one month later" data-alt-es="Fotos de antes y después de una persona real, rostro y cuello con Fusion Plasma, un mes después">
-          </div>
-          <div class="st-tabs tiny" role="group" aria-label="Show results for" data-aria-en="Show results for" data-aria-es="Ver resultados de">
-            <button type="button" data-st-set="body" aria-pressed="true"><span class="en">Body</span><span class="es">Cuerpo</span></button>
-            <button type="button" data-st-set="face" aria-pressed="false"><span class="en">Face</span><span class="es">Rostro</span></button>
-          </div>
-          <div class="st-foot">
-            <span class="st-count" aria-hidden="true"><span data-st-n>01</span> / <span data-st-of>06</span></span>
-            <div class="st-nav">
-              <button type="button" data-st-dir="-1" aria-label="Previous photo" data-aria-en="Previous photo" data-aria-es="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-              <button type="button" data-st-dir="1" aria-label="Next photo" data-aria-en="Next photo" data-aria-es="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="book">
+      <div class="wrap">
+        <div class="cal-head reveal" id="pick-time">
+          <h3 class="duo"><span class="en"><span class="caps">Pick</span> <span class="serif">a time</span></span><span class="es"><span class="caps">Elige</span> <span class="serif">tu horario</span></span></h3>
+          <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
+        </div>
+        <div class="cal-card" data-cal-section="wl">
+          <div id="cal-wl-en" class="cal-inline en" hidden></div>
+          <div id="cal-wl-es" class="cal-inline es" hidden></div>
+          <div class="cal-fallback">
+            <p><span class="en">Online booking is almost ready. For now, call or text us at (305) 909-7069 and we'll hold a time for you.</span><span class="es">La reserva en línea ya casi está lista. Por ahora, llámanos o escríbenos al (305) 909-7069 y te apartamos un horario.</span></p>
+            <div class="cta-row">
+              <a class="btn" href="tel:+13059097069" data-track="call"><span class="en">Call us</span><span class="es">Llámanos</span></a>
+              <a class="btn ghost js-sms" href="sms:+13059097069" data-track="text" data-msg="wl"><span class="en">Text us</span><span class="es">Escríbenos</span></a>
             </div>
           </div>
-          <div class="st-bar" aria-hidden="true"><i></i></div>
         </div>
       </div>
-    </section>
-  </div>
-
-  <!-- Booking -->
-  <section class="book" aria-labelledby="pick-time">
-    <div class="wrap">
-      <p class="tiny muted rv"><span class="en">Nov 10 to 14 · Five days only</span><span class="es">10 al 14 de nov. · Solo cinco días</span></p>
-      <h2 id="pick-time" class="duo rv d1" style="margin-top:18px"><span class="caps"><span class="en">Pick</span><span class="es">Elige</span></span><span class="serif"><span class="en">your time</span><span class="es">tu horario</span></span></h2>
-      <p class="txt rv d2"><span class="en">Every visit is 40 minutes, one person at a time. You’ll get a confirmation right away.</span><span class="es">Cada visita dura 40 minutos, una persona a la vez. Te llega la confirmación al instante.</span></p>
-      <ul class="days rv d2" aria-label="Demo days" data-aria-en="Demo days" data-aria-es="Días de demo">
-        <li class="day" data-day="2026-11-10"><span class="dw"><span class="en">Tue</span><span class="es">Mar</span></span><span class="dn">10</span><span class="full"><span class="en">Full</span><span class="es">Agotado</span></span></li>
-        <li class="day" data-day="2026-11-11"><span class="dw"><span class="en">Wed</span><span class="es">Mié</span></span><span class="dn">11</span><span class="full"><span class="en">Full</span><span class="es">Agotado</span></span></li>
-        <li class="day" data-day="2026-11-12"><span class="dw"><span class="en">Thu</span><span class="es">Jue</span></span><span class="dn">12</span><span class="full"><span class="en">Full</span><span class="es">Agotado</span></span></li>
-        <li class="day" data-day="2026-11-13"><span class="dw"><span class="en">Fri</span><span class="es">Vie</span></span><span class="dn">13</span><span class="full"><span class="en">Full</span><span class="es">Agotado</span></span></li>
-        <li class="day" data-day="2026-11-14"><span class="dw"><span class="en">Sat</span><span class="es">Sáb</span></span><span class="dn">14</span><span class="full"><span class="en">Full</span><span class="es">Agotado</span></span></li>
-      </ul>
-      <p class="hours rv d3"><span class="en"><b>Tuesday</b> <span class="nw">1 PM to 7 PM</span> · <b class="nw">Wednesday to Saturday</b> <span class="nw">9 AM to 7 PM</span></span><span class="es"><b>Martes</b> <span class="nw">de 1 a 7 p. m.</span> · <b class="nw">Miércoles a sábado</b> <span class="nw">de 9 a. m. a 7 p. m.</span></span></p>
-      <div class="cal-card rv d3" data-cal-section="wl">
-        <div id="cal-wl-en" class="cal-inline en" hidden></div>
-        <div id="cal-wl-es" class="cal-inline es" hidden></div>
-        <div class="cal-fallback">
-          <p><span class="en">Call or text us at (305) 909-7069 and we’ll hold a time for you.</span><span class="es">Llámanos o escríbenos al (305) 909-7069 y te apartamos un horario.</span></p>
-          <div class="hero-cta">
-            <a class="btn" href="tel:+13059097069" data-track="call"><span class="en">Call us</span><span class="es">Llámanos</span></a>
-            <a class="ul js-sms" href="sms:+13059097069" data-track="text" data-msg="wl"><span class="en">Text us</span><span class="es">Escríbenos</span></a>
-          </div>
-        </div>
-      </div>
-      <p class="book-note"><span class="en">Plans change? Text us at <a href="sms:+13059097069" class="js-sms nw" data-track="text" data-msg="move">(305) 909-7069</a> and we’ll move you to another time.</span><span class="es">¿Cambió tu plan? Escríbenos al <a href="sms:+13059097069" class="js-sms nw" data-track="text" data-msg="move">(305) 909-7069</a> y te pasamos a otro horario.</span></p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq" id="faq" aria-labelledby="faq-title">
+  <section class="faq" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
-      <div class="faq-l">
-        <p class="tiny muted rv"><span class="en">Questions</span><span class="es">Preguntas</span></p>
-        <h2 id="faq-title" class="duo rv d1" style="margin-top:18px"><span class="caps"><span class="en">Good to</span><span class="es">Bueno</span></span><span class="serif"><span class="en">know</span><span class="es">saber</span></span></h2>
-        <p class="txt muted rv d2"><span class="en">Anything else? Call, text or WhatsApp us at (305) 909-7069.</span><span class="es">¿Algo más? Llámanos, escríbenos o mándanos un WhatsApp al (305) 909-7069.</span></p>
+      <div class="faq-l reveal">
+        <h2 id="faq-title" class="duo"><span class="en"><span class="caps">Questions people</span> <span class="serif">ask</span></span><span class="es"><span class="caps">Preguntas</span> <span class="serif">frecuentes</span></span></h2>
       </div>
-      <div class="rv d2">
+      <div class="reveal d1">
 <details>
           <summary><span class="en">Is it really free?</span><span class="es">¿De verdad es gratis?</span></summary>
-          <p><span class="en">Yes. The demo is free and you don’t have to buy anything. If you want to keep going, we’ll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis y no tienes que comprar nada. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
-        </details>
-        <details>
-          <summary><span class="en">How long does it take?</span><span class="es">¿Cuánto dura?</span></summary>
-          <p><span class="en">About 40 minutes, start to finish. Try to get here a few minutes early so we can start on time.</span><span class="es">Unos 40 minutos en total. Trata de llegar unos minutos antes para empezar a tiempo.</span></p>
+          <p><span class="en">Yes. The demo is free and you don't have to buy anything. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis y no tienes que comprar nada. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
         </details>
         <details>
           <summary><span class="en">How much weight will I lose?</span><span class="es">¿Cuánto peso voy a bajar?</span></summary>
-          <p><span class="en">We can’t promise a number, and nobody honest can. Results vary from person to person. That’s why we measure you before and after your Invisa-RED session, so you see your own numbers.</span><span class="es">No podemos prometerte un número, y nadie honesto puede. Los resultados varían de persona a persona. Por eso te medimos antes y después de tu sesión de Invisa-RED, para que veas tus propios números.</span></p>
+          <p><span class="en">We can't promise a number, and nobody honest can. Results vary from person to person. That's why we measure you before and after your Invisa-RED session, so you see your own numbers.</span><span class="es">No podemos prometerte un número, y nadie honesto puede. Los resultados varían de persona a persona. Por eso te medimos antes y después de tu sesión de Invisa-RED, para que veas tus propios números.</span></p>
         </details>
         <details>
           <summary><span class="en">Is Invisa-RED FDA cleared?</span><span class="es">¿Invisa-RED está autorizado por la FDA?</span></summary>
@@ -484,10 +464,6 @@ footer{padding:0 0 120px;border-top:1px solid var(--line)}
         <details>
           <summary><span class="en">What should I wear?</span><span class="es">¿Qué me pongo?</span></summary>
           <p><span class="en">Something comfortable, and skip lotion, oil and self-tanner on your waist, hips and thighs that day.</span><span class="es">Ropa cómoda, y evita cremas, aceites y autobronceador en la cintura, las caderas y los muslos ese día.</span></p>
-        </details>
-        <details>
-          <summary><span class="en">What if I can’t make it?</span><span class="es">¿Y si no puedo ir?</span></summary>
-          <p><span class="en">Call or text us at (305) 909-7069 and we’ll find you another time. Spots are limited, so the sooner you tell us, the better.</span><span class="es">Llámanos o escríbenos al (305) 909-7069 y te buscamos otro horario. Hay pocos lugares, así que mientras antes nos avises, mejor.</span></p>
         </details>
         <details>
           <summary><span class="en">Where are you?</span><span class="es">¿Dónde están?</span></summary>
@@ -502,12 +478,12 @@ footer{padding:0 0 120px;border-top:1px solid var(--line)}
     </div>
   </section>
 
-  <!-- Talk -->
+  <!-- Talk to a person -->
   <section class="talk" aria-labelledby="talk-title">
     <div class="wrap">
-      <h2 id="talk-title" class="duo rv"><span class="caps"><span class="en">Rather talk to</span><span class="es">¿Prefieres hablar</span></span><span class="serif"><span class="en">a person?</span><span class="es">con alguien?</span></span></h2>
-      <p class="txt rv d1"><span class="en">Call, text or WhatsApp us at (305) 909-7069. Hablamos español.</span><span class="es">Llámanos, escríbenos o mándanos un WhatsApp al (305) 909-7069.</span></p>
-      <div class="hero-cta rv d2">
+      <h2 id="talk-title" class="duo reveal"><span class="en"><span class="caps">Rather talk to a</span> <span class="serif">person?</span></span><span class="es"><span class="caps">¿Prefieres hablar con</span> <span class="serif">alguien?</span></span></h2>
+      <p class="reveal d1"><span class="en">Call, text or WhatsApp us at (305) 909-7069. Hablamos español.</span><span class="es">Llámanos, escríbenos o mándanos un WhatsApp al (305) 909-7069.</span></p>
+      <div class="cta-row reveal d2">
         <a class="btn" href="tel:+13059097069" data-track="call"><span class="en">Call</span><span class="es">Llamar</span></a>
         <a class="btn ghost js-sms" href="sms:+13059097069" data-track="text"><span class="en">Text</span><span class="es">Mensaje</span></a>
         <a class="btn ghost js-wa" href="https://wa.me/13059097069" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp</a>
@@ -520,12 +496,11 @@ footer{padding:0 0 120px;border-top:1px solid var(--line)}
 <footer>
   <div class="wordmark" aria-hidden="true" data-fit-wm><span>Awakened</span></div>
   <div class="wrap">
-    <div class="f-row tiny">
+    <p class="sr">Awakened Skin + Body</p>
+    <div class="info">
       <span>2106 NE 123rd Street, Miami, FL 33181</span>
-      <a href="tel:+13059097069" data-track="call">(305) 909-7069</a>
-      <a href="mailto:contact@awakenedskinbody.com">contact@awakenedskinbody.com</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions"><span class="en">Directions</span><span class="es">Cómo llegar</span></a>
-      <a href="https://awakened.skin" target="_blank" rel="noopener">awakened.skin</a>
+      <span><a href="tel:+13059097069" data-track="call">(305) 909-7069</a> · <a href="mailto:contact@awakenedskinbody.com">contact@awakenedskinbody.com</a></span>
+      <span><a href="https://awakened.skin" target="_blank" rel="noopener">awakened.skin</a></span>
     </div>
     <p class="fine"><span class="en">Invisa-RED is an FDA-cleared laser. Results vary.</span><span class="es">Invisa-RED es un láser autorizado por la FDA. Los resultados varían.</span></p>
     <p class="fine">THE PATIENT AND ANY OTHER PERSON RESPONSIBLE FOR PAYMENT HAS A RIGHT TO REFUSE TO PAY, CANCEL PAYMENT, OR BE REIMBURSED FOR PAYMENT FOR ANY OTHER SERVICE, EXAMINATION, OR TREATMENT THAT IS PERFORMED AS A RESULT OF AND WITHIN 72 HOURS OF RESPONDING TO THE ADVERTISEMENT FOR THE FREE, DISCOUNTED FEE, OR REDUCED FEE SERVICE, EXAMINATION, OR TREATMENT.</p>
@@ -535,34 +510,34 @@ footer{padding:0 0 120px;border-top:1px solid var(--line)}
 
 <!-- Sticky bar on phones -->
 <div class="mbar" role="region" aria-label="Quick actions">
-  <a class="btn" href="#pick-time" data-track="sticky_book"><span class="en">Pick a time</span><span class="es">Elige tu horario</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  <a class="call" href="tel:+13059097069" data-track="call" aria-label="Call (305) 909-7069"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg></a>
+  <a class="btn" href="#pick-time" data-track="sticky_book"><span class="en">Book a free demo</span><span class="es">Reserva tu demo gratis</span></a>
+  <a class="btn call" href="tel:+13059097069" data-track="call" aria-label="Call (305) 909-7069"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg><span class="en">Call</span><span class="es">Llamar</span></a>
 </div>
 
 <script>
 /* =========================================================
    SETTINGS
-   CAL: Cal.com event links, "username/event-slug". Leave one empty
-   and the booking card shows the call / text buttons instead.
-   SOLD_OUT: days that are full, as "YYYY-MM-DD". Their tiles get
-   crossed out with a "Full" tag. Example: ["2026-11-10"]
+   CAL: Cal.com event links, "username/event-slug" or the full
+   https://cal.com/... link. Leave one empty and that section shows
+   the call / text buttons instead.
+   DEMO_DAYS_END: the "Demo days" line hides itself after this date.
    ========================================================= */
 var CAL = {
   wl_en: "awakened-skin-and-body/free-demo-weight-loss",
   wl_es: "awakened-skin-and-body/free-demo-weight-loss-es"
 };
-var SOLD_OUT = [];
+var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
 
 (function () {
   var root = document.documentElement;
   var TEXT = {
     en: {
-      title: "Free Weight Loss Demo, Nov 10 to 14 | Awakened Skin + Body",
-      msg: { wl: "Hi, I'd like to book a free weight loss demo.", any: "Hi, I'd like to book a free demo.", move: "Hi, I need to move my free demo to another time." }
+      title: "Free Weight Loss Demo | Awakened Skin + Body",
+      msg: { wl: "Hi, I'd like to book a free weight loss demo.", any: "Hi, I'd like to book a free demo." }
     },
     es: {
-      title: "Demo gratis para bajar de peso, 10 al 14 de nov. | Awakened Skin + Body",
-      msg: { wl: "Hola, quiero reservar una demo gratis para bajar de peso.", any: "Hola, quiero reservar una demo gratis.", move: "Hola, necesito cambiar mi demo gratis a otro horario." }
+      title: "Demo gratis para bajar de peso | Awakened Skin + Body",
+      msg: { wl: "Hola, quiero reservar una demo gratis para bajar de peso.", any: "Hola, quiero reservar una demo gratis." }
     }
   };
 
@@ -570,10 +545,11 @@ var SOLD_OUT = [];
   function read(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
   function clean(link) { return (link || "").trim().replace(/^https?:\/\/(app\.)?cal\.com\//, "").replace(/\/$/, ""); }
 
-  // Full days
-  SOLD_OUT.forEach(function (d) {
-    document.querySelectorAll('[data-day="' + d + '"]').forEach(function (el) { el.classList.add("is-full"); });
-  });
+  // Hide the dated line once the demo days are over
+  if (Date.now() >= new Date(DEMO_DAYS_END).getTime()) {
+    var d = document.getElementById("demo-dates");
+    if (d) d.style.display = "none";
+  }
 
   // ---------- Cal.com ----------
   var anyCal = !!(clean(CAL.wl_en) || clean(CAL.wl_es));
@@ -593,18 +569,18 @@ var SOLD_OUT = [];
     Cal.ns[key]("inline", {
       elementOrSelector: "#" + boxId,
       calLink: link,
-      config: { layout: "month_view", theme: "light", "metadata[source]": "freebodydemo", "metadata[demo]": demo, "metadata[design]": "v10" }
+      config: { layout: "month_view", theme: "light", "metadata[source]": "freebodydemo", "metadata[demo]": demo, "metadata[design]": "v11" }
     });
     Cal.ns[key]("ui", {
       theme: "light",
-      cssVarsPerTheme: { light: { "cal-brand": "#1d1d1f" } },
+      cssVarsPerTheme: { light: { "cal-brand": "#111111" } },
       hideEventTypeDetails: true,
       layout: "month_view"
     });
     Cal.ns[key]("on", {
       action: "bookingSuccessful",
       callback: function () {
-        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v10" });
+        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11" });
         if (window.fbq) fbq("track", "Schedule", { content_name: demo });
       }
     });
@@ -617,13 +593,13 @@ var SOLD_OUT = [];
     mount("wl_" + lang, "cal-wl-" + lang, link, "weight_loss");
   }
 
-  // Load the calendar only when the booking card gets close to the screen
+  // Load each calendar only when its section gets close to the screen
   if (anyCal && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { loadSection(e.target.getAttribute("data-cal-section")); io.unobserve(e.target); }
       });
-    }, { rootMargin: "900px 0px" });
+    }, { rootMargin: "700px 0px" });
     document.querySelectorAll("[data-cal-section]").forEach(function (el) { io.observe(el); });
   } else if (anyCal) {
     loadSection("wl");
@@ -669,25 +645,31 @@ var SOLD_OUT = [];
     });
   });
 
-  // ---------- Before and after gallery ----------
+  // ---------- Before and after carousels (one photo at a time) ----------
+  var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll("[data-results]").forEach(function (box) {
-    var track = box.querySelector(".g-track");
+    var track = box.querySelector(".hc-track");
+    var count = box.querySelector(".hc-count");
+    var total = track.children.length;
     var tracked = false;
+
+    function current() {
+      var w = track.clientWidth || 1;
+      return Math.min(total - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+    }
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function paint() { count.textContent = pad(current() + 1) + " / " + pad(total); }
     function interacted() {
       if (tracked) return;
       tracked = true;
       if (window.gtag) gtag("event", "results_carousel", { section: box.getAttribute("data-results"), language: root.getAttribute("data-lang") });
     }
-    function step() {
-      var s = track.querySelector(".g-slide");
-      return s ? s.getBoundingClientRect().width + 18 : track.clientWidth;
-    }
     function go(dir) {
       interacted();
-      var max = track.scrollWidth - track.clientWidth - 2;
-      if (dir > 0 && track.scrollLeft >= max) { track.scrollTo({ left: 0, behavior: "smooth" }); return; }
-      if (dir < 0 && track.scrollLeft <= 2) { track.scrollTo({ left: max + 2, behavior: "smooth" }); return; }
-      track.scrollBy({ left: dir * step(), behavior: "smooth" });
+      var i = current() + dir, wrap = false;
+      if (i < 0) { i = total - 1; wrap = true; }
+      else if (i >= total) { i = 0; wrap = true; }
+      track.scrollTo({ left: i * track.clientWidth, behavior: (wrap || reduceMotion) ? "auto" : "smooth" });
     }
     box.querySelectorAll("[data-dir]").forEach(function (b) {
       b.addEventListener("click", function () { go(Number(b.getAttribute("data-dir"))); });
@@ -696,7 +678,16 @@ var SOLD_OUT = [];
       if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
       else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
     });
-    track.addEventListener("scroll", function () { if (track.scrollLeft > 20) interacted(); }, { passive: true });
+    track.addEventListener("scroll", function () {
+      paint();
+      if (track.scrollLeft > 20) interacted();
+    }, { passive: true });
+    window.addEventListener("resize", paint);
+    paint();
+  });
+  // Fetch the other carousel photos once the page is up, so wrapping around never shows a blank slide
+  window.addEventListener("load", function () {
+    document.querySelectorAll('.hc-track img[loading="lazy"]').forEach(function (img) { img.loading = "eager"; });
   });
 
   // ---------- Click tracking ----------
@@ -725,39 +716,35 @@ var SOLD_OUT = [];
     new IntersectionObserver(function (es) { cb(es[0].isIntersecting); }, { rootMargin: margin || "120px 0px" }).observe(el);
   }
 
-  // Reveal once (and the clip-open panels)
-  var rvs = document.querySelectorAll(".rv, [data-clip]");
+  // Reveal once (panels open with a wipe)
+  var rvs = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && motion) {
     var rio = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); rio.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visible"); rio.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
     rvs.forEach(function (el) { rio.observe(el); });
-  } else rvs.forEach(function (el) { el.classList.add("in"); });
+  } else rvs.forEach(function (el) { el.classList.add("visible"); });
 
-  // Giant hero word: fit the width, letters rise in
-  var megas = document.querySelectorAll("[data-mega]");
-  megas.forEach(function (m) {
+  // Giant hero word: letters rise in
+  document.querySelectorAll("[data-mega]").forEach(function (m) {
     var txt = m.textContent; m.textContent = "";
     txt.split("").forEach(function (c, i) {
       var s = document.createElement("span"); s.className = "ch"; s.textContent = c === " " ? " " : c;
       s.style.animationDelay = (0.25 + i * 0.045) + "s"; m.appendChild(s);
     });
   });
-  var megaWrap = document.querySelector(".mega");
-  function fitMega() {
-    if (!megaWrap) return;
-    var vis = megaWrap.querySelector(root.getAttribute("data-lang") === "es" ? ".es" : ".en");
-    megaWrap.style.setProperty("--mega", "100px");
-    var w = vis.getBoundingClientRect().width || 1;
-    var target = megaWrap.clientWidth - 36;
-    megaWrap.style.setProperty("--mega", Math.floor(100 * target / w) + "px");
-  }
-  // Panel words and the footer word: fit the width
-  var pwords = document.querySelectorAll("[data-fit]"), wm = document.querySelector("[data-fit-wm]");
+
+  // Fit the big words to their width
+  var megaWrap = document.querySelector(".mega"), pwords = document.querySelectorAll("[data-fit]"), wm = document.querySelector("[data-fit-wm]");
   var wide = window.matchMedia("(min-width:901px)");
   function fitAll() {
-    fitMega();
     var es = root.getAttribute("data-lang") === "es";
+    if (megaWrap) {
+      var mv = megaWrap.querySelector(es ? ".es" : ".en");
+      megaWrap.style.setProperty("--mega", "100px");
+      var w0 = mv.getBoundingClientRect().width || 1;
+      megaWrap.style.setProperty("--mega", Math.floor(100 * (megaWrap.clientWidth - 36) / w0) + "px");
+    }
     pwords.forEach(function (p) {
       var vis = p.querySelector(es ? ".es" : ".en"), box = p.parentNode;
       p.style.setProperty("--pw", "100px");
@@ -774,6 +761,7 @@ var SOLD_OUT = [];
     }
     paintWords();
   }
+  // On laptops the panel word holds still in the window while the panel slides past
   function paintWords() {
     pwords.forEach(function (p) {
       if (!p.classList.contains("win")) { p.style.transform = ""; return; }
@@ -814,7 +802,7 @@ var SOLD_OUT = [];
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
     var loc = gl.getAttribLocation(pr, "a"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
     var uR = gl.getUniformLocation(pr, "r"), uT = gl.getUniformLocation(pr, "t"), uM = gl.getUniformLocation(pr, "m"), uS = gl.getUniformLocation(pr, "s");
-    var st = { vis: true, mx: 0, my: 0, tx: 0, ty: 0, t0: performance.now() + (opts.offset || 0), last: 0 };
+    var st = { vis: true, mx: 0, my: 0, tx: 0, ty: 0, t0: performance.now(), last: 0 };
     function draw(now) {
       var sc = opts.scale || 0.6;
       var w = Math.max(1, Math.round(canvas.clientWidth * sc)), h = Math.max(1, Math.round(canvas.clientHeight * sc));
@@ -823,89 +811,20 @@ var SOLD_OUT = [];
       gl.uniform2f(uR, canvas.width, canvas.height);
       gl.uniform1f(uT, motion ? (now - st.t0) / 1000 : 14.0);
       gl.uniform2f(uM, st.mx, st.my);
-      gl.uniform1f(uS, motion && opts.scroll ? clamp(window.scrollY / vh, 0, 1.5) : 0);
+      gl.uniform1f(uS, motion ? clamp(window.scrollY / vh, 0, 1.5) : 0);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
     draw(performance.now()); canvas.classList.add("ready");
     if (!motion) { window.addEventListener("resize", function () { draw(performance.now()); }); return st; }
     watch(canvas, function (v) { st.vis = v; });
-    if (opts.mouse) window.addEventListener("pointermove", function (e) { st.tx = e.clientX / window.innerWidth - 0.5; st.ty = -(e.clientY / window.innerHeight - 0.5); }, { passive: true });
+    window.addEventListener("pointermove", function (e) { st.tx = e.clientX / window.innerWidth - 0.5; st.ty = -(e.clientY / window.innerHeight - 0.5); }, { passive: true });
     (function loop(now) { requestAnimationFrame(loop); if (!st.vis || document.hidden || now - st.last < 30) return; st.last = now; draw(now); })(performance.now());
     return st;
   }
   var heroSilk = document.querySelector(".hero .silk");
-  if (heroSilk) silkOn(heroSilk, { scale: 0.55, mouse: true, scroll: true });
-  var stSilk = document.querySelector(".stage .silk");
-  if (stSilk) silkOn(stSilk, { scale: 0.6, offset: -20000 });
+  if (heroSilk) silkOn(heroSilk, { scale: 0.55 });
 
-  // Hero photo card: body before and afters crossfade
-  var pc = document.querySelector("[data-pcard]");
-  if (pc && motion) {
-    var pimgs = pc.querySelectorAll("img"), pi = 0, pVis = true;
-    watch(pc, function (v) { pVis = v; });
-    setInterval(function () {
-      if (!pVis || document.hidden) return;
-      pimgs[pi].classList.remove("on"); pi = (pi + 1) % pimgs.length;
-      if (pimgs[pi].loading === "lazy") pimgs[pi].loading = "eager";
-      pimgs[pi].classList.add("on");
-      var nx = pimgs[(pi + 1) % pimgs.length]; if (nx.loading === "lazy") nx.loading = "eager";
-    }, 4200);
-  }
-
-  // Results stage: Body / Face, one photo at a time
-  var stage = document.querySelector("[data-stage]");
-  if (stage) {
-    var prints = stage.querySelector(".prints"), barI = stage.querySelector(".st-bar i");
-    var nEl = stage.querySelector("[data-st-n]"), ofEl = stage.querySelector("[data-st-of]");
-    var set = "body", idx = 0, DUR = 5200, el = 0, last = performance.now(), held = false, vis = true, tracked = false;
-    var list = function () { return prints.querySelectorAll('img[data-set="' + set + '"]'); };
-    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
-    var track = function () { if (tracked) return; tracked = true; if (window.gtag) gtag("event", "results_carousel", { section: "results_" + set, language: root.getAttribute("data-lang") }); };
-    var show = function (k) {
-      var L = list(); idx = (k + L.length) % L.length;
-      prints.querySelectorAll("img").forEach(function (im) { im.classList.remove("on"); });
-      var im = L[idx]; if (im.loading === "lazy") im.loading = "eager"; im.classList.add("on");
-      var nx = L[(idx + 1) % L.length]; if (nx.loading === "lazy") nx.loading = "eager";
-      nEl.textContent = pad(idx + 1); ofEl.textContent = pad(L.length);
-      el = 0; if (barI) barI.style.transform = "scaleX(0)";
-    };
-    var setTo = function (n) {
-      set = n;
-      stage.querySelectorAll("[data-st-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-st-set") === n ? "true" : "false"); });
-      document.querySelectorAll("[data-st-cap]").forEach(function (c) { c.hidden = c.getAttribute("data-st-cap") !== n; });
-      show(0);
-    };
-    stage.querySelectorAll("[data-st-set]").forEach(function (b) { b.addEventListener("click", function () { setTo(b.getAttribute("data-st-set")); track(); }); });
-    stage.querySelectorAll("[data-st-dir]").forEach(function (b) { b.addEventListener("click", function () { show(idx + Number(b.getAttribute("data-st-dir"))); track(); }); });
-    var dx0 = null, dy0 = null;
-    prints.addEventListener("pointerdown", function (e) { dx0 = e.clientX; dy0 = e.clientY; });
-    prints.addEventListener("pointerup", function (e) {
-      if (dx0 === null) return; var dx = e.clientX - dx0, dy = e.clientY - dy0; dx0 = null;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { show(idx + (dx < 0 ? 1 : -1)); track(); }
-      else if (Math.abs(dx) < 10 && Math.abs(dy) < 10) { show(idx + 1); track(); }
-    });
-    prints.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft") { e.preventDefault(); show(idx - 1); track(); }
-      else if (e.key === "ArrowRight") { e.preventDefault(); show(idx + 1); track(); }
-    });
-    stage.addEventListener("mouseenter", function () { held = true; });
-    stage.addEventListener("mouseleave", function () { held = false; });
-    stage.addEventListener("focusin", function () { held = true; });
-    stage.addEventListener("focusout", function () { held = false; });
-    setTo("body");
-    if (motion) {
-      watch(stage, function (v) { vis = v; });
-      (function loop(now) {
-        requestAnimationFrame(loop);
-        var dt = Math.min(100, now - last); last = now;
-        if (held || !vis || document.hidden) return;
-        el += dt; if (barI) barI.style.transform = "scaleX(" + Math.min(1, el / DUR).toFixed(3) + ")";
-        if (el >= DUR) show(idx + 1);
-      })(last);
-    }
-  }
-
-  // Light waves in the black panel
+  // Red and infrared light in the black panel
   var wc = document.querySelector("canvas.waves");
   if (wc && wc.getContext) {
     var wx = wc.getContext("2d"), wVis = false, wT0 = performance.now(), wLast = 0, dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -936,7 +855,7 @@ var SOLD_OUT = [];
 
   // Steps light up one by one as you scroll through the list
   var stepsEl = document.querySelector("[data-steps]");
-  var stepLis = stepsEl ? stepsEl.querySelectorAll("li") : [];
+  var stepLis = stepsEl ? stepsEl.querySelectorAll(".step") : [];
   if (stepsEl && motion) stepsEl.classList.add("live");
   function paintSteps() {
     if (!stepsEl || !motion) return;
@@ -948,14 +867,14 @@ var SOLD_OUT = [];
 
   // Scroll: nav line, hero word drift, phone bar
   var nav = document.getElementById("nav");
-  var bar = document.querySelector(".mbar"), hero = document.querySelector(".hero"), cal = document.querySelector(".cal-card");
+  var bar = document.querySelector(".mbar"), heroCta = document.querySelector(".choice-link"), cal = document.querySelector(".cal-card");
   var ticking = false;
   function onScroll() {
     var y = window.scrollY;
     if (nav) nav.classList.toggle("stuck", y > 10);
-    if (motion && megaWrap && y < vh * 1.3) megaWrap.style.transform = "translate3d(0," + (y * -0.12).toFixed(1) + "px,0)";
-    if (bar && hero) {
-      var past = hero.getBoundingClientRect().bottom < 60, onCal = false;
+    if (motion && megaWrap && y < vh * 1.6) megaWrap.style.transform = wide.matches ? "translate3d(0," + (y * 0.12).toFixed(1) + "px,0)" : "";
+    if (bar && heroCta) {
+      var past = heroCta.getBoundingClientRect().bottom < 60, onCal = false;
       if (cal) { var b = cal.getBoundingClientRect(); onCal = b.top < vh && b.bottom > 0; }
       bar.classList.toggle("show", past && !onCal);
     }

@@ -4,6 +4,17 @@ One-page site where people book a free demo: weight loss (herbalist + Invisa-RED
 
 **v9 look for the Nov 10 to 14, 2026 round (not live yet, on branch `preview-v7`).** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
+## v11 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
+
+Sarah's ask: the v10 look on the exact structure of the live October page. Same sections, same order, same copy and same booking/tracking script as `main`. Only the design changed, plus the facts for the new round:
+
+- Dates line in the hero now reads Nov 10 to 14 (Tue 1 to 7 PM, Wed to Sat 9 AM to 7 PM). `DEMO_DAYS_END` is `2026-11-15T00:00:00-05:00`.
+- "About an hour" is now "About 40 minutes" (choice card and the demo section).
+- Carousel uses the clean crops in `assets/results/c/` (same six photos, same order, same alt text).
+- Cal brand color is black; `metadata[design]` and the `demo_booked` event carry `"v11"`.
+- Design: white and black, wide Archivo caps + Instrument Serif italic, live white silk in the hero, giant TRY IT FREE / PRUÉBALO GRATIS fitted to the width, the demo section and the Invisa-RED paragraph as split panels with DEMO and LIGHT/LUZ words that hold still in the window on laptops, giant AWAKENED in the footer.
+- OG image: `assets/og-nov-v10.jpg`.
+
 ## v10 look (Oct 31, 2026, not live yet, on branch `preview-v7`)
 
 A mix of A.N Other (an-other.com) and Organic Care (organiccare.framer.website), on Sarah's ask.
