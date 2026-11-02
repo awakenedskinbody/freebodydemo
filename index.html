@@ -216,6 +216,10 @@ h1,h2,h3,p{margin:0}
 .taken-days li.full .n{color:var(--black);font-weight:600}
 .book .taken{max-width:620px;margin:30px auto 0;text-align:left}
 /* Card hold note (no-show fee, Nov 2026) */
+.hold-line{max-width:620px;margin:22px auto 0;font-size:14px;line-height:1.5;color:#222}
+.hold-line b{font-weight:600}
+.hold-line a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.book .hold{margin-top:36px}
 .hold{max-width:620px;margin:30px auto 0;border:1px solid var(--line);padding:22px 24px 20px;text-align:left;background:#fff}
 .hold-t{font-stretch:125%;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 14px;line-height:1.35}
 .hold ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
@@ -402,6 +406,43 @@ footer{padding:0 0 40px}
     <p class="mega" aria-hidden="true"><span class="en" data-mega>Try it free</span><span class="es" data-mega>Pruébalo gratis</span></p>
   </div>
 
+  <!-- Book: calendar right after the hero (moved up Nov 2, 2026) -->
+    <div class="book">
+      <div class="wrap">
+        <div class="cal-head reveal" id="pick-time">
+          <h3 class="duo"><span class="en"><span class="caps">Pick</span> <span class="serif">a time</span></span><span class="es"><span class="caps">Elige</span> <span class="serif">tu horario</span></span></h3>
+          <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
+        </div>
+        <p class="hold-line reveal"><span class="en"><b>Free.</b> Your card only holds your time. $0 if you come or cancel 24 hours ahead, $25 only if you don't show up or cancel late. <a href="#card-hold" data-track="hold_details">How it works</a></span><span class="es"><b>Gratis.</b> Tu tarjeta solo aparta tu horario. $0 si vienes o cancelas con 24 horas de anticipación, $25 solo si no vienes o cancelas tarde. <a href="#card-hold" data-track="hold_details">Cómo funciona</a></span></p>
+        <div class="taken" data-taken data-taken-days hidden aria-live="polite">
+          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
+          <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
+          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
+          <ul class="taken-days"></ul>
+        </div>
+        <div class="cal-card" data-cal-section="wl">
+          <div id="cal-wl-en" class="cal-inline en" hidden></div>
+          <div id="cal-wl-es" class="cal-inline es" hidden></div>
+          <div class="cal-fallback">
+            <p><span class="en">Online booking is almost ready. For now, call or text us at (305) 909-7069 and we'll hold a time for you.</span><span class="es">La reserva en línea ya casi está lista. Por ahora, llámanos o escríbenos al (305) 909-7069 y te apartamos un horario.</span></p>
+            <div class="cta-row">
+              <a class="btn" href="tel:+13059097069" data-track="call"><span class="en">Call us</span><span class="es">Llámanos</span></a>
+              <a class="btn ghost js-sms" href="sms:+13059097069" data-track="text" data-msg="wl"><span class="en">Text us</span><span class="es">Escríbenos</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="hold reveal" id="card-hold">
+          <p class="hold-t"><span class="en">The demo is free. Your card just holds your time.</span><span class="es">La demo es gratis. Tu tarjeta solo aparta tu horario.</span></p>
+          <ul>
+            <li><b>$0</b><span><span class="en">if you come to your demo.</span><span class="es">si vienes a tu demo.</span></span></li>
+            <li><b>$0</b><span><span class="en">if you cancel or reschedule at least 24 hours before.</span><span class="es">si cancelas o cambias tu cita con al menos 24 horas de anticipación.</span></span></li>
+            <li><b>$25</b><span><span class="en">only if you don't show up, or cancel with less than 24 hours' notice.</span><span class="es">solo si no vienes, o cancelas con menos de 24 horas de anticipación.</span></span></li>
+          </ul>
+          <p class="hold-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><span class="en">Your card is processed securely by Stripe. We never see your full card number. Times are limited, so if you can't make it, please cancel from your confirmation email or text us at (305) 909-7069, and someone else gets your spot.</span><span class="es">Tu tarjeta la procesa Stripe de forma segura. Nosotros nunca vemos el número completo. Los horarios son pocos, así que si no puedes venir, cancela desde el correo de confirmación o escríbenos al (305) 909-7069, y otra persona puede usar tu lugar.</span></span></p>
+        </div>
+      </div>
+    </div>
+
   <!-- Weight loss demo -->
   <section id="weight-loss" aria-labelledby="wl-title">
     <div class="split">
@@ -462,40 +503,6 @@ footer{padding:0 0 40px}
       </div>
     </div>
 
-    <div class="book">
-      <div class="wrap">
-        <div class="cal-head reveal" id="pick-time">
-          <h3 class="duo"><span class="en"><span class="caps">Pick</span> <span class="serif">a time</span></span><span class="es"><span class="caps">Elige</span> <span class="serif">tu horario</span></span></h3>
-          <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
-        </div>
-        <div class="hold reveal" id="card-hold">
-          <p class="hold-t"><span class="en">The demo is free. Your card just holds your time.</span><span class="es">La demo es gratis. Tu tarjeta solo aparta tu horario.</span></p>
-          <ul>
-            <li><b>$0</b><span><span class="en">if you come to your demo.</span><span class="es">si vienes a tu demo.</span></span></li>
-            <li><b>$0</b><span><span class="en">if you cancel or reschedule at least 24 hours before.</span><span class="es">si cancelas o cambias tu cita con al menos 24 horas de anticipación.</span></span></li>
-            <li><b>$25</b><span><span class="en">only if you don't show up, or cancel with less than 24 hours' notice.</span><span class="es">solo si no vienes, o cancelas con menos de 24 horas de anticipación.</span></span></li>
-          </ul>
-          <p class="hold-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><span class="en">Your card is processed securely by Stripe. We never see your full card number. Times are limited, so if you can't make it, please cancel from your confirmation email or text us at (305) 909-7069, and someone else gets your spot.</span><span class="es">Tu tarjeta la procesa Stripe de forma segura. Nosotros nunca vemos el número completo. Los horarios son pocos, así que si no puedes venir, cancela desde el correo de confirmación o escríbenos al (305) 909-7069, y otra persona puede usar tu lugar.</span></span></p>
-        </div>
-        <div class="taken" data-taken data-taken-days hidden aria-live="polite">
-          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
-          <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
-          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
-          <ul class="taken-days"></ul>
-        </div>
-        <div class="cal-card" data-cal-section="wl">
-          <div id="cal-wl-en" class="cal-inline en" hidden></div>
-          <div id="cal-wl-es" class="cal-inline es" hidden></div>
-          <div class="cal-fallback">
-            <p><span class="en">Online booking is almost ready. For now, call or text us at (305) 909-7069 and we'll hold a time for you.</span><span class="es">La reserva en línea ya casi está lista. Por ahora, llámanos o escríbenos al (305) 909-7069 y te apartamos un horario.</span></p>
-            <div class="cta-row">
-              <a class="btn" href="tel:+13059097069" data-track="call"><span class="en">Call us</span><span class="es">Llámanos</span></a>
-              <a class="btn ghost js-sms" href="sms:+13059097069" data-track="text" data-msg="wl"><span class="en">Text us</span><span class="es">Escríbenos</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- FAQ -->
