@@ -215,7 +215,7 @@ h1,h2,h3,p{margin:0}
 .taken-days li.full .d{text-decoration:line-through}
 .taken-days li.full .n{color:var(--black);font-weight:600}
 .book .taken{max-width:620px;margin:30px auto 0;text-align:left}
-/* Card hold note (no-show fee, Nov 2026) */
+/* Note above the calendar (was the card-hold note until Nov 3, 2026; the .hold box styles stay for an easy restore) */
 .hold-line{max-width:620px;margin:22px auto 0;font-size:14px;line-height:1.5;color:#222}
 .hold-line b{font-weight:600}
 .hold-line a{color:inherit;text-decoration:underline;text-underline-offset:3px}
@@ -413,7 +413,7 @@ footer{padding:0 0 40px}
           <h3 class="duo"><span class="en"><span class="caps">Pick</span> <span class="serif">a time</span></span><span class="es"><span class="caps">Elige</span> <span class="serif">tu horario</span></span></h3>
           <p><span class="en">You'll get a confirmation right away.</span><span class="es">Te llega la confirmación al instante.</span></p>
         </div>
-        <p class="hold-line reveal"><span class="en"><b>Free.</b> Your card only holds your time. $0 if you come or cancel 24 hours ahead, $25 only if you don't show up or cancel late. <a href="#card-hold" data-track="hold_details">How it works</a></span><span class="es"><b>Gratis.</b> Tu tarjeta solo aparta tu horario. $0 si vienes o cancelas con 24 horas de anticipación, $25 solo si no vienes o cancelas tarde. <a href="#card-hold" data-track="hold_details">Cómo funciona</a></span></p>
+        <p class="hold-line reveal"><span class="en"><b>Free, no card needed.</b> Can't make it? Cancel from your confirmation email or text us, so someone else can take your time.</span><span class="es"><b>Gratis, sin tarjeta.</b> ¿No puedes venir? Cancela desde el correo de confirmación o escríbenos, así otra persona puede usar tu horario.</span></p>
         <div class="taken" data-taken data-taken-days hidden aria-live="polite">
           <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
           <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
@@ -431,15 +431,7 @@ footer{padding:0 0 40px}
             </div>
           </div>
         </div>
-        <div class="hold reveal" id="card-hold">
-          <p class="hold-t"><span class="en">The demo is free. Your card just holds your time.</span><span class="es">La demo es gratis. Tu tarjeta solo aparta tu horario.</span></p>
-          <ul>
-            <li><b>$0</b><span><span class="en">if you come to your demo.</span><span class="es">si vienes a tu demo.</span></span></li>
-            <li><b>$0</b><span><span class="en">if you cancel or reschedule at least 24 hours before.</span><span class="es">si cancelas o cambias tu cita con al menos 24 horas de anticipación.</span></span></li>
-            <li><b>$25</b><span><span class="en">only if you don't show up, or cancel with less than 24 hours' notice.</span><span class="es">solo si no vienes, o cancelas con menos de 24 horas de anticipación.</span></span></li>
-          </ul>
-          <p class="hold-fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><span class="en">Your card is processed securely by Stripe. We never see your full card number. Times are limited, so if you can't make it, please cancel from your confirmation email or text us at (305) 909-7069, and someone else gets your spot.</span><span class="es">Tu tarjeta la procesa Stripe de forma segura. Nosotros nunca vemos el número completo. Los horarios son pocos, así que si no puedes venir, cancela desde el correo de confirmación o escríbenos al (305) 909-7069, y otra persona puede usar tu lugar.</span></span></p>
-        </div>
+        <!-- Card-hold box removed Nov 3, 2026 (48-hour test without the card). Saved on branch backup/card-hold-2026-11-02. -->
       </div>
     </div>
 
@@ -514,15 +506,11 @@ footer{padding:0 0 40px}
       <div class="reveal d1">
 <details>
           <summary><span class="en">Is it really free?</span><span class="es">¿De verdad es gratis?</span></summary>
-          <p><span class="en">Yes. The demo is free and you don't have to buy anything. We only ask for a card to hold your time (see below). If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis y no tienes que comprar nada. Solo pedimos una tarjeta para apartar tu horario (mira abajo). Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
-        </details>
-        <details>
-          <summary><span class="en">Why do you ask for a card?</span><span class="es">¿Por qué piden una tarjeta?</span></summary>
-          <p><span class="en">Only to hold your time. Demo times are limited, and last round a lot of people booked and never came, so others couldn't get in. You pay nothing if you come, or if you cancel or reschedule at least 24 hours before. If you don't show up, or cancel with less than 24 hours' notice, we charge a $25 no-show fee. Your card is processed securely by Stripe, and we never see your full card number.</span><span class="es">Solo para apartar tu horario. Los horarios son pocos, y la vez pasada mucha gente reservó y no vino, así que otras personas se quedaron sin lugar. No pagas nada si vienes, o si cancelas o cambias tu cita con al menos 24 horas de anticipación. Si no vienes, o cancelas con menos de 24 horas, cobramos $25 por no presentarte. Tu tarjeta la procesa Stripe de forma segura, y nunca vemos el número completo.</span></p>
+          <p><span class="en">Yes. The demo is free, you don't have to buy anything, and you don't need a card to book. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis, no tienes que comprar nada y no necesitas tarjeta para reservar. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
         </details>
         <details>
           <summary><span class="en">How do I cancel or change my time?</span><span class="es">¿Cómo cancelo o cambio mi horario?</span></summary>
-          <p><span class="en">Use the cancel or reschedule link in your confirmation email, or call or text us at (305) 909-7069. Do it at least 24 hours before and there's no charge.</span><span class="es">Usa el enlace para cancelar o cambiar tu cita en el correo de confirmación, o llámanos o escríbenos al (305) 909-7069. Si lo haces con al menos 24 horas de anticipación, no se cobra nada.</span></p>
+          <p><span class="en">Use the cancel or reschedule link in your confirmation email, or call or text us at (305) 909-7069. Times are limited, so the sooner you tell us, the sooner someone else can take your spot.</span><span class="es">Usa el enlace para cancelar o cambiar tu cita en el correo de confirmación, o llámanos o escríbenos al (305) 909-7069. Los horarios son pocos, así que mientras antes nos avises, antes otra persona puede usar tu lugar.</span></p>
         </details>
         <details>
           <summary><span class="en">How much weight will I lose?</span><span class="es">¿Cuánto peso voy a bajar?</span></summary>
@@ -649,8 +637,8 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
       layout: "month_view"
     });
     // Funnel tracking (Oct 31, 2026): cal_loaded -> calendar_seen -> demo_booked.
-    // Note: Cal fires bookingSuccessful when the form is sent, BEFORE the Stripe card page,
-    // so demo_booked = "sent the form"; bookings that never finish the card step stay unpaid in Cal.
+    // Card hold turned off Nov 3, 2026 (48-hour test), so demo_booked = a finished booking again.
+    // payment: "card_hold" until Nov 3, "none" after, so GA4 can split the two.
     Cal.ns[key]("on", {
       action: "bookerViewed",
       callback: function (e) {
@@ -667,7 +655,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
     Cal.ns[key]("on", {
       action: "bookingSuccessful",
       callback: function () {
-        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11", payment: "card_hold" });
+        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11", payment: "none" });
         if (window.fbq) fbq("track", "Schedule", { content_name: demo });
         if (window.__takenRefresh) setTimeout(window.__takenRefresh, 2000);
       }
