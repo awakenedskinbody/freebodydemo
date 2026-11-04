@@ -141,6 +141,8 @@ h1,h2,h3,p{margin:0}
 .dates > span{flex:1 1 260px}
 
 .hero h1 .serif{display:block;font-size:clamp(38px,4vw,58px);line-height:1;text-wrap:balance}
+/* "Try it free." shown under the headline again (Nov 4, 2026; it was screen-reader only) */
+.hero h1 .free{display:block;margin-top:12px;font-family:var(--wide);font-stretch:125%;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(30px,3.4vw,48px);line-height:1}
 .duo .caps,.statement,summary{text-wrap:balance}
 
 /* Choice card: free demo for weight loss */
@@ -367,7 +369,7 @@ footer{padding:0 0 40px}
           <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
           <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
         </div>
-        <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="sr"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
+        <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="free"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
         <p class="txt reveal d2"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
       </div>
 
@@ -1083,7 +1085,8 @@ var TAKEN_SHOW_FROM = 15;
     if (bar && heroCta) {
       var past = heroCta.getBoundingClientRect().bottom < 60, onCal = false;
       if (cal) { var b = cal.getBoundingClientRect(); onCal = b.top < vh && b.bottom > 0; }
-      bar.classList.toggle("show", past && !onCal);
+      // Nov 4, 2026: show the Book / Call bar from the first screen (as on the October page); hide it only while the calendar is on screen
+      bar.classList.toggle("show", !onCal);
     }
     paintSteps();
     paintWords();
