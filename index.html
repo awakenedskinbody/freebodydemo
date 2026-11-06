@@ -201,18 +201,23 @@ h1,h2,h3,p{margin:0}
 .taken{width:100%;max-width:460px}
 .taken[hidden]{display:none!important}
 .taken-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
-.taken-top b{font-stretch:125%;font-weight:600;font-size:26px;line-height:1;letter-spacing:-.01em}
+.taken-top b{font-stretch:125%;font-weight:600;font-size:26px;line-height:1;letter-spacing:-.01em;color:var(--urg,var(--black));transition:color .6s}
+.taken-top b small{font-size:13px;font-weight:500;letter-spacing:.02em;margin-left:6px}
 .taken-bar{height:6px;margin-top:10px;background:rgba(0,0,0,.1);overflow:hidden}
-.taken-bar i{display:block;height:100%;width:0;background:var(--black);transition:width 1.4s var(--ease)}
+.taken-bar i{display:block;height:100%;width:0;background:var(--urg,var(--black));transition:width 1.4s var(--ease),background-color .6s}
 .taken-sub{margin-top:9px;font-size:13px;color:#333}
-.taken-sub .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#1f9d55;margin-right:8px;vertical-align:1px;box-shadow:0 0 0 0 rgba(31,157,85,.5)}
+.taken-sub .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--urg,#1f9d55);color:var(--urg,#1f9d55);margin-right:8px;vertical-align:1px;box-shadow:0 0 0 0 currentColor}
 .motion .taken-sub .live{animation:pulse 2.4s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.45)}70%{box-shadow:0 0 0 7px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 currentColor}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+/* Counter shows what's LEFT since Nov 6, 2026 (Sarah's ask). --urg runs green (plenty left) to amber to red (few left), set by the script. */
+.taken .so{display:none}
+.taken.soldout .so{display:inline}
+.taken.soldout .nso{display:none}
 .taken-days{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .taken-days li{display:flex;flex-direction:column;gap:6px;text-align:left}
 .taken-days .d{font-size:10.5px;font-stretch:125%;text-transform:uppercase;letter-spacing:.12em;font-weight:500}
 .taken-days .mb{height:3px;background:rgba(0,0,0,.1);overflow:hidden}
-.taken-days .mb i{display:block;height:100%;width:0;background:var(--black);transition:width 1.4s var(--ease)}
+.taken-days .mb i{display:block;height:100%;width:0;background:var(--black);transition:width 1.4s var(--ease),background-color .6s}
 .taken-days .n{font-size:12px;color:var(--grey);line-height:1.3}
 .taken-days li.full .d{text-decoration:line-through}
 .taken-days li.full .n{color:var(--black);font-weight:600}
@@ -365,9 +370,9 @@ footer{padding:0 0 40px}
           <span class="es"><strong class="nw">Martes 10</strong> <span class="nw">de 1 a 7 p. m.</span> y <strong class="nw">de miércoles a sábado</strong> <span class="nw">de 9 a. m. a 7 p. m.</span></span>
         </p>
         <div class="taken reveal" data-taken hidden aria-live="polite">
-          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
+          <div class="taken-top"><span class="tiny"><span class="nso"><span class="en">Only</span><span class="es">Solo quedan</span></span><span class="so"><span class="en">Fully booked</span><span class="es">Todo reservado</span></span></span><b class="nso"><span data-taken-open></span><small><span class="en">left</span><span class="es">horarios</span></small></b></div>
           <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
-          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
+          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="nso"><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left<span data-taken-where-en></span></span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios<span data-taken-where-es></span></span></span><span class="so"><span class="en">Call or text (305) 909-7069 to join the waitlist.</span><span class="es">Llama o escribe al (305) 909-7069 para entrar en la lista de espera.</span></span></p>
         </div>
         <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="free"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
         <p class="txt reveal d2"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
@@ -417,9 +422,9 @@ footer{padding:0 0 40px}
         </div>
         <p class="hold-line reveal"><span class="en"><b>Free, no card needed.</b> Can't make it? Cancel from your confirmation email or text us, so someone else can take your time.</span><span class="es"><b>Gratis, sin tarjeta.</b> ¿No puedes venir? Cancela desde el correo de confirmación o escríbenos, así otra persona puede usar tu horario.</span></p>
         <div class="taken" data-taken data-taken-days hidden aria-live="polite">
-          <div class="taken-top"><span class="tiny"><span class="en">Already taken</span><span class="es">Ya tomados</span></span><b data-taken-pct>0%</b></div>
+          <div class="taken-top"><span class="tiny"><span class="nso"><span class="en">Only</span><span class="es">Solo quedan</span></span><span class="so"><span class="en">Fully booked</span><span class="es">Todo reservado</span></span></span><b class="nso"><span data-taken-open></span><small><span class="en">left</span><span class="es">horarios</span></small></b></div>
           <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
-          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left</span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios</span></p>
+          <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="nso"><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left<span data-taken-where-en></span></span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios<span data-taken-where-es></span></span></span><span class="so"><span class="en">Call or text (305) 909-7069 to join the waitlist.</span><span class="es">Llama o escribe al (305) 909-7069 para entrar en la lista de espera.</span></span></p>
           <ul class="taken-days"></ul>
         </div>
         <div class="cal-card" data-cal-section="wl">
@@ -845,6 +850,19 @@ var TAKEN_SHOW_FROM = 15;
     return out;
   }
   function setAll(sel, val) { document.querySelectorAll(sel).forEach(function (e) { e.textContent = val; }); }
+  // Share of times still open (0 to 1) -> colour. 60% or more left: green. About 30% left: amber. 12% or less left: red. Blended in between.
+  var URG_STOPS = [[0.12, [198, 40, 40]], [0.30, [224, 138, 0]], [0.60, [31, 157, 85]]];
+  function urgColor(x) {
+    var s = URG_STOPS;
+    if (x <= s[0][0]) return "rgb(" + s[0][1].join(",") + ")";
+    if (x >= s[s.length - 1][0]) return "rgb(" + s[s.length - 1][1].join(",") + ")";
+    for (var i = 1; i < s.length; i++) {
+      if (x <= s[i][0]) {
+        var t = (x - s[i - 1][0]) / (s[i][0] - s[i - 1][0]);
+        return "rgb(" + s[i - 1][1].map(function (c, k) { return Math.round(c + (s[i][1][k] - c) * t); }).join(",") + ")";
+      }
+    }
+  }
 
   function paint(slots) {
     var now = Date.now(), total = 0, open = 0, rows = [];
@@ -859,25 +877,38 @@ var TAKEN_SHOW_FROM = 15;
     if (!total) { boxes.forEach(function (b) { b.hidden = true; }); return; }
     var pct = Math.round(100 * (total - open) / total);
     var show = pct >= TAKEN_SHOW_FROM;
+    // Since Nov 6, 2026 the meter counts what's LEFT, and its colour runs green -> amber -> red as times run out.
+    var leftPct = Math.round(100 * open / total);
+    var urg = urgColor(open / total);
+    var openDays = rows.filter(function (r) { return r.open; });
+    var whereEn = "", whereEs = "";
+    if (openDays.length && openDays.length <= 3) {
+      whereEn = " (" + openDays.map(function (r) { var d = new Date(r.day + "T12:00:00" + DEMO_OFFSET); return DW.en[d.getUTCDay()] + " " + r.day.slice(8).replace(/^0/, ""); }).join(", ") + ")";
+      whereEs = " (" + openDays.map(function (r) { var d = new Date(r.day + "T12:00:00" + DEMO_OFFSET); return DW.es[d.getUTCDay()] + " " + r.day.slice(8).replace(/^0/, ""); }).join(", ") + ")";
+    }
     setAll("[data-taken-pct]", pct + "%");
     setAll("[data-taken-open]", open);
     setAll("[data-taken-total]", total);
+    setAll("[data-taken-where-en]", whereEn);
+    setAll("[data-taken-where-es]", whereEs);
     boxes.forEach(function (b) {
       b.hidden = !show;
+      b.style.setProperty("--urg", urg);
+      b.classList.toggle("soldout", open === 0);
       var f = b.querySelector("[data-taken-fill]");
-      if (f) requestAnimationFrame(function () { f.style.width = pct + "%"; });
+      if (f) requestAnimationFrame(function () { f.style.width = leftPct + "%"; });
       var ul = b.querySelector(".taken-days");
       if (!ul) return;
       ul.innerHTML = "";
       rows.forEach(function (r) {
         var d = new Date(r.day + "T12:00:00" + DEMO_OFFSET), n = r.day.slice(8).replace(/^0/, "");
         var li = document.createElement("li"); if (!r.open) li.className = "full";
-        var tk = Math.round(100 * (r.total - r.open) / r.total);
+        var lf = Math.round(100 * r.open / r.total), col = urgColor(r.open / r.total);
         li.innerHTML = '<span class="d"><span class="en">' + DW.en[d.getUTCDay()] + " " + n + '</span><span class="es">' + DW.es[d.getUTCDay()] + " " + n + "</span></span>" +
           '<span class="mb"><i style="width:0"></i></span>' +
           '<span class="n">' + (r.open ? '<span class="en">' + r.open + ' left</span><span class="es">quedan ' + r.open + "</span>" : '<span class="en">Full</span><span class="es">Agotado</span>') + "</span>";
         ul.appendChild(li);
-        var bar = li.querySelector(".mb i"); requestAnimationFrame(function () { bar.style.width = tk + "%"; });
+        var bar = li.querySelector(".mb i"); bar.style.background = col; requestAnimationFrame(function () { bar.style.width = lf + "%"; });
       });
     });
   }
