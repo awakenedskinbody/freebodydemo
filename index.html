@@ -815,7 +815,10 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
    while it's open. "Taken" = every 40-minute demo time from the
    grid below that is no longer open on Cal.com, for any reason
    (a demo booking or another appointment on the calendar).
-   Times that already passed don't count either way.
+   Since Nov 12, 2026: the total covers every demo time of the
+   round, from the first day, and times that already passed count
+   as gone. Past days show as Full. The meter hides once the last
+   demo time has passed.
    DEMO_GRID: the demo days and hours, studio time (EST, -05:00).
    TAKEN_SHOW_FROM: below this %, the meter stays hidden.
    ========================================================= */
@@ -865,16 +868,19 @@ var TAKEN_SHOW_FROM = 15;
   }
 
   function paint(slots) {
-    var now = Date.now(), total = 0, open = 0, rows = [];
+    // Since Nov 12, 2026 (Sarah's ask) the total is the whole round, from the first demo day:
+    // times that already passed count as gone, so "10 of 69 left" instead of "10 of 33 left".
+    var now = Date.now(), total = 0, open = 0, upcoming = 0, rows = [];
     days.forEach(function (day) {
-      var g = grid(day, now);
+      var g = grid(day, 0);
       if (!g.length) return;
+      upcoming += grid(day, now).length;
       var o = (slots[day] || []).filter(function (s) { return new Date(s.start).getTime() > now; }).length;
       o = Math.min(o, g.length);
       total += g.length; open += o;
       rows.push({ day: day, total: g.length, open: o });
     });
-    if (!total) { boxes.forEach(function (b) { b.hidden = true; }); return; }
+    if (!total || !upcoming) { boxes.forEach(function (b) { b.hidden = true; }); return; }
     var pct = Math.round(100 * (total - open) / total);
     var show = pct >= TAKEN_SHOW_FROM;
     // Since Nov 6, 2026 the meter counts what's LEFT, and its colour runs green -> amber -> red as times run out.
