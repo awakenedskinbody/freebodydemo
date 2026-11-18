@@ -1,3 +1,4 @@
+/** @OnlyCurrentDoc */
 /*
  December demo round: Cal.com webhook -> Bookings tab of this sheet.
  Deployed as a web app (Execute as: Me, Who has access: Anyone).
