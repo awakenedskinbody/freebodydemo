@@ -2,6 +2,22 @@
 
 One-page site where people book a free demo: weight loss (herbalist + Invisa-RED + before and after measurements). The domain goes on the street signs.
 
+## December 2026 round (branch `dec-2026`, not live yet)
+
+Demo days Thu Dec 10 to Sat Dec 12, 2026, 9 AM to 7 PM, 30-minute times. Built Nov 18, 2026 on Sarah's ask. A January round (Thu Jan 7 to Sat Jan 9, 2027) reuses the same page with new dates.
+
+- Offer: Invisa-RED + muscle sculpting in one free visit (about an hour), with Thinnr (6-week at-home program with an app) as the option for people who can't come in every week. Thinnr is mentioned, not demoed.
+- Hero: "Why wait for January? / Try both free." (ES: "¿Para qué esperar a enero? / Prueba las dos gratis."). Why: weight-loss searches bottom out in December and peak in January, and the Nov "Try it free" audience was tired.
+- Price line under the hero text and in the "Is it really free?" answer: programs start at $1,899, with payment plans. It's there on purpose, as a filter: in November only 23% of ad leads who came bought, and price came up in 5 of the 17 who didn't. No payment amounts or number of payments (Reg Z trigger terms).
+- Steps: herbalist, before measurements, Invisa-RED, muscle sculpting, after measurements, your plan. The vibration plate step was taken out to keep the visit at about an hour; put it back from `main` if Rachel wants it.
+- New split section "Muscle sculpting" with a grey panel (bars that contract, still for reduced motion) and the word MUSCLE / MÚSCULO. Copy says what it feels like only; no device claims, and it never says Emsculpt (the new machine isn't BTL).
+- FAQ: new "What's muscle sculpting?" and "What's Thinnr?" answers.
+- Booking: `CAL` points to two NEW Cal.com events, `free-body-demo` (EN) and `free-body-demo-es` (ES), 30 minutes, which have to exist before this goes live. The old `free-demo-weight-loss` events stay as they are. `DEMO_DAYS_END` is `2026-12-13T00:00:00-05:00`.
+- Meter: `DEMO_GRID` is Dec 10 to 12, 9:00 to 19:00, `DEMO_SLOT_MIN` 30, so 60 times in the round.
+- Tracking: `design: "dec26"` on `cal_loaded` and `demo_booked`, `metadata[design]=dec26` on the Cal booking. `demo` is still `weight_loss`, so GA4 reports keep working.
+- Link preview: `assets/og-dec26.jpg` (rendered with Playwright from the site fonts).
+- To go live: create the two Cal events (and the webhook to the December sheet), then merge `dec-2026` into `main`. To go back to November: revert the merge.
+
 **v9 look for the Nov 10 to 14, 2026 round (not live yet, on branch `preview-v7`).** Sarah asked for a more modern, futuristic, "Apple" style and chose to replace the October look rather than split traffic. The October v6 site is saved untouched on the branch `backup/v6-oct-2026` (commit 6a4731e). To bring it back: `git checkout backup/v6-oct-2026 -- index.html`, commit and push. The two-demo version (weight loss and face lift) is still on `backup/two-demos-2026-10-20`.
 
 ## v11 look (live since Oct 31, 2026)

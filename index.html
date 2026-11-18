@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Free Weight Loss Demo | Awakened Skin + Body</title>
-<meta name="description" content="Don't take our word for it. Try a free weight loss demo at our studio right off the Broad Causeway, Nov 10 to 14. Book online or call (305) 909-7069.">
+<title>Free Body Demo, Dec 10 to 12 | Awakened Skin + Body</title>
+<meta name="description" content="Why wait for January? Try Invisa-RED and muscle sculpting free at our studio right off the Broad Causeway, Dec 10 to 12. Book online or call (305) 909-7069.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://freebodydemo.com/">
@@ -12,9 +12,9 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freebodydemo.com/">
-<meta property="og:title" content="Free weight loss demo | Awakened Skin + Body">
-<meta property="og:description" content="Don't take our word for it. Try a free weight loss demo, Nov 10 to 14. Book online, or call or text (305) 909-7069.">
-<meta property="og:image" content="https://freebodydemo.com/assets/og-nov-v10.jpg">
+<meta property="og:title" content="Free body demo, Dec 10 to 12 | Awakened Skin + Body">
+<meta property="og:description" content="Why wait for January? Try Invisa-RED and muscle sculpting free, Dec 10 to 12. Book online, or call or text (305) 909-7069.">
+<meta property="og:image" content="https://freebodydemo.com/assets/og-dec26.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -50,6 +50,9 @@
 
 <style>
 /* =========================================================
+   dec26 (Dec 10 to 12, 2026 round): the v11 page with the December
+   offer (Invisa-RED + muscle sculpting, Thinnr as the at-home option),
+   a price line, 30-minute demo times and a muscle panel.
    v11 (Nov 2026): the October page, same sections and copy,
    in the v10 look (A.N Other + Organic Care).
    White and black. Archivo stretched wide in capitals, Instrument
@@ -141,6 +144,15 @@ h1,h2,h3,p{margin:0}
 .dates > span{flex:1 1 260px}
 
 .hero h1 .serif{display:block;font-size:clamp(38px,4vw,58px);line-height:1;text-wrap:balance}
+/* Dec 2026: price line under the hero text, so people know the cost before they book */
+.hero .price{margin-top:14px;font-size:14px;color:var(--grey);max-width:520px}
+.hero .price b{color:var(--black);font-weight:600}
+/* Dec 2026: muscle panel, bars that contract in waves (still for reduced motion) */
+.fibers{position:absolute;left:12%;right:12%;top:18%;bottom:34%;z-index:1;display:flex;flex-direction:column;justify-content:space-between}
+.fibers i{display:block;height:9%;border-radius:999px;background:var(--black);transform-origin:center;opacity:.9}
+.motion .fibers i{animation:contract 2.4s var(--ease) infinite}
+.motion .fibers i:nth-child(2){animation-delay:.12s}.motion .fibers i:nth-child(3){animation-delay:.24s}.motion .fibers i:nth-child(4){animation-delay:.36s}.motion .fibers i:nth-child(5){animation-delay:.48s}.motion .fibers i:nth-child(6){animation-delay:.6s}
+@keyframes contract{0%,100%{transform:scaleX(1)}35%{transform:scaleX(.62)}55%{transform:scaleX(.66)}}
 /* "Try it free." shown under the headline again (Nov 4, 2026; it was screen-reader only) */
 .hero h1 .free{display:block;margin-top:12px;font-family:var(--wide);font-stretch:125%;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(30px,3.4vw,48px);line-height:1}
 .duo .caps,.statement,summary{text-wrap:balance}
@@ -365,23 +377,24 @@ footer{padding:0 0 40px}
     <div class="wrap hero-grid">
       <div class="hero-l">
         <p class="dates reveal" id="demo-dates" role="status">
-          <b><span class="en">Nov 10 to 14</span><span class="es">10 al 14 de nov.</span></b>
-          <span class="en"><strong class="nw">Tuesday, Nov 10</strong> from <span class="nw">1 PM to 7 PM</span>, and <strong class="nw">Wednesday to Saturday</strong> from <span class="nw">9 AM to 7 PM</span>.</span>
-          <span class="es"><strong class="nw">Martes 10</strong> <span class="nw">de 1 a 7 p. m.</span> y <strong class="nw">de miércoles a sábado</strong> <span class="nw">de 9 a. m. a 7 p. m.</span></span>
+          <b><span class="en">Dec 10 to 12</span><span class="es">10 al 12 de dic.</span></b>
+          <span class="en"><strong class="nw">Thursday to Saturday</strong>, <span class="nw">9 AM to 7 PM</span>.</span>
+          <span class="es"><strong class="nw">De jueves a sábado</strong>, <span class="nw">de 9 a. m. a 7 p. m.</span></span>
         </p>
         <div class="taken reveal" data-taken hidden aria-live="polite">
           <div class="taken-top"><span class="tiny"><span class="nso"><span class="en">Only</span><span class="es">Solo quedan</span></span><span class="so"><span class="en">Fully booked</span><span class="es">Todo reservado</span></span></span><b class="nso"><span data-taken-open></span><small><span class="en">left</span><span class="es">horarios</span></small></b></div>
           <div class="taken-bar" aria-hidden="true"><i data-taken-fill></i></div>
           <p class="taken-sub"><span class="live" aria-hidden="true"></span><span class="nso"><span class="en"><span data-taken-open></span> of <span data-taken-total></span> demo times left<span data-taken-where-en></span></span><span class="es">Quedan <span data-taken-open></span> de <span data-taken-total></span> horarios<span data-taken-where-es></span></span></span><span class="so"><span class="en">Call or text (305) 909-7069 to join the waitlist.</span><span class="es">Llama o escribe al (305) 909-7069 para entrar en la lista de espera.</span></span></p>
         </div>
-        <h1 class="reveal d1"><span class="serif"><span class="en">Don’t take our word for it.</span><span class="es">No tienes que creernos.</span></span><span class="free"><span class="en"> Try it free.</span><span class="es"> Pruébalo gratis.</span></span></h1>
-        <p class="txt reveal d2"><span class="en">A free weight loss demo at our studio, right off the Broad Causeway. Pick a time and come in. You don't have to buy a thing.</span><span class="es">Una demo gratis para bajar de peso en nuestro estudio, a pasos del Broad Causeway. Elige tu horario y ven. No tienes que comprar nada.</span></p>
+        <h1 class="reveal d1"><span class="serif"><span class="en">Why wait for January?</span><span class="es">¿Para qué esperar a enero?</span></span><span class="free"><span class="en"> Try both free.</span><span class="es"> Prueba las dos gratis.</span></span></h1>
+        <p class="txt reveal d2"><span class="en">A free body demo at our studio, right off the Broad Causeway. You try an Invisa-RED session and a muscle sculpting session, and we measure you before and after. You don't have to buy a thing.</span><span class="es">Una demo corporal gratis en nuestro estudio, a pasos del Broad Causeway. Pruebas una sesión de Invisa-RED y una de esculpido muscular, y te medimos antes y después. No tienes que comprar nada.</span></p>
+        <p class="price reveal d2"><span class="en">Want to keep going after? Programs start at <b>$1,899</b>, with payment plans.</span><span class="es">¿Quieres seguir después? Los programas empiezan en <b>$1,899</b> y hay planes de pago.</span></p>
       </div>
 
       <div class="choice reveal d2">
         <div class="choice-head">
-          <span class="tiny muted"><span class="en">Free demo for</span><span class="es">Demo gratis para</span></span>
-          <span class="title"><span class="en">Weight loss</span><span class="es">Bajar de peso</span></span>
+          <span class="tiny muted"><span class="en">Free demo</span><span class="es">Demo gratis</span></span>
+          <span class="title"><span class="en">Laser + muscle</span><span class="es">Láser + músculo</span></span>
         </div>
         <div class="hc" data-results="weight_loss" role="region" aria-roledescription="carousel" aria-label="Before and after photos, weight loss demo" data-aria-en="Before and after photos, weight loss demo" data-aria-es="Fotos de antes y después, demo para bajar de peso">
           <div class="hc-stage">
@@ -399,7 +412,7 @@ footer{padding:0 0 40px}
           <p class="hc-cap"><span class="hc-count" aria-hidden="true">01 / 06</span><span class="en">Invisa-RED Elite clients, photographed in our studio with their consent. Individual results vary.</span><span class="es">Clientes de Invisa-RED Elite, fotografiados en nuestro estudio con su permiso. Los resultados varían de persona a persona.</span></p>
         </div>
         <a class="choice-link" href="#pick-time" data-track="choose_weight_loss">
-          <p><span class="en">Meet our herbalist, try an Invisa-RED session and see your before and after measurements. About 40 minutes.</span><span class="es">Consulta con herbalista, una sesión de Invisa-RED y tus medidas de antes y después. Unos 40 minutos.</span></p>
+          <p><span class="en">Meet our herbalist, try Invisa-RED and muscle sculpting, and see your measurements before and after. About an hour.</span><span class="es">Consulta con herbalista, Invisa-RED y esculpido muscular, y tus medidas de antes y después. Más o menos una hora.</span></p>
           <span class="btn go"><span class="en">Book this demo</span><span class="es">Reservar esta demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
@@ -410,7 +423,7 @@ footer{padding:0 0 40px}
         <p class="where"><span class="en">2106 NE 123rd Street, Miami · Free parking · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Get directions</a></span><span class="es">2106 NE 123rd Street, Miami · Estacionamiento gratis · <a href="https://www.google.com/maps/search/?api=1&query=2106+NE+123rd+Street+Miami+FL+33181" target="_blank" rel="noopener" data-track="directions">Cómo llegar</a></span></p>
       </div>
     </div>
-    <p class="mega" aria-hidden="true"><span class="en" data-mega>Try it free</span><span class="es" data-mega>Pruébalo gratis</span></p>
+    <p class="mega" aria-hidden="true"><span class="en" data-mega>Free demo</span><span class="es" data-mega>Demo gratis</span></p>
   </div>
 
   <!-- Book: calendar right after the hero (moved up Nov 2, 2026) -->
@@ -448,8 +461,8 @@ footer{padding:0 0 40px}
       <div class="split-l">
         <div class="section-head reveal">
           <p class="tiny muted"><span class="en">Free demo</span><span class="es">Demo gratis</span></p>
-          <h2 id="wl-title" class="duo"><span class="en"><span class="caps">Your weight loss</span> <span class="serif">demo</span></span><span class="es"><span class="caps">Tu demo</span> <span class="serif">para bajar de peso</span></span></h2>
-          <p class="txt"><span class="en">About 40 minutes, here in our studio. Here's what happens:</span><span class="es">Unos 40 minutos, aquí en nuestro estudio. Así es la visita:</span></p>
+          <h2 id="wl-title" class="duo"><span class="en"><span class="caps">Your body</span> <span class="serif">demo</span></span><span class="es"><span class="caps">Tu demo</span> <span class="serif">corporal</span></span></h2>
+          <p class="txt"><span class="en">About an hour, here in our studio. Here's how it goes:</span><span class="es">Más o menos una hora, aquí en nuestro estudio. Así es la visita:</span></p>
         </div>
         <ol class="steps reveal d1" data-steps>
           <li class="step">
@@ -465,12 +478,16 @@ footer{padding:0 0 40px}
             <p><span class="en">You lie back and relax while the laser works. No needles, no downtime.</span><span class="es">Te recuestas y te relajas mientras trabaja el láser. Sin agujas y sin tiempo de recuperación.</span></p>
           </li>
           <li class="step">
+            <h3><span class="en">Muscle sculpting</span><span class="es">Esculpido muscular</span></h3>
+            <p><span class="en">We place the paddles on your belly or glutes and your muscles contract on their own. You'll feel it working. No needles, no downtime.</span><span class="es">Ponemos las placas en el abdomen o los glúteos y tus músculos se contraen solos. Lo vas a sentir. Sin agujas y sin tiempo de recuperación.</span></p>
+          </li>
+          <li class="step">
             <h3><span class="en">After measurements</span><span class="es">Medidas de después</span></h3>
             <p><span class="en">We measure again, so you see your own numbers.</span><span class="es">Volvemos a medir, para que veas tus propios números.</span></p>
           </li>
           <li class="step">
-            <h3><span class="en">Drainage on the vibration plate</span><span class="es">Drenaje en la plataforma vibratoria</span></h3>
-            <p><span class="en">The last step before you head out.</span><span class="es">El último paso antes de irte.</span></p>
+            <h3><span class="en">Your plan</span><span class="es">Tu plan</span></h3>
+            <p><span class="en">We put a plan together with you: weekly sessions here, or Thinnr, a 6-week program you follow at home with an app, if weekly visits don't fit your schedule.</span><span class="es">Armamos un plan contigo: sesiones semanales aquí, o Thinnr, un programa de 6 semanas que sigues en casa con una app, si venir cada semana no te queda fácil.</span></p>
           </li>
         </ol>
         <p class="extra reveal d2"><span class="en">Depending on your goals, you may also qualify for a cleanse protocol, a foot detox and more. We'll go over it at your visit.</span><span class="es">Según tus metas, también podrías calificar para un protocolo de limpieza, un detox de pies y más. Lo vemos en tu visita.</span></p>
@@ -502,6 +519,25 @@ footer{padding:0 0 40px}
       </div>
     </div>
 
+    <!-- Dec 2026: muscle sculpting joins the demo -->
+    <div class="split about">
+      <div class="split-l">
+        <p class="tiny muted reveal"><span class="en">Muscle sculpting</span><span class="es">Esculpido muscular</span></p>
+        <p class="statement reveal d1"><span class="en">Muscle sculpting makes your muscles contract on their own while you lie back. We use it on the belly and glutes, and in this demo you try it right after Invisa-RED.</span><span class="es">El esculpido muscular hace que tus músculos se contraigan solos mientras descansas. Lo usamos en el abdomen y los glúteos, y en esta demo lo pruebas justo después de Invisa-RED.</span></p>
+        <ul class="chips reveal d2">
+          <li><span class="en">No needles</span><span class="es">Sin agujas</span></li>
+          <li><span class="en">Belly or glutes</span><span class="es">Abdomen o glúteos</span></li>
+          <li><span class="en">Same visit as Invisa-RED</span><span class="es">En la misma visita que Invisa-RED</span></li>
+        </ul>
+      </div>
+      <div class="split-r reveal">
+        <div class="panel grey">
+          <div class="fibers" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="pword" aria-hidden="true" data-fit><span class="en">Muscle</span><span class="es">Músculo</span></p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- FAQ -->
@@ -513,7 +549,7 @@ footer{padding:0 0 40px}
       <div class="reveal d1">
 <details>
           <summary><span class="en">Is it really free?</span><span class="es">¿De verdad es gratis?</span></summary>
-          <p><span class="en">Yes. The demo is free, you don't have to buy anything, and you don't need a card to book. If you want to keep going, we'll go over the plans and prices so you can decide on your own time.</span><span class="es">Sí. La demo es gratis, no tienes que comprar nada y no necesitas tarjeta para reservar. Si quieres seguir, te explicamos los planes y precios para que decidas con calma.</span></p>
+          <p><span class="en">Yes. The demo is free, you don't have to buy anything, and you don't need a card to book. If you want to keep going, programs start at $1,899 and we have payment plans. We go over them at your visit, and you decide on your own time.</span><span class="es">Sí. La demo es gratis, no tienes que comprar nada y no necesitas tarjeta para reservar. Si quieres seguir, los programas empiezan en $1,899 y hay planes de pago. Te los explicamos en tu visita y decides con calma.</span></p>
         </details>
         <details>
           <summary><span class="en">How do I cancel or change my time?</span><span class="es">¿Cómo cancelo o cambio mi horario?</span></summary>
@@ -522,6 +558,14 @@ footer{padding:0 0 40px}
         <details>
           <summary><span class="en">How much weight will I lose?</span><span class="es">¿Cuánto peso voy a bajar?</span></summary>
           <p><span class="en">We can't promise a number, and nobody honest can. Results vary from person to person. That's why we measure you before and after your Invisa-RED session, so you see your own numbers.</span><span class="es">No podemos prometerte un número, y nadie honesto puede. Los resultados varían de persona a persona. Por eso te medimos antes y después de tu sesión de Invisa-RED, para que veas tus propios números.</span></p>
+        </details>
+        <details>
+          <summary><span class="en">What's muscle sculpting?</span><span class="es">¿Qué es el esculpido muscular?</span></summary>
+          <p><span class="en">Paddles on your belly or glutes make the muscles contract on their own while you lie back. In this demo you try it together with Invisa-RED.</span><span class="es">Unas placas en el abdomen o los glúteos hacen que los músculos se contraigan solos mientras descansas. En esta demo lo pruebas junto con Invisa-RED.</span></p>
+        </details>
+        <details>
+          <summary><span class="en">What's Thinnr?</span><span class="es">¿Qué es Thinnr?</span></summary>
+          <p><span class="en">A 6-week program you follow at home, with an app. It's for people who can't come in every week. The demo is for our in-studio program, and if Thinnr fits you better, we'll tell you about it at your visit.</span><span class="es">Un programa de 6 semanas que sigues en casa, con una app. Es para quien no puede venir cada semana. La demo es de nuestro programa en el estudio y, si Thinnr te queda mejor, te lo explicamos en tu visita.</span></p>
         </details>
         <details>
           <summary><span class="en">Is Invisa-RED FDA cleared?</span><span class="es">¿Invisa-RED está autorizado por la FDA?</span></summary>
@@ -589,21 +633,21 @@ footer{padding:0 0 40px}
    DEMO_DAYS_END: the "Demo days" line hides itself after this date.
    ========================================================= */
 var CAL = {
-  wl_en: "awakened-skin-and-body/free-demo-weight-loss",
-  wl_es: "awakened-skin-and-body/free-demo-weight-loss-es"
+  wl_en: "awakened-skin-and-body/free-body-demo",
+  wl_es: "awakened-skin-and-body/free-body-demo-es"
 };
-var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
+var DEMO_DAYS_END = "2026-12-13T00:00:00-05:00";
 
 (function () {
   var root = document.documentElement;
   var TEXT = {
     en: {
-      title: "Free Weight Loss Demo | Awakened Skin + Body",
-      msg: { wl: "Hi, I'd like to book a free weight loss demo.", any: "Hi, I'd like to book a free demo." }
+      title: "Free Body Demo, Dec 10 to 12 | Awakened Skin + Body",
+      msg: { wl: "Hi, I'd like to book a free body demo.", any: "Hi, I'd like to book a free demo." }
     },
     es: {
-      title: "Demo gratis para bajar de peso | Awakened Skin + Body",
-      msg: { wl: "Hola, quiero reservar una demo gratis para bajar de peso.", any: "Hola, quiero reservar una demo gratis." }
+      title: "Demo corporal gratis, 10 al 12 de dic. | Awakened Skin + Body",
+      msg: { wl: "Hola, quiero reservar una demo corporal gratis.", any: "Hola, quiero reservar una demo gratis." }
     }
   };
 
@@ -635,7 +679,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
     Cal.ns[key]("inline", {
       elementOrSelector: "#" + boxId,
       calLink: link,
-      config: { layout: "month_view", theme: "light", "metadata[source]": "freebodydemo", "metadata[demo]": demo, "metadata[design]": "v11" }
+      config: { layout: "month_view", theme: "light", "metadata[source]": "freebodydemo", "metadata[demo]": demo, "metadata[design]": "dec26" }
     });
     Cal.ns[key]("ui", {
       theme: "light",
@@ -650,7 +694,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
       action: "bookerViewed",
       callback: function (e) {
         var d = (e && e.detail && e.detail.data) || {};
-        if (window.gtag) gtag("event", "cal_loaded", { demo: demo, language: root.getAttribute("data-lang"), slots_loaded: d.slotsLoaded ? "yes" : "no", design: "v11" });
+        if (window.gtag) gtag("event", "cal_loaded", { demo: demo, language: root.getAttribute("data-lang"), slots_loaded: d.slotsLoaded ? "yes" : "no", design: "dec26" });
       }
     });
     Cal.ns[key]("on", {
@@ -662,7 +706,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
     Cal.ns[key]("on", {
       action: "bookingSuccessful",
       callback: function () {
-        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "v11", payment: "none" });
+        if (window.gtag) gtag("event", "demo_booked", { demo: demo, language: root.getAttribute("data-lang"), design: "dec26", payment: "none" });
         if (window.fbq) fbq("track", "Schedule", { content_name: demo });
         if (window.__takenRefresh) setTimeout(window.__takenRefresh, 2000);
       }
@@ -812,7 +856,7 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
    LIVE COUNT OF DEMO TIMES TAKEN
    Reads the open times straight from Cal.com (public slots API,
    no key) every time the page opens, and again every 3 minutes
-   while it's open. "Taken" = every 40-minute demo time from the
+   while it's open. "Taken" = every demo time (DEMO_SLOT_MIN, 30 min since Dec 2026) from the
    grid below that is no longer open on Cal.com, for any reason
    (a demo booking or another appointment on the calendar).
    Since Nov 12, 2026: the total covers every demo time of the
@@ -823,13 +867,11 @@ var DEMO_DAYS_END = "2026-11-15T00:00:00-05:00";
    TAKEN_SHOW_FROM: below this %, the meter stays hidden.
    ========================================================= */
 var DEMO_GRID = {
-  "2026-11-10": ["13:00", "19:00"],
-  "2026-11-11": ["09:00", "19:00"],
-  "2026-11-12": ["09:00", "19:00"],
-  "2026-11-13": ["09:00", "19:00"],
-  "2026-11-14": ["09:00", "19:00"]
+  "2026-12-10": ["09:00", "19:00"],
+  "2026-12-11": ["09:00", "19:00"],
+  "2026-12-12": ["09:00", "19:00"]
 };
-var DEMO_SLOT_MIN = 40, DEMO_TZ = "America/New_York", DEMO_OFFSET = "-05:00";
+var DEMO_SLOT_MIN = 30, DEMO_TZ = "America/New_York", DEMO_OFFSET = "-05:00";
 var TAKEN_SHOW_FROM = 15;
 
 (function () {
