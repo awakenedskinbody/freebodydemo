@@ -13,3 +13,10 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Tools kept in the repo for the team (Apps Script for the December sheet), not part of the site
+[[redirects]]
+  from = "/tools/*"
+  to = "/"
+  status = 404
+  force = true
